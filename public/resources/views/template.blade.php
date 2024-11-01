@@ -2,7 +2,7 @@
 <html class="wide wow-animation" lang="en">
 
 <head>
-    <title>Home</title>
+    <title>@yield('title')</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -41,7 +41,7 @@
                         <div class="rd-navbar-panel">
                             <button class="rd-navbar-toggle" data-custom-toggle=".rd-navbar-nav-wrap"
                                 data-custom-toggle-disable-on-blur="true"><span></span></button><a
-                                class="rd-navbar-brand brand" href="index.html"><img
+                                class="rd-navbar-brand brand" href="{{url('/')}}"><img
                                     src="dist/images/logo-default-187x60.svg" alt="" width="187" height="60" /></a>
                         </div>
                         <div class="rd-navbar-group rd-navbar-search-wrap">
@@ -52,16 +52,17 @@
                                             href="contact-me.html" target="_blank"><span
                                                 class="icon icon-xs-smaller icomoon-chat"></span>Contact me</a></div>
                                     <ul class="rd-navbar-nav">
-                                        <li class="rd-nav-item"><a class="rd-nav-link" href="about-me.html">About me</a>
+                                        <li class="rd-nav-item"><a class="rd-nav-link" href="{{url('/tentang')}}">Tentang</a>
                                         </li>
-                                        <li class="rd-nav-item"><a class="rd-nav-link" href="coaching.html">Coaching</a>
+                                        <li class="rd-nav-item"><a class="rd-nav-link" href="{{url('/pendidikan')}}">Pendidikan</a>
                                         </li>
-                                        <li class="rd-nav-item"><a class="rd-nav-link" href="client-stories.html">Client
-                                                stories</a>
+                                        <li class="rd-nav-item"><a class="rd-nav-link" href="{{url('/kemahasiswaan')}}">Kemahasiswaan</a>
                                         </li>
-                                        <li class="rd-nav-item"><a class="rd-nav-link" href="pricing.html">Prices</a>
+                                        <li class="rd-nav-item"><a class="rd-nav-link" href="{{url('/artikel')}}">Artikel</a>
                                         </li>
-                                        <li class="rd-nav-item"><a class="rd-nav-link" href="blog.html">Blog</a>
+                                        <li class="rd-nav-item"><a class="rd-nav-link" href="{{url('/akreditasi')}}">akreditasi</a>
+                                        </li>
+                                        {{-- <li class="rd-nav-item"><a class="rd-nav-link" href="blog.html">Blog</a>
                                             <ul class="rd-menu rd-navbar-dropdown">
                                                 <li class="rd-dropdown-item"><a class="rd-dropdown-link"
                                                         href="blog-post.html">Blog post</a>
@@ -135,7 +136,7 @@
                                                     </ul>
                                                 </li>
                                             </ul>
-                                        </li>
+                                        </li> --}}
                                     </ul>
                                 </div>
                             </div>

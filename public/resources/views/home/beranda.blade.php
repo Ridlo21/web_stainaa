@@ -5,6 +5,7 @@ Home
 @endsection
 
 @section('konten')
+{{-- jumbotron --}}
 <section class="section section-intro bg-primary position-relative">
     <div class="container">
         <div class="row row-40">
@@ -18,6 +19,7 @@ Home
         </div><img class="img-mod-1" src="dist/images/img-01-950x920.png" alt="" width="950" height="920" />
     </div>
 </section>
+
 <section class="section section-lg bg-default">
     <div class="container">
         <h2 class="text-center">I help people tackle their business issues</h2>
@@ -65,6 +67,7 @@ Home
         </div>
     </div>
 </section>
+
 <section class="section section-lg bg-default">
     <div class="container">
         <div class="row row-40 justify-content-md-between flex-column-reverse flex-md-row">
@@ -95,7 +98,8 @@ Home
                                 clients</p>
                         </div>
                     </div>
-                </div><a class="btn btn-nero wow fadeInUp" href="about-me.html" data-wow-delay=".1s">More about
+                </div>
+                <a class="btn btn-nero wow fadeInUp" href="about-me.html" data-wow-delay=".1s">More about
                     me</a>
             </div>
             <div class="col-md-5"><img class="wow fadeIn" src="dist/images/img-02-510x680.jpg" alt="" width="510"
@@ -104,6 +108,7 @@ Home
         </div>
     </div>
 </section>
+
 <section class="section section-lg bg-default">
     <div class="container">
         <div class="row row-30 align-items-center">
@@ -195,6 +200,7 @@ Home
         </div>
     </div>
 </section>
+
 <section class="section section-lg bg-primary">
     <div class="container">
         <div class="row row-10 justify-content-lg-between">
@@ -224,6 +230,7 @@ Home
         </div>
     </div>
 </section>
+
 <section class="section section-lg bg-default">
     <div class="container">
         <div class="row">
@@ -365,9 +372,11 @@ Home
         </div>
     </div>
 </section>
+
 <div class="container mt-0">
     <hr>
 </div>
+
 <section class="section section-lg bg-default">
     <div class="container">
         <div class="row justify-content-center">
