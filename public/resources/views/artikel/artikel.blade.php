@@ -1,7 +1,7 @@
 @extends('template')
 
 @section('title')
-    Kemahasiswaan
+    Artikel
 @endsection
 
 @section('konten')
