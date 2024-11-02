@@ -40,7 +40,7 @@
                         <div class="box-top">
                             <div class="box-icon"><span class="icon icon-md icomoon-stats"></span></div>
                             <div class="box-header">
-                                <h3 class="h4"><a href="about-me.html">Career mentoring</a></h3>
+                                <h3 class="h4"><a href="about-me.html">Kuliah & Ngaji</a></h3>
                             </div>
                         </div>
                         <div class="box-body">
@@ -53,7 +53,7 @@
                         <div class="box-top">
                             <div class="box-icon"><span class="icon icon-md icomoon-user"></span></div>
                             <div class="box-header">
-                                <h3 class="h4"><a href="about-me.html">Work &amp; life balance</a></h3>
+                                <h3 class="h4"><a href="about-me.html"></a>Invokasi</h3>
                             </div>
                         </div>
                         <div class="box-body">
@@ -66,7 +66,7 @@
                         <div class="box-top">
                             <div class="box-icon"><span class="icon icon-md icomoon-aim"></span></div>
                             <div class="box-header">
-                                <h3 class="h4"><a href="about-me.html">Important decisions</a></h3>
+                                <h3 class="h4"><a href="about-me.html">Kampus Merdeka</a></h3>
                             </div>
                         </div>
                         <div class="box-body">
@@ -82,38 +82,28 @@
         <div class="container">
             <div class="row row-40 justify-content-md-between flex-column-reverse flex-md-row">
                 <div class="col-md-6">
-                    <h2>Helping millions of owners create a business that works.</h2>
+                    <h2>Selayang Pandang</h2>
                     <p>My name is John Adams and I am a business coach and trainer. I work with you to increase your
                         awareness and choices, so you can set meaningful goals and get the results you truly want. I
                         will challenge you to learn and think differently.</p>
-                    <div class="row row-xs row-20">
-                        <div class="col-6 wow fadeIn" data-wow-delay=".3s">
-                            <!--Counter-->
-                            <div class="box-counter">
-                                <div class="box-counter-main">
-                                    <div class="counter">82</div>
-                                    <div class="counter-postfix">%</div>
-                                </div>
-                                <p class="small box-counter-title">Percentage of regular and returning customers</p>
-                            </div>
-                        </div>
-                        <div class="col-6 wow fadeIn" data-wow-delay=".2s">
-                            <!--Counter-->
-                            <div class="box-counter">
-                                <div class="box-counter-main">
-                                    <div class="counter">100</div>
-                                    <div class="counter-postfix">+</div>
-                                </div>
-                                <p class="small box-counter-title">Positive reviews and testimonials submitted by my
-                                    clients</p>
-                            </div>
-                        </div>
-                    </div>
-                    <a class="btn btn-nero wow fadeInUp" href="about-me.html" data-wow-delay=".1s">More about
-                        me</a>
+                    <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos, molestias iste fugit minus
+                        iusto quas eveniet neque libero rerum at. Doloribus perferendis ipsum reiciendis sequi at voluptatum
+                        maiores enim neque!
+                    </p>
+                    <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos, molestias iste fugit minus
+                        iusto quas eveniet neque libero rerum at. Doloribus perferendis ipsum reiciendis sequi at voluptatum
+                        maiores enim neque!
+                    </p>
+                    <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos, molestias iste fugit minus
+                        iusto quas eveniet neque libero rerum at. Doloribus perferendis ipsum reiciendis sequi at voluptatum
+                        maiores enim neque!
+                    </p>
                 </div>
-                <div class="col-md-5"><img class="wow fadeIn" src="dist/images/img-02-510x680.jpg" alt=""
-                        width="510" height="680" data-wow-delay=".3s" />
+                <div class="col-md-5"><img class="wow fadeIn" src="dist/images/t.jpg" alt="" width="510"
+                        height="680" data-wow-delay=".3s" />
                 </div>
             </div>
         </div>
@@ -123,7 +113,7 @@
         <div class="container">
             <div class="row row-30 align-items-center">
                 <div class="col-md-8">
-                    <h2>I am here for you and your business — every step of the way.</h2>
+                    <h2>Pengumuman</h2>
                     <p>Here’s how I can help you improve various aspects of your business through coaching.</p>
                 </div>
                 <div class="col-md-4 text-md-end"><a class="btn btn-nero-outline-1" href="contact-me.html">Free
