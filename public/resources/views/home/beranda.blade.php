@@ -96,11 +96,6 @@
                         iusto quas eveniet neque libero rerum at. Doloribus perferendis ipsum reiciendis sequi at voluptatum
                         maiores enim neque!
                     </p>
-                    <p>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos, molestias iste fugit minus
-                        iusto quas eveniet neque libero rerum at. Doloribus perferendis ipsum reiciendis sequi at voluptatum
-                        maiores enim neque!
-                    </p>
                 </div>
                 <div class="col-md-5"><img class="wow fadeIn" src="dist/images/t.jpg" alt="" width="510"
                         height="680" data-wow-delay=".3s" />
@@ -114,10 +109,9 @@
             <div class="row row-30 align-items-center">
                 <div class="col-md-8">
                     <h2>Pengumuman</h2>
-                    <p>Here’s how I can help you improve various aspects of your business through coaching.</p>
+                    <p>Berikut beberapa informasi mengenai perkuliahan di STAINAA.</p>
                 </div>
-                <div class="col-md-4 text-md-end"><a class="btn btn-nero-outline-1" href="contact-me.html">Free
-                        consulting</a></div>
+                <div class="col-md-4 text-md-end"><a class="btn btn-nero-outline-1" href="contact-me.html">Lainnya</a></div>
             </div>
             <div class="row row-20 row-md-40 row-xl-60">
                 <div class="col-sm-6 col-md-4 wow fadeInUp" data-wow-delay="0s">
@@ -201,31 +195,111 @@
         </div>
     </section>
 
+    <section class="section section-lg bg-default">
+        <div class="container">
+            <div class="row row-30 align-items-center">
+                <div class="col-md-8">
+                    <h2>Berita</h2>
+                    <p>Berita Terkini</p>
+                </div>
+                <div class="col-md-4 text-md-end"><a class="btn btn-nero-outline-1" href="contact-me.html">Lainnya</a>
+                </div>
+            </div>
+            <div class="row row-20 row-md-40 row-xl-60">
+                <div class="col-sm-6 col-md-3 wow fadeInUp" data-wow-delay="0s">
+                    <div class="card shadow">
+                        <img src="dist/images/b4.jpg" class="card-img-top" alt="..."
+                            style="height: 250px; object-fit: cover;">
+                        <div class="card-body">
+                            <h5 class="card-title">Card title</h5>
+                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of
+                                the card's content.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-md-3 wow fadeInUp" data-wow-delay=".1s">
+                    <div class="card shadow">
+                        <img src="dist/images/b4.jpg" class="card-img-top" alt="..."
+                            style="height: 250px; object-fit: cover;">
+                        <div class="card-body">
+                            <h5 class="card-title">Card title</h5>
+                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of
+                                the card's content.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-md-3 wow fadeInUp" data-wow-delay=".2s">
+                    <div class="card shadow">
+                        <img src="dist/images/b4.jpg" class="card-img-top" alt="..."
+                            style="height: 250px; object-fit: cover;">
+                        <div class="card-body">
+                            <h5 class="card-title">Card title</h5>
+                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of
+                                the card's content.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-md-3 wow fadeInUp" data-wow-delay=".3s">
+                    <div class="card shadow">
+                        <img src="dist/images/b4.jpg" class="card-img-top" alt="..."
+                            style="height: 250px; object-fit: cover;">
+                        <div class="card-body">
+                            <h5 class="card-title">Card title</h5>
+                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of
+                                the card's content.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <section class="section section-lg bg-primary">
         <div class="container">
-            <div class="row row-10 justify-content-lg-between">
-                <div class="col-md-6 col-lg-5">
-                    <h2>Working together<br>for your better life!</h2>
-                    <p>At Lead Planner, I strive to help you achieve ambitious goals and reach new heights just by
-                        focusing on what’s important for you.</p>
+            <div class="row g-0">
+                <div class="col-sm-6 col-md-6 mb-0 border-black border-end border-bottom p-5">
+                    <div class="d-flex align-items-center justify-content-end">
+                        <div class="text-center me-5">
+                            <div class="box-counter-main">
+                                <div class="counter">2021</div>
+                            </div>
+                            <p class="box-counter-title">Berdiri Sejak</p>
+                        </div>
+                        <img src="dist/images/school.png" width="90" alt="" class="ms-2">
+                    </div>
                 </div>
-                <div class="col-md-6 col-lg-5">
-                    <p class="small">An experienced business coach can easily help you get more from your business
-                        by setting clear goals and planning your actions on the way to success.</p>
-                    <p>As a professional and highly experienced business coach, I will be glad to guide you towards
-                        new goals for both you and your team. By ensuring the geometric growth of your business, you
-                        can push your company to the limit in order to get what you want.</p>
-                    <div class="unit unit-horizontal unit-spacing-md align-items-center wow fadeInUp"
-                        data-wow-delay=".1s">
-                        <div class="unit-left"><img class="img-circle" src="dist/images/person-01-80x80.jpg"
-                                alt="" width="80" height="80" />
+                <div class="col-sm-6 col-md-6 mb-0 border-black border-start border-bottom p-5">
+                    <div class="d-flex align-items-center justify-content-start">
+                        <img src="dist/images/mahasiswa.png" width="90" alt="" class="ms-2">
+                        <div class="text-center ms-5">
+                            <div class="box-counter-main">
+                                <div class="counter">149</div>
+                            </div>
+                            <p class="box-counter-title">Mahasiswa</p>
                         </div>
-                        <div class="unit-body">
-                            <h3 class="h4">John Adams</h3>
-                            <p class="small mt-2">Business coach, founder of Lead Planner</p>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-md-6 mb-0 border-black border-end border-top p-5">
+                    <div class="d-flex align-items-center justify-content-end">
+                        <div class="text-center me-5">
+                            <div class="box-counter-main">
+                                <div class="counter">30</div>
+                            </div>
+                            <p class="box-counter-title">Dosen</p>
                         </div>
-                    </div><a class="btn btn-nero wow fadeInUp" href="about-me.html" data-wow-delay=".2s">More about
-                        me</a>
+                        <img src="dist/images/dosen.png" width="90" alt="" class="ms-2">
+                    </div>
+                </div>
+                <div class="col-sm-6 col-md-6 mb-0 border-black border-start border-top p-5">
+                    <div class="d-flex align-items-center justify-content-start">
+                        <img src="dist/images/lulusan.png" width="90" alt="" class="ms-2">
+                        <div class="text-center ms-5">
+                            <div class="box-counter-main">
+                                <div class="counter">0</div>
+                            </div>
+                            <p class="box-counter-title">Lulusan</p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

@@ -9199,7 +9199,7 @@ blockquote cite {
 }
 
 .bg-primary .box-counter {
-	color: #fff;
+	/* color: #fff; */
 }
 
 .icon-box.context-dark,
