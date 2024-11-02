@@ -19,17 +19,18 @@
         <img class="img-fluid cover" src="dist/images/bg_3.jpg" alt="" />
     </section>
 
+
     <section class="section section-lg bg-default">
         <div class="container">
-            <h2 class="text-center">I help people tackle their business issues</h2>
-            <p class="text-center">It’s easy to get the results you want with the top-quality advice.</p>
+            <!-- <h2 class="text-center">I help people tackle their business issues</h2>
+                            <p class="text-center">It’s easy to get the results you want with the top-quality advice.</p> -->
             <div class="row row-40 justify-content-center">
                 <div class="col-sm-6 col-lg-4 height-fill wow fadeInUp" data-wow-delay="0s">
                     <article class="icon-box shadow-lg">
                         <div class="box-top">
                             <div class="box-icon"><span class="icon icon-md icomoon-stats"></span></div>
                             <div class="box-header">
-                                <h3 class="h4"><a href="about-me.html">Career mentoring</a></h3>
+                                <h3 class="h4"><a href="about-me.html">Kuliah &amp; Ngaji</a></h3>
                             </div>
                         </div>
                         <div class="box-body">
@@ -42,7 +43,7 @@
                         <div class="box-top">
                             <div class="box-icon"><span class="icon icon-md icomoon-user"></span></div>
                             <div class="box-header">
-                                <h3 class="h4"><a href="about-me.html">Work &amp; life balance</a></h3>
+                                <h3 class="h4"><a href="about-me.html">Invokasi </a></h3>
                             </div>
                         </div>
                         <div class="box-body">
@@ -55,7 +56,7 @@
                         <div class="box-top">
                             <div class="box-icon"><span class="icon icon-md icomoon-aim"></span></div>
                             <div class="box-header">
-                                <h3 class="h4"><a href="about-me.html">Important decisions</a></h3>
+                                <h3 class="h4"><a href="about-me.html">Kampus Merdeka</a></h3>
                             </div>
                         </div>
                         <div class="box-body">
@@ -71,48 +72,32 @@
         <div class="container">
             <div class="row row-40 justify-content-md-between flex-column-reverse flex-md-row">
                 <div class="col-md-6">
-                    <h2>Helping millions of owners create a business that works.</h2>
+                    <h2>Selayang Pandang</h2>
                     <p>My name is John Adams and I am a business coach and trainer. I work with you to increase your
                         awareness and choices, so you can set meaningful goals and get the results you truly want. I
                         will challenge you to learn and think differently.</p>
-                    <div class="row row-xs row-20">
-                        <div class="col-6 wow fadeIn" data-wow-delay=".3s">
-                            <!--Counter-->
-                            <div class="box-counter">
-                                <div class="box-counter-main">
-                                    <div class="counter">82</div>
-                                    <div class="counter-postfix">%</div>
-                                </div>
-                                <p class="small box-counter-title">Percentage of regular and returning customers</p>
-                            </div>
-                        </div>
-                        <div class="col-6 wow fadeIn" data-wow-delay=".2s">
-                            <!--Counter-->
-                            <div class="box-counter">
-                                <div class="box-counter-main">
-                                    <div class="counter">100</div>
-                                    <div class="counter-postfix">+</div>
-                                </div>
-                                <p class="small box-counter-title">Positive reviews and testimonials submitted by my
-                                    clients</p>
-                            </div>
-                        </div>
-                    </div>
-                    <a class="btn btn-nero wow fadeInUp" href="about-me.html" data-wow-delay=".1s">More about
-                        me</a>
+                    <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga ipsam id exercitationem distinctio
+                        rerum itaque illo quod laboriosam repellendus, nostrum vero sapiente aliquam dicta! Molestias modi
+                        corporis distinctio totam aliquid!
+                    </p>
+                    <p>
+                        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ducimus veritatis debitis deleniti autem,
+                        provident magnam. Similique nihil vero nam commodi, excepturi ut, maxime ratione ad asperiores
+                        quisquam culpa blanditiis adipisci.
+                    </p>
                 </div>
-                <div class="col-md-5"><img class="wow fadeIn" src="dist/images/img-02-510x680.jpg" alt=""
-                        width="510" height="680" data-wow-delay=".3s" />
+                <div class="col-md-5"><img class="wow fadeIn" src="dist/images/t.jpg" alt="" width="510"
+                        height="680" data-wow-delay=".3s" />
                 </div>
             </div>
-        </div>
     </section>
 
     <section class="section section-lg bg-default">
         <div class="container">
             <div class="row row-30 align-items-center">
                 <div class="col-md-8">
-                    <h2>I am here for you and your business — every step of the way.</h2>
+                    <h2>Pengumuman</h2>
                     <p>Here’s how I can help you improve various aspects of your business through coaching.</p>
                 </div>
                 <div class="col-md-4 text-md-end"><a class="btn btn-nero-outline-1" href="contact-me.html">Free
@@ -177,7 +162,8 @@
                             </div>
                             <div class="unit-body">
                                 <h4><a href="coaching.html">Lead generation</a></h4>
-                                <p>Increase the consumer interest and discover how to successfully generate leads.
+                                <p>Increase the consumer interest and discover how to successfully generate
+                                    leads.
                                 </p>
                             </div>
                         </div>
@@ -190,7 +176,8 @@
                             </div>
                             <div class="unit-body">
                                 <h4><a href="coaching.html">Lead conversion</a></h4>
-                                <p>Turn a potential customer into a real and regular one in just a few simple steps.
+                                <p>Turn a potential customer into a real and regular one in just a few simple
+                                    steps.
                                 </p>
                             </div>
                         </div>
@@ -205,14 +192,18 @@
             <div class="row row-10 justify-content-lg-between">
                 <div class="col-md-6 col-lg-5">
                     <h2>Working together<br>for your better life!</h2>
-                    <p>At Lead Planner, I strive to help you achieve ambitious goals and reach new heights just by
+                    <p>At Lead Planner, I strive to help you achieve ambitious goals and reach new heights just
+                        by
                         focusing on what’s important for you.</p>
                 </div>
                 <div class="col-md-6 col-lg-5">
-                    <p class="small">An experienced business coach can easily help you get more from your business
+                    <p class="small">An experienced business coach can easily help you get more from your
+                        business
                         by setting clear goals and planning your actions on the way to success.</p>
-                    <p>As a professional and highly experienced business coach, I will be glad to guide you towards
-                        new goals for both you and your team. By ensuring the geometric growth of your business, you
+                    <p>As a professional and highly experienced business coach, I will be glad to guide you
+                        towards
+                        new goals for both you and your team. By ensuring the geometric growth of your business,
+                        you
                         can push your company to the limit in order to get what you want.</p>
                     <div class="unit unit-horizontal unit-spacing-md align-items-center wow fadeInUp"
                         data-wow-delay=".1s">
@@ -223,7 +214,8 @@
                             <h3 class="h4">John Adams</h3>
                             <p class="small mt-2">Business coach, founder of Lead Planner</p>
                         </div>
-                    </div><a class="btn btn-nero wow fadeInUp" href="about-me.html" data-wow-delay=".2s">More about
+                    </div><a class="btn btn-nero wow fadeInUp" href="about-me.html" data-wow-delay=".2s">More
+                        about
                         me</a>
                 </div>
             </div>
@@ -235,8 +227,10 @@
             <div class="row">
                 <div class="col-md-10 col-xl-8">
                     <h2>Kind words from my happy clients</h2>
-                    <p>My clients appreciate the provided guidance and assistance I offer along the way to help them
-                        become stronger leaders and unlock the full potential of their businesses. Read their latest
+                    <p>My clients appreciate the provided guidance and assistance I offer along the way to help
+                        them
+                        become stronger leaders and unlock the full potential of their businesses. Read their
+                        latest
                         testimonials below.</p>
                 </div>
             </div>
@@ -246,7 +240,8 @@
                     <div class="quote-body">
                         <div class="quote-body-inner">
                             <p>
-                                <q>The coaching has been really rewarding. I have learned how to communicate clearly
+                                <q>The coaching has been really rewarding. I have learned how to communicate
+                                    clearly
                                     with my team and to reflect on my leadership skills.</q>
                             </p>
                         </div>
@@ -267,7 +262,8 @@
                     <div class="quote-body">
                         <div class="quote-body-inner">
                             <p>
-                                <q>I have worked with John for almost a year, and during this time I’ve learned how
+                                <q>I have worked with John for almost a year, and during this time I’ve learned
+                                    how
                                     to be realistic about my work.</q>
                             </p>
                         </div>
@@ -288,7 +284,8 @@
                     <div class="quote-body">
                         <div class="quote-body-inner">
                             <p>
-                                <q>Working with Mr. Adams has enabled me to shape and implement a set of personal
+                                <q>Working with Mr. Adams has enabled me to shape and implement a set of
+                                    personal
                                     objectives that have materially improved my performance as a leader.</q>
                             </p>
                         </div>
@@ -309,7 +306,8 @@
                     <div class="quote-body">
                         <div class="quote-body-inner">
                             <p>
-                                <q>The coaching has been really rewarding. I have learned how to communicate clearly
+                                <q>The coaching has been really rewarding. I have learned how to communicate
+                                    clearly
                                     with my team and to reflect on my leadership skills.</q>
                             </p>
                         </div>
@@ -330,7 +328,8 @@
                     <div class="quote-body">
                         <div class="quote-body-inner">
                             <p>
-                                <q>I have worked with John for almost a year, and during this time I’ve learned how
+                                <q>I have worked with John for almost a year, and during this time I’ve learned
+                                    how
                                     to be realistic about my work.</q>
                             </p>
                         </div>
@@ -351,7 +350,8 @@
                     <div class="quote-body">
                         <div class="quote-body-inner">
                             <p>
-                                <q>Working with Mr. Adams has enabled me to shape and implement a set of personal
+                                <q>Working with Mr. Adams has enabled me to shape and implement a set of
+                                    personal
                                     objectives that have materially improved my performance as a leader.</q>
                             </p>
                         </div>
