@@ -13,6 +13,14 @@
             display: block;
             object-fit: cover;
         }
+
+        .image-2 {
+            width: 100%;
+            height: 400px;
+            max-width: 100%;
+            display: block;
+            object-fit: cover;
+        }
     </style>
     {{-- jumbotron --}}
     <section class="section section-intro bg-primary position-relative">
@@ -97,8 +105,9 @@
                         maiores enim neque!
                     </p>
                 </div>
-                <div class="col-md-5"><img class="wow fadeIn" src="dist/images/t.jpg" alt="" width="510"
-                        height="680" data-wow-delay=".3s" />
+                <div class="col-md-5">
+                    <img class="wow fadeIn" src="dist/images/t.jpg" alt="" width="510" height="680"
+                        data-wow-delay=".3s" />
                 </div>
             </div>
         </div>
@@ -254,210 +263,46 @@
         </div>
     </section>
 
-    <section class="section section-lg bg-primary">
-        <div class="container">
-            <div class="row g-0">
-                <div class="col-sm-6 col-md-6 mb-0 border-black border-end border-bottom p-5">
-                    <div class="d-flex align-items-center justify-content-end">
-                        <div class="text-center me-5">
-                            <div class="box-counter-main">
-                                <div class="counter">2021</div>
-                            </div>
-                            <p class="box-counter-title">Berdiri Sejak</p>
-                        </div>
-                        <img src="dist/images/school.png" width="90" alt="" class="ms-2">
+    <section class="section section-md bg-nero">
+        <div class="container text-center">
+            <h3>STAINAA dalam angka</h3>
+            <div class="row row-40">
+                <div class="col-sm-6 col-md-3">
+                    <div class="box-counter"><span
+                            class="novi-icon icon icon-md icon-primary material-icons-content_copy"></span>
+                        <div class="text-large counter">58249</div>
+                        <h5 class="box-header">Berdiri Sejak</h5>
                     </div>
                 </div>
-                <div class="col-sm-6 col-md-6 mb-0 border-black border-start border-bottom p-5">
-                    <div class="d-flex align-items-center justify-content-start">
-                        <img src="dist/images/mahasiswa.png" width="90" alt="" class="ms-2">
-                        <div class="text-center ms-5">
-                            <div class="box-counter-main">
-                                <div class="counter">149</div>
-                            </div>
-                            <p class="box-counter-title">Mahasiswa</p>
-                        </div>
+                <div class="col-sm-6 col-md-3">
+                    <div class="box-counter"><span class="novi-icon icon icon-md icon-primary material-icons-mood"></span>
+                        <div class="text-large counter counter-k">246</div>
+                        <h5 class="box-header">Mahasiswa</h5>
                     </div>
                 </div>
-                <div class="col-sm-6 col-md-6 mb-0 border-black border-end border-top p-5">
-                    <div class="d-flex align-items-center justify-content-end">
-                        <div class="text-center me-5">
-                            <div class="box-counter-main">
-                                <div class="counter">30</div>
-                            </div>
-                            <p class="box-counter-title">Dosen</p>
-                        </div>
-                        <img src="dist/images/dosen.png" width="90" alt="" class="ms-2">
+                <div class="col-sm-6 col-md-3">
+                    <div class="box-counter"><span
+                            class="novi-icon icon icon-md icon-primary material-icons-access_time"></span>
+                        <div class="text-large counter">1200</div>
+                        <h5 class="box-header">Dosen</h5>
                     </div>
                 </div>
-                <div class="col-sm-6 col-md-6 mb-0 border-black border-start border-top p-5">
-                    <div class="d-flex align-items-center justify-content-start">
-                        <img src="dist/images/lulusan.png" width="90" alt="" class="ms-2">
-                        <div class="text-center ms-5">
-                            <div class="box-counter-main">
-                                <div class="counter">0</div>
-                            </div>
-                            <p class="box-counter-title">Lulusan</p>
-                        </div>
+                <div class="col-sm-6 col-md-3">
+                    <div class="box-counter"><span class="novi-icon icon icon-md icon-primary material-icons-code"></span>
+                        <div class="text-large counter counter-k">834</div>
+                        <h5 class="box-header">Lulusan</h5>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    {{-- <section class="section section-lg bg-default">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-10 col-xl-8">
-                    <h2>Kind words from my happy clients</h2>
-                    <p>My clients appreciate the provided guidance and assistance I offer along the way to help them
-                        become stronger leaders and unlock the full potential of their businesses. Read their latest
-                        testimonials below.</p>
-                </div>
-            </div>
-            <div class="owl-carousel owl-style-minimal" data-items="1" data-sm-items="2" data-lg-items="3"
-                data-margin="40" data-dots="true">
-                <blockquote class="quote-primary">
-                    <div class="quote-body">
-                        <div class="quote-body-inner">
-                            <p>
-                                <q>The coaching has been really rewarding. I have learned how to communicate clearly
-                                    with my team and to reflect on my leadership skills.</q>
-                            </p>
-                        </div>
-                    </div>
-                    <div class="quote-footer">
-                        <div class="unit unit-horizontal unit-spacing-md align-items-center">
-                            <div class="unit-left"><img class="img-circle" src="dist/images/person-01-64x64.jpg"
-                                    alt="" width="64" height="64" />
-                            </div>
-                            <div class="unit-body">
-                                <cite class="h4">Courtney Johnson</cite>
-                                <p class="small">28.10.2023</p>
-                            </div>
-                        </div>
-                    </div>
-                </blockquote>
-                <blockquote class="quote-primary">
-                    <div class="quote-body">
-                        <div class="quote-body-inner">
-                            <p>
-                                <q>I have worked with John for almost a year, and during this time I’ve learned how
-                                    to be realistic about my work.</q>
-                            </p>
-                        </div>
-                    </div>
-                    <div class="quote-footer">
-                        <div class="unit unit-horizontal unit-spacing-md align-items-center">
-                            <div class="unit-left"><img class="img-circle" src="dist/images/person-02-64x64.jpg"
-                                    alt="" width="64" height="64" />
-                            </div>
-                            <div class="unit-body">
-                                <cite class="h4">Jenny Wilson</cite>
-                                <p class="small">28.10.2023</p>
-                            </div>
-                        </div>
-                    </div>
-                </blockquote>
-                <blockquote class="quote-primary">
-                    <div class="quote-body">
-                        <div class="quote-body-inner">
-                            <p>
-                                <q>Working with Mr. Adams has enabled me to shape and implement a set of personal
-                                    objectives that have materially improved my performance as a leader.</q>
-                            </p>
-                        </div>
-                    </div>
-                    <div class="quote-footer">
-                        <div class="unit unit-horizontal unit-spacing-md align-items-center">
-                            <div class="unit-left"><img class="img-circle" src="dist/images/person-03-64x64.jpg"
-                                    alt="" width="64" height="64" />
-                            </div>
-                            <div class="unit-body">
-                                <cite class="h4">Andrew Jackson</cite>
-                                <p class="small">28.10.2023</p>
-                            </div>
-                        </div>
-                    </div>
-                </blockquote>
-                <blockquote class="quote-primary">
-                    <div class="quote-body">
-                        <div class="quote-body-inner">
-                            <p>
-                                <q>The coaching has been really rewarding. I have learned how to communicate clearly
-                                    with my team and to reflect on my leadership skills.</q>
-                            </p>
-                        </div>
-                    </div>
-                    <div class="quote-footer">
-                        <div class="unit unit-horizontal unit-spacing-md align-items-center">
-                            <div class="unit-left"><img class="img-circle" src="dist/images/person-01-64x64.jpg"
-                                    alt="" width="64" height="64" />
-                            </div>
-                            <div class="unit-body">
-                                <cite class="h4">Courtney Johnson</cite>
-                                <p class="small">28.10.2023</p>
-                            </div>
-                        </div>
-                    </div>
-                </blockquote>
-                <blockquote class="quote-primary">
-                    <div class="quote-body">
-                        <div class="quote-body-inner">
-                            <p>
-                                <q>I have worked with John for almost a year, and during this time I’ve learned how
-                                    to be realistic about my work.</q>
-                            </p>
-                        </div>
-                    </div>
-                    <div class="quote-footer">
-                        <div class="unit unit-horizontal unit-spacing-md align-items-center">
-                            <div class="unit-left"><img class="img-circle" src="dist/images/person-02-64x64.jpg"
-                                    alt="" width="64" height="64" />
-                            </div>
-                            <div class="unit-body">
-                                <cite class="h4">Jenny Wilson</cite>
-                                <p class="small">28.10.2023</p>
-                            </div>
-                        </div>
-                    </div>
-                </blockquote>
-                <blockquote class="quote-primary">
-                    <div class="quote-body">
-                        <div class="quote-body-inner">
-                            <p>
-                                <q>Working with Mr. Adams has enabled me to shape and implement a set of personal
-                                    objectives that have materially improved my performance as a leader.</q>
-                            </p>
-                        </div>
-                    </div>
-                    <div class="quote-footer">
-                        <div class="unit unit-horizontal unit-spacing-md align-items-center">
-                            <div class="unit-left"><img class="img-circle" src="dist/images/person-03-64x64.jpg"
-                                    alt="" width="64" height="64" />
-                            </div>
-                            <div class="unit-body">
-                                <cite class="h4">Andrew Jackson</cite>
-                                <p class="small">28.10.2023</p>
-                            </div>
-                        </div>
-                    </div>
-                </blockquote>
-            </div>
-        </div>
-    </section> --}}
-
-    <div class="container mt-0">
-        <hr>
-    </div>
+    <section class="section section-lg bg-default">
+        <img class="img-fluid image-2" src="dist/images/stai.png" alt="" />
+    </section>
 
     <section class="section section-lg bg-default">
         <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-md-10 col-xl-8 text-center">
-                    <h2>I help millions of owners create a business that works flawlessly</h2>
-                </div>
-            </div>
             <div class="row row-20">
                 <div class="col-sm-6 col-md-4 col-xl-2 wow fadeInUp" data-wow-delay="0s">
                     <div class="link-image-wrap"><a class="link-image" href="#"><img
