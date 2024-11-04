@@ -200,7 +200,7 @@
             <div class="row row-30 align-items-center">
                 <div class="col-md-8">
                     <h2>Berita</h2>
-                    <p>Berita Terkini</p>
+                    <p>Berikut beberapa berita terkini</p>
                 </div>
                 <div class="col-md-4 text-md-end"><a class="btn btn-nero-outline-1" href="contact-me.html">Lainnya</a>
                 </div>
@@ -305,7 +305,7 @@
         </div>
     </section>
 
-    <section class="section section-lg bg-default">
+    {{-- <section class="section section-lg bg-default">
         <div class="container">
             <div class="row">
                 <div class="col-md-10 col-xl-8">
@@ -445,7 +445,7 @@
                 </blockquote>
             </div>
         </div>
-    </section>
+    </section> --}}
 
     <div class="container mt-0">
         <hr>
