@@ -28,7 +28,8 @@
                                 <img src="dist/images/b4.jpg" class="card-img-top" alt="..."
                                     style="height: 300px; object-fit: cover;">
                                 <div class="card-body">
-                                    <h5 class="card-title"><a href="#">Pendidikan Agama Islam</a></h5>
+                                    <h5 class="card-title"><a href="{{ url('/pendidikan_detail') }}">Pendidikan Agama
+                                            Islam</a></h5>
                                     <p class="card-text">Some quick example text to build on the card title and make up the
                                         bulk of
                                         the card's content.</p>
@@ -40,7 +41,8 @@
                                 <img src="dist/images/b4.jpg" class="card-img-top" alt="..."
                                     style="height: 300px; object-fit: cover;">
                                 <div class="card-body">
-                                    <h5 class="card-title"><a href="#">Hukum Ekonomi Syariah</a></h5>
+                                    <h5 class="card-title"><a href="{{ url('/pendidikan_detail') }}">Hukum Ekonomi
+                                            Syariah</a></h5>
                                     <p class="card-text">Some quick example text to build on the card title and make up the
                                         bulk of
                                         the card's content.</p>

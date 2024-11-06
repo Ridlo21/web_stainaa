@@ -14,6 +14,10 @@ Route::get('/pendidikan', function () {
     return view('pendidikan.pendidikan');
 });
 
+Route::get('/pendidikan_detail', function () {
+    return view('pendidikan.pendidikandetail');
+});
+
 Route::get('/kemahasiswaan', function () {
     return view('kemahasiswaan.kemahasiswaan');
 });
