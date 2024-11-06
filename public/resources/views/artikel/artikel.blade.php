@@ -34,7 +34,7 @@
                                 Phasellus nec massa purus.</p>
                         </div>
                         <a class="btn btn-nero" style="margin-top: 20px !important;" style="margin-top: 20px !important;"
-                            href="#">Read More</a>
+                            href="{{ url('/artikel_detail') }}">Read More</a>
                     </article>
                     <article class="post post-single mb-5">
                         <div class="post-image">
@@ -53,7 +53,8 @@
                                 placerat lacinia, odio nisl congue tellus, sed placerat nunc neque id urna.
                                 Phasellus nec massa purus.</p>
                         </div>
-                        <a class="btn btn-nero" style="margin-top: 20px !important;" href="#">Read More</a>
+                        <a class="btn btn-nero" style="margin-top: 20px !important;"
+                            href="{{ url('/artikel_detail') }}">Read More</a>
                     </article>
                     <article class="post post-single mb-5">
                         <div class="post-image">
@@ -72,7 +73,8 @@
                                 placerat lacinia, odio nisl congue tellus, sed placerat nunc neque id urna.
                                 Phasellus nec massa purus.</p>
                         </div>
-                        <a class="btn btn-nero" style="margin-top: 20px !important;" href="#">Read More</a>
+                        <a class="btn btn-nero" style="margin-top: 20px !important;"
+                            href="{{ url('/artikel_detail') }}">Read More</a>
                     </article>
                     <article class="post post-single mb-5">
                         <div class="post-image">
@@ -91,7 +93,8 @@
                                 placerat lacinia, odio nisl congue tellus, sed placerat nunc neque id urna.
                                 Phasellus nec massa purus.</p>
                         </div>
-                        <a class="btn btn-nero" style="margin-top: 20px !important;" href="#">Read More</a>
+                        <a class="btn btn-nero" style="margin-top: 20px !important;"
+                            href="{{ url('/artikel_detail') }}">Read More</a>
                     </article>
                     <article class="post post-single mb-5">
                         <div class="post-image">
@@ -110,7 +113,8 @@
                                 placerat lacinia, odio nisl congue tellus, sed placerat nunc neque id urna.
                                 Phasellus nec massa purus.</p>
                         </div>
-                        <a class="btn btn-nero" style="margin-top: 20px !important;" href="#">Read More</a>
+                        <a class="btn btn-nero" style="margin-top: 20px !important;"
+                            href="{{ url('/artikel_detail') }}">Read More</a>
                     </article>
                     <article class="post post-single mb-5">
                         <div class="post-image">
@@ -129,7 +133,8 @@
                                 placerat lacinia, odio nisl congue tellus, sed placerat nunc neque id urna.
                                 Phasellus nec massa purus.</p>
                         </div>
-                        <a class="btn btn-nero" style="margin-top: 20px !important;" href="#">Read More</a>
+                        <a class="btn btn-nero" style="margin-top: 20px !important;"
+                            href="{{ url('/artikel_detail') }}">Read More</a>
                     </article>
                     <article class="post post-single mb-5">
                         <div class="post-image">
@@ -148,7 +153,8 @@
                                 placerat lacinia, odio nisl congue tellus, sed placerat nunc neque id urna.
                                 Phasellus nec massa purus.</p>
                         </div>
-                        <a class="btn btn-nero" style="margin-top: 20px !important;" href="#">Read More</a>
+                        <a class="btn btn-nero" style="margin-top: 20px !important;"
+                            href="{{ url('/artikel_detail') }}">Read More</a>
                     </article>
                     <article class="post post-single mb-5">
                         <div class="post-image">
@@ -167,7 +173,8 @@
                                 placerat lacinia, odio nisl congue tellus, sed placerat nunc neque id urna.
                                 Phasellus nec massa purus.</p>
                         </div>
-                        <a class="btn btn-nero" style="margin-top: 20px !important;" href="#">Read More</a>
+                        <a class="btn btn-nero" style="margin-top: 20px !important;"
+                            href="{{ url('/artikel_detail') }}">Read More</a>
                     </article>
                     <article class="post post-single mb-5">
                         <div class="post-image">
@@ -186,7 +193,8 @@
                                 placerat lacinia, odio nisl congue tellus, sed placerat nunc neque id urna.
                                 Phasellus nec massa purus.</p>
                         </div>
-                        <a class="btn btn-nero" style="margin-top: 20px !important;" href="#">Read More</a>
+                        <a class="btn btn-nero" style="margin-top: 20px !important;"
+                            href="{{ url('/artikel_detail') }}">Read More</a>
                     </article>
                     <article class="post post-single mb-5">
                         <div class="post-image">
@@ -205,7 +213,8 @@
                                 placerat lacinia, odio nisl congue tellus, sed placerat nunc neque id urna.
                                 Phasellus nec massa purus.</p>
                         </div>
-                        <a class="btn btn-nero" style="margin-top: 20px !important;" href="#">Read More</a>
+                        <a class="btn btn-nero" style="margin-top: 20px !important;"
+                            href="{{ url('/artikel_detail') }}">Read More</a>
                     </article>
                     <ul class="pag pag-simple">
                         <li class="pag-simple-item"><a class="pag-simple-link pag-simple-link-prev inactive"
@@ -252,7 +261,7 @@
                         <div class="blog-aside-item">
                             <h4>Popular posts</h4>
                             <div class="post-preview-wrap">
-                                <article class="post post-preview"><a href="blog-post.html">
+                                <article class="post post-preview"><a href="{{ url('/artikel_detail') }}">
                                         <div class="unit unit-spacing-md">
                                             <div class="unit-left">
                                                 <figure class="post-image"><img src="dist/images/post-preview-1-80x80.jpg"
@@ -274,7 +283,7 @@
                                             </div>
                                         </div>
                                     </a></article>
-                                <article class="post post-preview"><a href="blog-post.html">
+                                <article class="post post-preview"><a href="{{ url('/artikel_detail') }}">
                                         <div class="unit unit-spacing-md">
                                             <div class="unit-left">
                                                 <figure class="post-image"><img src="dist/images/post-preview-2-80x80.jpg"
@@ -296,7 +305,7 @@
                                             </div>
                                         </div>
                                     </a></article>
-                                <article class="post post-preview"><a href="blog-post.html">
+                                <article class="post post-preview"><a href="{{ url('/artikel_detail') }}">
                                         <div class="unit unit-spacing-md">
                                             <div class="unit-left">
                                                 <figure class="post-image"><img src="dist/images/post-preview-3-80x80.jpg"

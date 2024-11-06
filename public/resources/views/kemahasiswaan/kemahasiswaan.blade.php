@@ -48,44 +48,80 @@
             </div>
             <div class="row row-20 row-md-40 row-xl-60">
                 <div class="col-sm-6 col-md-3 wow fadeInUp" data-wow-delay="0s">
-                    <div class="card shadow">
+                    <div class="card shadow post post-preview">
                         <img src="dist/images/b4.jpg" class="card-img-top" alt="..."
                             style="height: 250px; object-fit: cover;">
-                        <div class="card-body">
-                            <h5 class="card-title"><a href="#">Card title</a></h5>
+                        <div class="card-body unit-body">
+                            <h5 class="card-title" style="margin-bottom: -20px !important;"><a
+                                    href="{{ url('/ukm_detail') }}">Card
+                                    title</a></h5>
+                            <div class="post-meta">
+                                <ul class="list-meta">
+                                    <li>
+                                        <time datetime="2023-02-04">Feb 4, 2023</time>
+                                    </li>
+                                </ul>
+                            </div>
                             <p class="card-text">Some quick example text to build on the card title and make up the bulk of
                                 the card's content.</p>
                         </div>
                     </div>
                 </div>
-                <div class="col-sm-6 col-md-3 wow fadeInUp" data-wow-delay=".1s">
-                    <div class="card shadow">
+                <div class="col-sm-6 col-md-3 wow fadeInUp" data-wow-delay="0s">
+                    <div class="card shadow post post-preview">
                         <img src="dist/images/b4.jpg" class="card-img-top" alt="..."
                             style="height: 250px; object-fit: cover;">
-                        <div class="card-body">
-                            <h5 class="card-title"><a href="#">Card title</a></h5>
+                        <div class="card-body unit-body">
+                            <h5 class="card-title" style="margin-bottom: -20px !important;"><a
+                                    href="{{ url('/ukm_detail') }}">Card
+                                    title</a></h5>
+                            <div class="post-meta">
+                                <ul class="list-meta">
+                                    <li>
+                                        <time datetime="2023-02-04">Feb 4, 2023</time>
+                                    </li>
+                                </ul>
+                            </div>
                             <p class="card-text">Some quick example text to build on the card title and make up the bulk of
                                 the card's content.</p>
                         </div>
                     </div>
                 </div>
-                <div class="col-sm-6 col-md-3 wow fadeInUp" data-wow-delay=".2s">
-                    <div class="card shadow">
+                <div class="col-sm-6 col-md-3 wow fadeInUp" data-wow-delay="0s">
+                    <div class="card shadow post post-preview">
                         <img src="dist/images/b4.jpg" class="card-img-top" alt="..."
                             style="height: 250px; object-fit: cover;">
-                        <div class="card-body">
-                            <h5 class="card-title"><a href="#">Card title</a></h5>
+                        <div class="card-body unit-body">
+                            <h5 class="card-title" style="margin-bottom: -20px !important;"><a
+                                    href="{{ url('/ukm_detail') }}">Card
+                                    title</a></h5>
+                            <div class="post-meta">
+                                <ul class="list-meta">
+                                    <li>
+                                        <time datetime="2023-02-04">Feb 4, 2023</time>
+                                    </li>
+                                </ul>
+                            </div>
                             <p class="card-text">Some quick example text to build on the card title and make up the bulk of
                                 the card's content.</p>
                         </div>
                     </div>
                 </div>
-                <div class="col-sm-6 col-md-3 wow fadeInUp" data-wow-delay=".3s">
-                    <div class="card shadow">
+                <div class="col-sm-6 col-md-3 wow fadeInUp" data-wow-delay="0s">
+                    <div class="card shadow post post-preview">
                         <img src="dist/images/b4.jpg" class="card-img-top" alt="..."
                             style="height: 250px; object-fit: cover;">
-                        <div class="card-body">
-                            <h5 class="card-title"><a href="#">Card title</a></h5>
+                        <div class="card-body unit-body">
+                            <h5 class="card-title" style="margin-bottom: -20px !important;"><a
+                                    href="{{ url('/ukm_detail') }}">Card
+                                    title</a></h5>
+                            <div class="post-meta">
+                                <ul class="list-meta">
+                                    <li>
+                                        <time datetime="2023-02-04">Feb 4, 2023</time>
+                                    </li>
+                                </ul>
+                            </div>
                             <p class="card-text">Some quick example text to build on the card title and make up the bulk of
                                 the card's content.</p>
                         </div>

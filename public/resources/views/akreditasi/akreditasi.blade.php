@@ -31,7 +31,7 @@
                                     </ul>
                                 </div>
                                 <div class="pricing-table-footer"><a class="btn btn-nero btn-block"
-                                        href="#">Selengkapnya</a></div>
+                                        href="{{ url('/akreditasi_detail') }}">Selengkapnya</a></div>
                             </div>
                         </div>
                         <div class="col-md-6 col-xl-3">
@@ -49,7 +49,7 @@
                                     </ul>
                                 </div>
                                 <div class="pricing-table-footer"><a class="btn btn-nero btn-block"
-                                        href="#">Selengkapnya</a></div>
+                                        href="{{ url('/akreditasi_detail') }}">Selengkapnya</a></div>
                             </div>
                         </div>
                         <div class="col-md-6 col-xl-3">
@@ -67,7 +67,7 @@
                                     </ul>
                                 </div>
                                 <div class="pricing-table-footer"><a class="btn btn-nero-2 btn-block"
-                                        href="#">Selengkapnya</a></div>
+                                        href="{{ url('/akreditasi_detail') }}">Selengkapnya</a></div>
                             </div>
                         </div>
                     </div>

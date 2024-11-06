@@ -22,19 +22,7 @@
             object-fit: cover;
         }
     </style>
-    {{-- jumbotron --}}
     <section class="section section-intro bg-primary position-relative">
-        {{-- <div class="container">
-        <div class="row row-40">
-            <div class="col-md-8 col-lg-6 position-relative z-1">
-                <h1 class="wow">Transform your business. Take back your life.</h1>
-                <p class="wow">Get the most out of your business with my coaching services.</p>
-                <div class="group-sm group-btn wow fadeInUp" data-wow-delay=".3s"><a class="btn btn-nero"
-                        href="about-me.html">More about me</a><a class="btn btn-nero-outline-2"
-                        href="contact-me.html">Free consultation</a></div>
-            </div>
-        </div>
-    </div> --}}
         <img class="img-fluid cover" src="dist/images/bg_3.jpg" alt="" />
     </section>
 
@@ -120,80 +108,132 @@
                     <h2>Pengumuman</h2>
                     <p>Berikut beberapa informasi mengenai perkuliahan di STAINAA.</p>
                 </div>
-                <div class="col-md-4 text-md-end"><a class="btn btn-nero-outline-1" href="contact-me.html">Lainnya</a></div>
+                <div class="col-md-4 text-md-end"><a class="btn btn-nero-outline-1"
+                        href="{{ url('/semua_pengumuman') }}">Lainnya</a></div>
             </div>
             <div class="row row-20 row-md-40 row-xl-60">
-                <div class="col-sm-6 col-md-4 wow fadeInUp" data-wow-delay="0s">
-                    <article class="icon-box-horizontal">
+                <div class="col-sm-6 col-md-4 wow fadeInUp post-preview-wrap" data-wow-delay="0s">
+                    <article class="icon-box-horizontal post post-preview">
                         <div class="unit unit-spacing-xs">
-                            <div class="unit-left"><span class="novi-icon icon icomoon-arrow icon-primary"></span>
+                            <div class="unit-left">
+                                <span class="novi-icon icon icomoon-arrow icon-primary"></span>
                             </div>
                             <div class="unit-body">
-                                <h4><a href="coaching.html">Marketing</a></h4>
+                                <h4 style="margin-bottom: -20px !important;"><a
+                                        href="{{ url('/pengumuman_detail') }}">Marketing</a></h4>
+                                <div class="post-meta">
+                                    <ul class="list-meta">
+                                        <li>
+                                            <time datetime="2023-02-04">Feb 4, 2023</time>
+                                        </li>
+                                    </ul>
+                                </div>
                                 <p>Understand how marketing concepts work and approach your marketing tasks
                                     efficiently.</p>
                             </div>
                         </div>
                     </article>
                 </div>
-                <div class="col-sm-6 col-md-4 wow fadeInUp" data-wow-delay=".1s">
-                    <article class="icon-box-horizontal">
+                <div class="col-sm-6 col-md-4 wow fadeInUp post-preview-wrap" data-wow-delay=".1s">
+                    <article class="icon-box-horizontal post post-preview">
                         <div class="unit unit-spacing-xs">
                             <div class="unit-left"><span class="novi-icon icon icomoon-arrow icon-primary"></span>
                             </div>
                             <div class="unit-body">
-                                <h4><a href="coaching.html">Management</a></h4>
+                                <h4 style="margin-bottom: -20px !important;"><a
+                                        href="{{ url('/pengumuman_detail') }}">Management</a></h4>
+                                <div class="post-meta">
+                                    <ul class="list-meta">
+                                        <li>
+                                            <time datetime="2023-02-04">Feb 4, 2023</time>
+                                        </li>
+                                    </ul>
+                                </div>
                                 <p>Learn how to deal with managerial tasks to achieve the set goals for your
                                     business.</p>
                             </div>
                         </div>
                     </article>
                 </div>
-                <div class="col-sm-6 col-md-4 wow fadeInUp" data-wow-delay=".2s">
-                    <article class="icon-box-horizontal">
+                <div class="col-sm-6 col-md-4 wow fadeInUp post-preview-wrap" data-wow-delay=".2s">
+                    <article class="icon-box-horizontal post post-preview">
                         <div class="unit unit-spacing-xs">
                             <div class="unit-left"><span class="novi-icon icon icomoon-arrow icon-primary"></span>
                             </div>
                             <div class="unit-body">
-                                <h4><a href="coaching.html">Leadership</a></h4>
+                                <h4 style="margin-bottom: -20px !important;"><a
+                                        href="{{ url('/pengumuman_detail') }}">Leadership</a></h4>
+                                <div class="post-meta">
+                                    <ul class="list-meta">
+                                        <li>
+                                            <time datetime="2023-02-04">Feb 4, 2023</time>
+                                        </li>
+                                    </ul>
+                                </div>
                                 <p>Establish powerful leadership in your company’s team through coaching.</p>
                             </div>
                         </div>
                     </article>
                 </div>
-                <div class="col-sm-6 col-md-4 wow fadeInUp" data-wow-delay=".3s">
-                    <article class="icon-box-horizontal">
+                <div class="col-sm-6 col-md-4 wow fadeInUp post-preview-wrap" data-wow-delay=".3s">
+                    <article class="icon-box-horizontal post post-preview">
                         <div class="unit unit-spacing-xs">
                             <div class="unit-left"><span class="novi-icon icon icomoon-arrow icon-primary"></span>
                             </div>
                             <div class="unit-body">
-                                <h4><a href="coaching.html">Finance</a></h4>
+                                <h4 style="margin-bottom: -20px !important;"><a
+                                        href="{{ url('/pengumuman_detail') }}">Finance</a></h4>
+                                <div class="post-meta">
+                                    <ul class="list-meta">
+                                        <li>
+                                            <time datetime="2023-02-04">Feb 4, 2023</time>
+                                        </li>
+                                    </ul>
+                                </div>
                                 <p>Handle your financial challenges easily with professional coaching by Lead
                                     Planner.</p>
                             </div>
                         </div>
                     </article>
                 </div>
-                <div class="col-sm-6 col-md-4 wow fadeInUp" data-wow-delay=".4s">
-                    <article class="icon-box-horizontal">
+                <div class="col-sm-6 col-md-4 wow fadeInUp post-preview-wrap" data-wow-delay=".4s">
+                    <article class="icon-box-horizontal post post-preview">
                         <div class="unit unit-spacing-xs">
                             <div class="unit-left"><span class="novi-icon icon icomoon-arrow icon-primary"></span>
                             </div>
                             <div class="unit-body">
-                                <h4><a href="coaching.html">Lead generation</a></h4>
+                                <h4 style="margin-bottom: -20px !important;"><a
+                                        href="{{ url('/pengumuman_detail') }}">Lead generation</a>
+                                </h4>
+                                <div class="post-meta">
+                                    <ul class="list-meta">
+                                        <li>
+                                            <time datetime="2023-02-04">Feb 4, 2023</time>
+                                        </li>
+                                    </ul>
+                                </div>
                                 <p>Increase the consumer interest and discover how to successfully generate leads.
                                 </p>
                             </div>
                         </div>
                     </article>
                 </div>
-                <div class="col-sm-6 col-md-4 wow fadeInUp" data-wow-delay=".5s">
-                    <article class="icon-box-horizontal">
+                <div class="col-sm-6 col-md-4 wow fadeInUp post-preview-wrap" data-wow-delay=".5s">
+                    <article class="icon-box-horizontal post post-preview">
                         <div class="unit unit-spacing-xs">
                             <div class="unit-left"><span class="novi-icon icon icomoon-arrow icon-primary"></span>
                             </div>
                             <div class="unit-body">
-                                <h4><a href="coaching.html">Lead conversion</a></h4>
+                                <h4 style="margin-bottom: -20px !important;"><a
+                                        href="{{ url('/pengumuman_detail') }}">Lead conversion</a>
+                                </h4>
+                                <div class="post-meta">
+                                    <ul class="list-meta">
+                                        <li>
+                                            <time datetime="2023-02-04">Feb 4, 2023</time>
+                                        </li>
+                                    </ul>
+                                </div>
                                 <p>Turn a potential customer into a real and regular one in just a few simple steps.
                                 </p>
                             </div>
@@ -211,49 +251,86 @@
                     <h2>Berita</h2>
                     <p>Berikut beberapa berita terkini</p>
                 </div>
-                <div class="col-md-4 text-md-end"><a class="btn btn-nero-outline-1" href="contact-me.html">Lainnya</a>
+                <div class="col-md-4 text-md-end"><a class="btn btn-nero-outline-1"
+                        href="{{ url('/semua_berita') }}">Lainnya</a>
                 </div>
             </div>
             <div class="row row-20 row-md-40 row-xl-60">
                 <div class="col-sm-6 col-md-3 wow fadeInUp" data-wow-delay="0s">
-                    <div class="card shadow">
+                    <div class="card shadow post post-preview">
                         <img src="dist/images/b4.jpg" class="card-img-top" alt="..."
                             style="height: 250px; object-fit: cover;">
-                        <div class="card-body">
-                            <h5 class="card-title"><a href="#">Card title</a></h5>
+                        <div class="card-body unit-body">
+                            <h5 class="card-title" style="margin-bottom: -20px !important;"><a
+                                    href="{{ url('/berita_detail') }}">Card
+                                    title</a></h5>
+                            <div class="post-meta">
+                                <ul class="list-meta">
+                                    <li>
+                                        <time datetime="2023-02-04">Feb 4, 2023</time>
+                                    </li>
+                                </ul>
+                            </div>
                             <p class="card-text">Some quick example text to build on the card title and make up the bulk of
                                 the card's content.</p>
                         </div>
                     </div>
                 </div>
-                <div class="col-sm-6 col-md-3 wow fadeInUp" data-wow-delay=".1s">
-                    <div class="card shadow">
+                <div class="col-sm-6 col-md-3 wow fadeInUp" data-wow-delay="0s">
+                    <div class="card shadow post post-preview">
                         <img src="dist/images/b4.jpg" class="card-img-top" alt="..."
                             style="height: 250px; object-fit: cover;">
-                        <div class="card-body">
-                            <h5 class="card-title"><a href="#">Card title</a></h5>
+                        <div class="card-body unit-body">
+                            <h5 class="card-title" style="margin-bottom: -20px !important;"><a
+                                    href="{{ url('/berita_detail') }}">Card
+                                    title</a></h5>
+                            <div class="post-meta">
+                                <ul class="list-meta">
+                                    <li>
+                                        <time datetime="2023-02-04">Feb 4, 2023</time>
+                                    </li>
+                                </ul>
+                            </div>
                             <p class="card-text">Some quick example text to build on the card title and make up the bulk of
                                 the card's content.</p>
                         </div>
                     </div>
                 </div>
-                <div class="col-sm-6 col-md-3 wow fadeInUp" data-wow-delay=".2s">
-                    <div class="card shadow">
+                <div class="col-sm-6 col-md-3 wow fadeInUp" data-wow-delay="0s">
+                    <div class="card shadow post post-preview">
                         <img src="dist/images/b4.jpg" class="card-img-top" alt="..."
                             style="height: 250px; object-fit: cover;">
-                        <div class="card-body">
-                            <h5 class="card-title"><a href="#">Card title</a></h5>
+                        <div class="card-body unit-body">
+                            <h5 class="card-title" style="margin-bottom: -20px !important;"><a
+                                    href="{{ url('/berita_detail') }}">Card
+                                    title</a></h5>
+                            <div class="post-meta">
+                                <ul class="list-meta">
+                                    <li>
+                                        <time datetime="2023-02-04">Feb 4, 2023</time>
+                                    </li>
+                                </ul>
+                            </div>
                             <p class="card-text">Some quick example text to build on the card title and make up the bulk of
                                 the card's content.</p>
                         </div>
                     </div>
                 </div>
-                <div class="col-sm-6 col-md-3 wow fadeInUp" data-wow-delay=".3s">
-                    <div class="card shadow">
+                <div class="col-sm-6 col-md-3 wow fadeInUp" data-wow-delay="0s">
+                    <div class="card shadow post post-preview">
                         <img src="dist/images/b4.jpg" class="card-img-top" alt="..."
                             style="height: 250px; object-fit: cover;">
-                        <div class="card-body">
-                            <h5 class="card-title"><a href="#">Card title</a></h5>
+                        <div class="card-body unit-body">
+                            <h5 class="card-title" style="margin-bottom: -20px !important;"><a
+                                    href="{{ url('/berita_detail') }}">Card
+                                    title</a></h5>
+                            <div class="post-meta">
+                                <ul class="list-meta">
+                                    <li>
+                                        <time datetime="2023-02-04">Feb 4, 2023</time>
+                                    </li>
+                                </ul>
+                            </div>
                             <p class="card-text">Some quick example text to build on the card title and make up the bulk of
                                 the card's content.</p>
                         </div>
