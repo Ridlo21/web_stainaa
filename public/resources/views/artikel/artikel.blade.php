@@ -5,97 +5,324 @@
 @endsection
 
 @section('konten')
-<section class="section section-xs novi-background bg-primary">
-    <div class="container">
-        <div class="page-title">
-            <h1 class="h2">Prices</h1>
-        </div>
-    </div>
-</section>
-<section class="section section-lg bg-default">
-    <div class="container">
-        <div class="row justify-content-center justify-content-xl-start text-center text-xl-start">
-            <div class="col-md-10 col-xl-8 col-xxl-7">
-                <h2>We'll suggest the plan that's right for your business</h2>
+    <section class="section section-xs bg-nero">
+        <div class="container">
+            <div class="page-title">
+                <h1 class="h2">Artikel</h1>
             </div>
         </div>
-        <div class="row justify-content-md-center">
-            <div class="col-lg-10 col-xl-12">
-                <div class="row row-20 row-md-40">
-                    <div class="col-md-6 col-xl-3">
-                        <div class="pricing-table">
-                            <div class="pricing-table-body">
-                                <h3 class="h4 pricing-table-header">Free consultation</h3>
-                                <div class="pricing-object"><span>$</span><span class="price">0</span></div>
-                                <p class="small">Pellentesque et tellus feug</p>
-                                <ul class="list-marked pricing-list">
-                                    <li>Donec quis vehicula diam</li>
-                                    <li>Ut viverra ligula non</li>
-                                    <li>Suscipit commodo orci</li>
-                                    <li>Curabitur orci magna</li>
-                                </ul>
-                            </div>
-                            <div class="pricing-table-footer"><a class="btn btn-nero btn-block" href="#">Buy
-                                    now</a></div>
+    </section>
+    <section class="section section-lg bg-default">
+        <div class="container">
+            <div class="row row-50 justify-content-between">
+                <div class="col-lg-8">
+                    <article class="post post-single mb-5">
+                        <div class="post-image">
+                            <figure><img src="dist/images/post-1-840x464.jpg" alt="" width="840"
+                                    height="464" />
+                            </figure>
                         </div>
-                    </div>
-                    <div class="col-md-6 col-xl-3">
-                        <div class="pricing-table">
-                            <div class="pricing-table-body">
-                                <h3 class="h4 pricing-table-header">Basic</h3>
-                                <div class="pricing-object"><span>$</span><span class="price">5</span><span
-                                        class="h4">/month</span></div>
-                                <p class="small">Penatibus vulputate in sagittis at</p>
-                                <ul class="list-marked pricing-list">
-                                    <li>Sed iaculis turpis sed</li>
-                                    <li>Accumsan pretium</li>
-                                    <li>In ultrices felis nulla non</li>
-                                    <li>Pellentesque ornare erat</li>
-                                </ul>
-                            </div>
-                            <div class="pricing-table-footer"><a class="btn btn-nero btn-block" href="#">Buy
-                                    now</a></div>
+                        <div class="post-header">
+                            <h2 class="h3">The ultimate guide to time management</h2>
                         </div>
-                    </div>
-                    <div class="col-md-6 col-xl-3">
-                        <div class="pricing-table bg-aqua-grey">
-                            <div class="pricing-table-body">
-                                <h3 class="h4 pricing-table-header">Standard</h3>
-                                <div class="pricing-object"><span>$</span><span class="price">20</span><span
-                                        class="h4">/month</span></div>
-                                <p class="small">Etiam nibh risus nunc ridiculus</p>
-                                <ul class="list-marked pricing-list">
-                                    <li>Condimentum nunc lectus</li>
-                                    <li>Interdum eros dictum</li>
-                                    <li>Convallis tortor nibh ornare</li>
-                                    <li>Morbi iaculis auctor luctus</li>
-                                </ul>
-                            </div>
-                            <div class="pricing-table-footer"><a class="btn btn-nero-2 btn-block" href="#">Buy
-                                    now</a></div>
+                        <div class="divider-fullwidth"></div>
+                        <div class="post-body">
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec nec venenatis elit,
+                                sed vehicula sapien. Praesent facilisis varius imperdiet. Ut et ligula quis mi
+                                viverra sodales. Vivamus lectus magna, faucibus vel ipsum. Proin iaculis, diam et
+                                placerat lacinia, odio nisl congue tellus, sed placerat nunc neque id urna.
+                                Phasellus nec massa purus.</p>
                         </div>
-                    </div>
-                    <div class="col-md-6 col-xl-3">
-                        <div class="pricing-table">
-                            <div class="pricing-table-body">
-                                <h3 class="h4 pricing-table-header">Premium</h3>
-                                <div class="pricing-object"><span>$</span><span class="price">50</span><span
-                                        class="h4">/month</span></div>
-                                <p class="small">Porta nunc facilisi cras quisque eget</p>
-                                <ul class="list-marked pricing-list">
-                                    <li>Proin iaculis diam et</li>
-                                    <li>Placerat lacinia odio nisl</li>
-                                    <li>Congue tellus sed</li>
-                                    <li>Placerat nunc neque id urna</li>
-                                </ul>
+                        <a class="btn btn-nero" style="margin-top: 20px !important;" style="margin-top: 20px !important;"
+                            href="#">Read More</a>
+                    </article>
+                    <article class="post post-single mb-5">
+                        <div class="post-image">
+                            <figure><img src="dist/images/post-1-840x464.jpg" alt="" width="840"
+                                    height="464" />
+                            </figure>
+                        </div>
+                        <div class="post-header">
+                            <h2 class="h3">The ultimate guide to time management</h2>
+                        </div>
+                        <div class="divider-fullwidth"></div>
+                        <div class="post-body">
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec nec venenatis elit,
+                                sed vehicula sapien. Praesent facilisis varius imperdiet. Ut et ligula quis mi
+                                viverra sodales. Vivamus lectus magna, faucibus vel ipsum. Proin iaculis, diam et
+                                placerat lacinia, odio nisl congue tellus, sed placerat nunc neque id urna.
+                                Phasellus nec massa purus.</p>
+                        </div>
+                        <a class="btn btn-nero" style="margin-top: 20px !important;" href="#">Read More</a>
+                    </article>
+                    <article class="post post-single mb-5">
+                        <div class="post-image">
+                            <figure><img src="dist/images/post-1-840x464.jpg" alt="" width="840"
+                                    height="464" />
+                            </figure>
+                        </div>
+                        <div class="post-header">
+                            <h2 class="h3">The ultimate guide to time management</h2>
+                        </div>
+                        <div class="divider-fullwidth"></div>
+                        <div class="post-body">
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec nec venenatis elit,
+                                sed vehicula sapien. Praesent facilisis varius imperdiet. Ut et ligula quis mi
+                                viverra sodales. Vivamus lectus magna, faucibus vel ipsum. Proin iaculis, diam et
+                                placerat lacinia, odio nisl congue tellus, sed placerat nunc neque id urna.
+                                Phasellus nec massa purus.</p>
+                        </div>
+                        <a class="btn btn-nero" style="margin-top: 20px !important;" href="#">Read More</a>
+                    </article>
+                    <article class="post post-single mb-5">
+                        <div class="post-image">
+                            <figure><img src="dist/images/post-1-840x464.jpg" alt="" width="840"
+                                    height="464" />
+                            </figure>
+                        </div>
+                        <div class="post-header">
+                            <h2 class="h3">The ultimate guide to time management</h2>
+                        </div>
+                        <div class="divider-fullwidth"></div>
+                        <div class="post-body">
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec nec venenatis elit,
+                                sed vehicula sapien. Praesent facilisis varius imperdiet. Ut et ligula quis mi
+                                viverra sodales. Vivamus lectus magna, faucibus vel ipsum. Proin iaculis, diam et
+                                placerat lacinia, odio nisl congue tellus, sed placerat nunc neque id urna.
+                                Phasellus nec massa purus.</p>
+                        </div>
+                        <a class="btn btn-nero" style="margin-top: 20px !important;" href="#">Read More</a>
+                    </article>
+                    <article class="post post-single mb-5">
+                        <div class="post-image">
+                            <figure><img src="dist/images/post-1-840x464.jpg" alt="" width="840"
+                                    height="464" />
+                            </figure>
+                        </div>
+                        <div class="post-header">
+                            <h2 class="h3">The ultimate guide to time management</h2>
+                        </div>
+                        <div class="divider-fullwidth"></div>
+                        <div class="post-body">
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec nec venenatis elit,
+                                sed vehicula sapien. Praesent facilisis varius imperdiet. Ut et ligula quis mi
+                                viverra sodales. Vivamus lectus magna, faucibus vel ipsum. Proin iaculis, diam et
+                                placerat lacinia, odio nisl congue tellus, sed placerat nunc neque id urna.
+                                Phasellus nec massa purus.</p>
+                        </div>
+                        <a class="btn btn-nero" style="margin-top: 20px !important;" href="#">Read More</a>
+                    </article>
+                    <article class="post post-single mb-5">
+                        <div class="post-image">
+                            <figure><img src="dist/images/post-1-840x464.jpg" alt="" width="840"
+                                    height="464" />
+                            </figure>
+                        </div>
+                        <div class="post-header">
+                            <h2 class="h3">The ultimate guide to time management</h2>
+                        </div>
+                        <div class="divider-fullwidth"></div>
+                        <div class="post-body">
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec nec venenatis elit,
+                                sed vehicula sapien. Praesent facilisis varius imperdiet. Ut et ligula quis mi
+                                viverra sodales. Vivamus lectus magna, faucibus vel ipsum. Proin iaculis, diam et
+                                placerat lacinia, odio nisl congue tellus, sed placerat nunc neque id urna.
+                                Phasellus nec massa purus.</p>
+                        </div>
+                        <a class="btn btn-nero" style="margin-top: 20px !important;" href="#">Read More</a>
+                    </article>
+                    <article class="post post-single mb-5">
+                        <div class="post-image">
+                            <figure><img src="dist/images/post-1-840x464.jpg" alt="" width="840"
+                                    height="464" />
+                            </figure>
+                        </div>
+                        <div class="post-header">
+                            <h2 class="h3">The ultimate guide to time management</h2>
+                        </div>
+                        <div class="divider-fullwidth"></div>
+                        <div class="post-body">
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec nec venenatis elit,
+                                sed vehicula sapien. Praesent facilisis varius imperdiet. Ut et ligula quis mi
+                                viverra sodales. Vivamus lectus magna, faucibus vel ipsum. Proin iaculis, diam et
+                                placerat lacinia, odio nisl congue tellus, sed placerat nunc neque id urna.
+                                Phasellus nec massa purus.</p>
+                        </div>
+                        <a class="btn btn-nero" style="margin-top: 20px !important;" href="#">Read More</a>
+                    </article>
+                    <article class="post post-single mb-5">
+                        <div class="post-image">
+                            <figure><img src="dist/images/post-1-840x464.jpg" alt="" width="840"
+                                    height="464" />
+                            </figure>
+                        </div>
+                        <div class="post-header">
+                            <h2 class="h3">The ultimate guide to time management</h2>
+                        </div>
+                        <div class="divider-fullwidth"></div>
+                        <div class="post-body">
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec nec venenatis elit,
+                                sed vehicula sapien. Praesent facilisis varius imperdiet. Ut et ligula quis mi
+                                viverra sodales. Vivamus lectus magna, faucibus vel ipsum. Proin iaculis, diam et
+                                placerat lacinia, odio nisl congue tellus, sed placerat nunc neque id urna.
+                                Phasellus nec massa purus.</p>
+                        </div>
+                        <a class="btn btn-nero" style="margin-top: 20px !important;" href="#">Read More</a>
+                    </article>
+                    <article class="post post-single mb-5">
+                        <div class="post-image">
+                            <figure><img src="dist/images/post-1-840x464.jpg" alt="" width="840"
+                                    height="464" />
+                            </figure>
+                        </div>
+                        <div class="post-header">
+                            <h2 class="h3">The ultimate guide to time management</h2>
+                        </div>
+                        <div class="divider-fullwidth"></div>
+                        <div class="post-body">
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec nec venenatis elit,
+                                sed vehicula sapien. Praesent facilisis varius imperdiet. Ut et ligula quis mi
+                                viverra sodales. Vivamus lectus magna, faucibus vel ipsum. Proin iaculis, diam et
+                                placerat lacinia, odio nisl congue tellus, sed placerat nunc neque id urna.
+                                Phasellus nec massa purus.</p>
+                        </div>
+                        <a class="btn btn-nero" style="margin-top: 20px !important;" href="#">Read More</a>
+                    </article>
+                    <article class="post post-single mb-5">
+                        <div class="post-image">
+                            <figure><img src="dist/images/post-1-840x464.jpg" alt="" width="840"
+                                    height="464" />
+                            </figure>
+                        </div>
+                        <div class="post-header">
+                            <h2 class="h3">The ultimate guide to time management</h2>
+                        </div>
+                        <div class="divider-fullwidth"></div>
+                        <div class="post-body">
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec nec venenatis elit,
+                                sed vehicula sapien. Praesent facilisis varius imperdiet. Ut et ligula quis mi
+                                viverra sodales. Vivamus lectus magna, faucibus vel ipsum. Proin iaculis, diam et
+                                placerat lacinia, odio nisl congue tellus, sed placerat nunc neque id urna.
+                                Phasellus nec massa purus.</p>
+                        </div>
+                        <a class="btn btn-nero" style="margin-top: 20px !important;" href="#">Read More</a>
+                    </article>
+                    <ul class="pag pag-simple">
+                        <li class="pag-simple-item"><a class="pag-simple-link pag-simple-link-prev inactive"
+                                href="#"><span class="mdi mdi-arrow-left novi-icon"></span></a>
+                        </li>
+                        <li class="pag-simple-item active"><a class="pag-simple-link" href="#">1</a>
+                        </li>
+                        <li class="pag-simple-item"><a class="pag-simple-link" href="#">2</a>
+                        </li>
+                        <li class="pag-simple-item"><a class="pag-simple-link" href="#">3</a>
+                        </li>
+                        <li class="pag-simple-item"><a class="pag-simple-link" href="#">4</a>
+                        </li>
+                        <li class="pag-simple-item"><a class="pag-simple-link inactive" href="#">...</a>
+                        </li>
+                        <li class="pag-simple-item"><a class="pag-simple-link" href="#">7</a>
+                        </li>
+                        <li class="pag-simple-item"><a class="pag-simple-link pag-simple-link-next" href="#"><span
+                                    class="mdi mdi-arrow-right novi-icon"></span></a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-lg-4 col-xl-3">
+                    <div class="blog-aside">
+                        <div class="blog-aside-item">
+                            <form class="rd-search rd-search-classic" action="search-results.html" method="GET">
+                                <div class="form-wrap">
+                                    <label class="form-label" for="rd-search-form-input-1">Search</label>
+                                    <input class="form-input" id="rd-search-form-input-1" type="text" name="s"
+                                        autocomplete="off">
+                                </div>
+                                <button class="rd-search-submit" type="submit"></button>
+                            </form>
+                        </div>
+                        <div class="blog-aside-item">
+                            <h4>Categories</h4>
+                            <ul class="list-marked-variant-3">
+                                <li><a href="#"><span>Management</span><span class="list-counter">(3)</span></a>
+                                </li>
+                                <li><a href="#"><span>Marketing</span><span class="list-counter">(4)</span></a></li>
+                                <li><a href="#"><span>Business</span><span class="list-counter">(4)</span></a></li>
+                            </ul>
+                        </div>
+                        <div class="blog-aside-item">
+                            <h4>Popular posts</h4>
+                            <div class="post-preview-wrap">
+                                <article class="post post-preview"><a href="blog-post.html">
+                                        <div class="unit unit-spacing-md">
+                                            <div class="unit-left">
+                                                <figure class="post-image"><img src="dist/images/post-preview-1-80x80.jpg"
+                                                        alt="" width="80" height="80" />
+                                                </figure>
+                                            </div>
+                                            <div class="unit-body">
+                                                <div class="post-header">
+                                                    <p>Find more time in your day through a simple time audit</p>
+                                                </div>
+                                                <div class="post-meta">
+                                                    <ul class="list-meta">
+                                                        <li>
+                                                            <time datetime="2023-02-04">Feb 4, 2023</time>
+                                                        </li>
+                                                        <li>3 Comments</li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </a></article>
+                                <article class="post post-preview"><a href="blog-post.html">
+                                        <div class="unit unit-spacing-md">
+                                            <div class="unit-left">
+                                                <figure class="post-image"><img src="dist/images/post-preview-2-80x80.jpg"
+                                                        alt="" width="80" height="80" />
+                                                </figure>
+                                            </div>
+                                            <div class="unit-body">
+                                                <div class="post-header">
+                                                    <p>How to get more out of your business</p>
+                                                </div>
+                                                <div class="post-meta">
+                                                    <ul class="list-meta">
+                                                        <li>
+                                                            <time datetime="2023-02-04">Feb 4, 2023</time>
+                                                        </li>
+                                                        <li>3 Comments</li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </a></article>
+                                <article class="post post-preview"><a href="blog-post.html">
+                                        <div class="unit unit-spacing-md">
+                                            <div class="unit-left">
+                                                <figure class="post-image"><img src="dist/images/post-preview-3-80x80.jpg"
+                                                        alt="" width="80" height="80" />
+                                                </figure>
+                                            </div>
+                                            <div class="unit-body">
+                                                <div class="post-header">
+                                                    <p>5 steps to increasing your effectiveness</p>
+                                                </div>
+                                                <div class="post-meta">
+                                                    <ul class="list-meta">
+                                                        <li>
+                                                            <time datetime="2023-02-04">Feb 4, 2023</time>
+                                                        </li>
+                                                        <li>3 Comments</li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </a></article>
                             </div>
-                            <div class="pricing-table-footer"><a class="btn btn-nero btn-block" href="#">Buy
-                                    now</a></div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-</section>
+    </section>
 @endsection

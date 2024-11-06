@@ -220,7 +220,7 @@
                         <img src="dist/images/b4.jpg" class="card-img-top" alt="..."
                             style="height: 250px; object-fit: cover;">
                         <div class="card-body">
-                            <h5 class="card-title">Card title</h5>
+                            <h5 class="card-title"><a href="#">Card title</a></h5>
                             <p class="card-text">Some quick example text to build on the card title and make up the bulk of
                                 the card's content.</p>
                         </div>
@@ -231,7 +231,7 @@
                         <img src="dist/images/b4.jpg" class="card-img-top" alt="..."
                             style="height: 250px; object-fit: cover;">
                         <div class="card-body">
-                            <h5 class="card-title">Card title</h5>
+                            <h5 class="card-title"><a href="#">Card title</a></h5>
                             <p class="card-text">Some quick example text to build on the card title and make up the bulk of
                                 the card's content.</p>
                         </div>
@@ -242,7 +242,7 @@
                         <img src="dist/images/b4.jpg" class="card-img-top" alt="..."
                             style="height: 250px; object-fit: cover;">
                         <div class="card-body">
-                            <h5 class="card-title">Card title</h5>
+                            <h5 class="card-title"><a href="#">Card title</a></h5>
                             <p class="card-text">Some quick example text to build on the card title and make up the bulk of
                                 the card's content.</p>
                         </div>
@@ -253,7 +253,7 @@
                         <img src="dist/images/b4.jpg" class="card-img-top" alt="..."
                             style="height: 250px; object-fit: cover;">
                         <div class="card-body">
-                            <h5 class="card-title">Card title</h5>
+                            <h5 class="card-title"><a href="#">Card title</a></h5>
                             <p class="card-text">Some quick example text to build on the card title and make up the bulk of
                                 the card's content.</p>
                         </div>
@@ -268,8 +268,7 @@
             <h3>STAINAA dalam angka</h3>
             <div class="row row-40">
                 <div class="col-sm-6 col-md-3">
-                    <div class="box-counter"><span
-                            class="novi-icon icon icon-md icon-primary material-icons-content_copy"></span>
+                    <div class="box-counter"><span class="novi-icon icon icon-md icon-primary fa-university"></span>
                         <div class="text-large counter">58249</div>
                         <h5 class="box-header">Berdiri Sejak</h5>
                     </div>
@@ -288,7 +287,7 @@
                     </div>
                 </div>
                 <div class="col-sm-6 col-md-3">
-                    <div class="box-counter"><span class="novi-icon icon icon-md icon-primary material-icons-code"></span>
+                    <div class="box-counter"><span class="novi-icon icon icon-md icon-primary fa-graduation-cap"></span>
                         <div class="text-large counter counter-k">834</div>
                         <h5 class="box-header">Lulusan</h5>
                     </div>

@@ -1,101 +1,117 @@
 @extends('template')
 
 @section('title')
-    Artikel
+    Kemahasiswaan
 @endsection
 
 @section('konten')
-<section class="section section-xs novi-background bg-primary">
-    <div class="container">
-        <div class="page-title">
-            <h1 class="h2">Prices</h1>
-        </div>
-    </div>
-</section>
-<section class="section section-lg bg-default">
-    <div class="container">
-        <div class="row justify-content-center justify-content-xl-start text-center text-xl-start">
-            <div class="col-md-10 col-xl-8 col-xxl-7">
-                <h2>We'll suggest the plan that's right for your business</h2>
+    <section class="section section-xs bg-nero">
+        <div class="container">
+            <div class="page-title">
+                <h1 class="h2">Kemahasiswaan</h1>
             </div>
         </div>
-        <div class="row justify-content-md-center">
-            <div class="col-lg-10 col-xl-12">
-                <div class="row row-20 row-md-40">
-                    <div class="col-md-6 col-xl-3">
-                        <div class="pricing-table">
-                            <div class="pricing-table-body">
-                                <h3 class="h4 pricing-table-header">Free consultation</h3>
-                                <div class="pricing-object"><span>$</span><span class="price">0</span></div>
-                                <p class="small">Pellentesque et tellus feug</p>
-                                <ul class="list-marked pricing-list">
-                                    <li>Donec quis vehicula diam</li>
-                                    <li>Ut viverra ligula non</li>
-                                    <li>Suscipit commodo orci</li>
-                                    <li>Curabitur orci magna</li>
-                                </ul>
-                            </div>
-                            <div class="pricing-table-footer"><a class="btn btn-nero btn-block" href="#">Buy
-                                    now</a></div>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-xl-3">
-                        <div class="pricing-table">
-                            <div class="pricing-table-body">
-                                <h3 class="h4 pricing-table-header">Basic</h3>
-                                <div class="pricing-object"><span>$</span><span class="price">5</span><span
-                                        class="h4">/month</span></div>
-                                <p class="small">Penatibus vulputate in sagittis at</p>
-                                <ul class="list-marked pricing-list">
-                                    <li>Sed iaculis turpis sed</li>
-                                    <li>Accumsan pretium</li>
-                                    <li>In ultrices felis nulla non</li>
-                                    <li>Pellentesque ornare erat</li>
-                                </ul>
-                            </div>
-                            <div class="pricing-table-footer"><a class="btn btn-nero btn-block" href="#">Buy
-                                    now</a></div>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-xl-3">
-                        <div class="pricing-table bg-aqua-grey">
-                            <div class="pricing-table-body">
-                                <h3 class="h4 pricing-table-header">Standard</h3>
-                                <div class="pricing-object"><span>$</span><span class="price">20</span><span
-                                        class="h4">/month</span></div>
-                                <p class="small">Etiam nibh risus nunc ridiculus</p>
-                                <ul class="list-marked pricing-list">
-                                    <li>Condimentum nunc lectus</li>
-                                    <li>Interdum eros dictum</li>
-                                    <li>Convallis tortor nibh ornare</li>
-                                    <li>Morbi iaculis auctor luctus</li>
-                                </ul>
-                            </div>
-                            <div class="pricing-table-footer"><a class="btn btn-nero-2 btn-block" href="#">Buy
-                                    now</a></div>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-xl-3">
-                        <div class="pricing-table">
-                            <div class="pricing-table-body">
-                                <h3 class="h4 pricing-table-header">Premium</h3>
-                                <div class="pricing-object"><span>$</span><span class="price">50</span><span
-                                        class="h4">/month</span></div>
-                                <p class="small">Porta nunc facilisi cras quisque eget</p>
-                                <ul class="list-marked pricing-list">
-                                    <li>Proin iaculis diam et</li>
-                                    <li>Placerat lacinia odio nisl</li>
-                                    <li>Congue tellus sed</li>
-                                    <li>Placerat nunc neque id urna</li>
-                                </ul>
-                            </div>
-                            <div class="pricing-table-footer"><a class="btn btn-nero btn-block" href="#">Buy
-                                    now</a></div>
-                        </div>
-                    </div>
+    </section>
+    <section class="section section-lg bg-default">
+        <div class="container">
+            <div class="row row-40 justify-content-md-between flex-column-reverse flex-md-row">
+                <div class="col-md-6">
+                    <h3>Badan Eksekutif Mahasiswa</h3>
+                    <p>My name is John Adams and I am a business coach and trainer. I work with you to increase your
+                        awareness and choices, so you can set meaningful goals and get the results you truly want. I
+                        will challenge you to learn and think differently.</p>
+                    <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos, molestias iste fugit minus
+                        iusto quas eveniet neque libero rerum at. Doloribus perferendis ipsum reiciendis sequi at voluptatum
+                        maiores enim neque!
+                    </p>
+                    <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos, molestias iste fugit minus
+                        iusto quas eveniet neque libero rerum at. Doloribus perferendis ipsum reiciendis sequi at voluptatum
+                        maiores enim neque!
+                    </p>
+                </div>
+                <div class="col-md-5">
+                    <img class="wow fadeIn" src="dist/images/t.jpg" alt="" width="510" height="680"
+                        data-wow-delay=".3s" />
                 </div>
             </div>
         </div>
-    </div>
-</section>
+    </section>
+    <section class="section section-lg bg-default">
+        <div class="container">
+            <div class="row row-30 align-items-center">
+                <div class="col-md-8">
+                    <h3>Unit Kegiatan Mahasiswa</h3>
+                    <p>Berikut informasi terkait kegiatan mahasiswa</p>
+                </div>
+            </div>
+            <div class="row row-20 row-md-40 row-xl-60">
+                <div class="col-sm-6 col-md-3 wow fadeInUp" data-wow-delay="0s">
+                    <div class="card shadow">
+                        <img src="dist/images/b4.jpg" class="card-img-top" alt="..."
+                            style="height: 250px; object-fit: cover;">
+                        <div class="card-body">
+                            <h5 class="card-title"><a href="#">Card title</a></h5>
+                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of
+                                the card's content.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-md-3 wow fadeInUp" data-wow-delay=".1s">
+                    <div class="card shadow">
+                        <img src="dist/images/b4.jpg" class="card-img-top" alt="..."
+                            style="height: 250px; object-fit: cover;">
+                        <div class="card-body">
+                            <h5 class="card-title"><a href="#">Card title</a></h5>
+                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of
+                                the card's content.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-md-3 wow fadeInUp" data-wow-delay=".2s">
+                    <div class="card shadow">
+                        <img src="dist/images/b4.jpg" class="card-img-top" alt="..."
+                            style="height: 250px; object-fit: cover;">
+                        <div class="card-body">
+                            <h5 class="card-title"><a href="#">Card title</a></h5>
+                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of
+                                the card's content.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-md-3 wow fadeInUp" data-wow-delay=".3s">
+                    <div class="card shadow">
+                        <img src="dist/images/b4.jpg" class="card-img-top" alt="..."
+                            style="height: 250px; object-fit: cover;">
+                        <div class="card-body">
+                            <h5 class="card-title"><a href="#">Card title</a></h5>
+                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of
+                                the card's content.</p>
+                        </div>
+                    </div>
+                </div>
+                <ul class="pag pag-simple">
+                    <li class="pag-simple-item"><a class="pag-simple-link pag-simple-link-prev inactive"
+                            href="#"><span class="mdi mdi-arrow-left novi-icon"></span></a>
+                    </li>
+                    <li class="pag-simple-item active"><a class="pag-simple-link" href="#">1</a>
+                    </li>
+                    <li class="pag-simple-item"><a class="pag-simple-link" href="#">2</a>
+                    </li>
+                    <li class="pag-simple-item"><a class="pag-simple-link" href="#">3</a>
+                    </li>
+                    <li class="pag-simple-item"><a class="pag-simple-link" href="#">4</a>
+                    </li>
+                    <li class="pag-simple-item"><a class="pag-simple-link inactive" href="#">...</a>
+                    </li>
+                    <li class="pag-simple-item"><a class="pag-simple-link" href="#">7</a>
+                    </li>
+                    <li class="pag-simple-item"><a class="pag-simple-link pag-simple-link-next" href="#"><span
+                                class="mdi mdi-arrow-right novi-icon"></span></a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
 @endsection

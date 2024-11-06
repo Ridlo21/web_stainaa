@@ -25,3 +25,7 @@ Route::get('/artikel', function () {
 Route::get('/akreditasi', function () {
     return view('akreditasi.akreditasi');
 });
+
+Route::get('/narahubung', function () {
+    return view('narahubung.narahubung');
+});

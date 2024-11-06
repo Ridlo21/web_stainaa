@@ -41,26 +41,31 @@
                         <div class="rd-navbar-panel">
                             <button class="rd-navbar-toggle" data-custom-toggle=".rd-navbar-nav-wrap"
                                 data-custom-toggle-disable-on-blur="true"><span></span></button><a
-                                class="rd-navbar-brand brand" href="{{url('/')}}"><img
-                                    src="dist/images/logo-default-187x60.svg" alt="" width="187" height="60" /></a>
+                                class="rd-navbar-brand brand" href="{{ url('/') }}"><img
+                                    src="dist/images/stainaa.png" alt="" width="50" /></a>
                         </div>
                         <div class="rd-navbar-group rd-navbar-search-wrap">
                             <div class="rd-navbar-nav-wrap">
                                 <div class="rd-navbar-nav-inner">
                                     <div class="rd-navbar-btn-wrap"><a
                                             class="btn btn-180 btn-icon btn-icon-right btn-nero-outline-1"
-                                            href="contact-me.html" target="_blank"><span
+                                            href="{{ url('/narahubung') }}"><span
                                                 class="icon icon-xs-smaller icomoon-chat"></span>Contact me</a></div>
                                     <ul class="rd-navbar-nav">
-                                        <li class="rd-nav-item"><a class="rd-nav-link" href="{{url('/tentang')}}">Tentang</a>
+                                        <li class="rd-nav-item"><a class="rd-nav-link"
+                                                href="{{ url('/tentang') }}">Tentang</a>
                                         </li>
-                                        <li class="rd-nav-item"><a class="rd-nav-link" href="{{url('/pendidikan')}}">Pendidikan</a>
+                                        <li class="rd-nav-item"><a class="rd-nav-link"
+                                                href="{{ url('/pendidikan') }}">Pendidikan</a>
                                         </li>
-                                        <li class="rd-nav-item"><a class="rd-nav-link" href="{{url('/kemahasiswaan')}}">Kemahasiswaan</a>
+                                        <li class="rd-nav-item"><a class="rd-nav-link"
+                                                href="{{ url('/kemahasiswaan') }}">Kemahasiswaan</a>
                                         </li>
-                                        <li class="rd-nav-item"><a class="rd-nav-link" href="{{url('/artikel')}}">Artikel</a>
+                                        <li class="rd-nav-item"><a class="rd-nav-link"
+                                                href="{{ url('/artikel') }}">Artikel</a>
                                         </li>
-                                        <li class="rd-nav-item"><a class="rd-nav-link" href="{{url('/akreditasi')}}">akreditasi</a>
+                                        <li class="rd-nav-item"><a class="rd-nav-link"
+                                                href="{{ url('/akreditasi') }}">Akreditasi</a>
                                         </li>
                                         {{-- <li class="rd-nav-item"><a class="rd-nav-link" href="blog.html">Blog</a>
                                             <ul class="rd-menu rd-navbar-dropdown">
@@ -187,7 +192,8 @@
                             </div>
                             <button class="btn btn-white" type="submit" aria-label="Subscribe">Subscribe</button>
                         </form>
-                        <p class="small">By clicking the button you agree to the Privacy Policy and Terms and Conditions
+                        <p class="small">By clicking the button you agree to the Privacy Policy and Terms and
+                            Conditions
                         </p>
                     </div>
                 </div>
