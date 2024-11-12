@@ -5,23 +5,6 @@
 @endsection
 
 @section('konten')
-    <style>
-        .cover {
-            width: 100%;
-            height: auto;
-            max-width: 100%;
-            display: block;
-            object-fit: cover;
-        }
-
-        .image-2 {
-            width: 100%;
-            height: 400px;
-            max-width: 100%;
-            display: block;
-            object-fit: cover;
-        }
-    </style>
     <section class="section section-intro bg-primary position-relative">
         <img class="img-fluid cover" src="dist/images/bg_3.jpg" alt="" />
     </section>
