@@ -5,14 +5,27 @@
 @endsection
 
 @section('konten')
-    <section class="section section-xs bg-nero">
+    {{-- <section class="section section-xs bg-nero">
         <div class="container">
             <div class="page-title">
                 <h1 class="h2">Semua Pengumuman</h1>
             </div>
         </div>
-    </section>
-    <section class="section section-lg bg-default">
+    </section> --}}
+    <div class="mm bg-default mb-5">
+        <img class="img-fluid cover" src="dist/images/bg_3.jpg" alt="" />
+        <div class="container judul">
+            <div class="row">
+                <div class="col-lg-4 col-md-6 bg-primary shadow pt-3">
+                    <h3>Pengumuman</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam necessitatibus facilis iste qui
+                        excepturi reprehenderit at, quis corrupti fugit sit, magnam dolorem nisi, accusamus aliquam et
+                        cupiditate aliquid assumenda eos.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <section class="section section-lg bg-default mt-5 pt-5">
         <div class="container">
             <div class="row row-20 row-md-40 row-xl-60">
                 <div class="col-sm-6 col-md-4 wow fadeInUp post-preview-wrap" data-wow-delay=".0s">

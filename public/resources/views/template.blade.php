@@ -52,20 +52,25 @@
                                             href="{{ url('/narahubung') }}"><span
                                                 class="icon icon-xs-smaller icomoon-chat"></span>Contact me</a></div>
                                     <ul class="rd-navbar-nav">
-                                        <li class="rd-nav-item"><a class="rd-nav-link"
-                                                href="{{ url('/tentang') }}">Tentang</a>
+                                        <li
+                                            class="rd-nav-item {{ request()->segment(1) == 'tentang' ? 'active' : '' }}">
+                                            <a class="rd-nav-link" href="{{ url('/tentang') }}">Tentang</a>
                                         </li>
-                                        <li class="rd-nav-item"><a class="rd-nav-link"
-                                                href="{{ url('/pendidikan') }}">Pendidikan</a>
+                                        <li
+                                            class="rd-nav-item {{ request()->segment(1) == 'pendidikan' ? 'active' : '' }}">
+                                            <a class="rd-nav-link" href="{{ url('/pendidikan') }}">Pendidikan</a>
                                         </li>
-                                        <li class="rd-nav-item"><a class="rd-nav-link"
-                                                href="{{ url('/kemahasiswaan') }}">Kemahasiswaan</a>
+                                        <li
+                                            class="rd-nav-item {{ request()->segment(1) == 'kemahasiswaan' ? 'active' : '' }}">
+                                            <a class="rd-nav-link" href="{{ url('/kemahasiswaan') }}">Kemahasiswaan</a>
                                         </li>
-                                        <li class="rd-nav-item"><a class="rd-nav-link"
-                                                href="{{ url('/artikel') }}">Artikel</a>
+                                        <li
+                                            class="rd-nav-item {{ request()->segment(1) == 'artikel' ? 'active' : '' }}">
+                                            <a class="rd-nav-link" href="{{ url('/artikel') }}">Artikel</a>
                                         </li>
-                                        <li class="rd-nav-item"><a class="rd-nav-link"
-                                                href="{{ url('/akreditasi') }}">Akreditasi</a>
+                                        <li
+                                            class="rd-nav-item {{ request()->segment(1) == 'akreditasi' ? 'active' : '' }}">
+                                            <a class="rd-nav-link" href="{{ url('/akreditasi') }}">Akreditasi</a>
                                         </li>
                                         {{-- <li class="rd-nav-item"><a class="rd-nav-link" href="blog.html">Blog</a>
                                             <ul class="rd-menu rd-navbar-dropdown">

@@ -13287,7 +13287,7 @@ html:not(.ie-11):not(.ios) .parallax-disabled {
 
 	.rd-navbar-static .rd-navbar-nav>li>a,
 	.rd-navbar-fullwidth .rd-navbar-nav>li>a {
-		font-size: 14px;
+		font-size: 16px;
 	}
 }
 
@@ -13310,7 +13310,7 @@ html:not(.ie-11):not(.ios) .parallax-disabled {
 .rd-navbar-fullwidth .rd-navbar-nav>li>a:hover:after {
 	opacity: 1;
 	visibility: visible;
-	width: 12px;
+	width: 100%;
 }
 
 .rd-navbar-static .rd-navbar-nav .rd-navbar-submenu>.rd-navbar-dropdown,
@@ -19589,12 +19589,34 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item.lg-complete .lg-object 
 	transition: transform 0.3s ease;
 }
 
-.cover {
-	width: 100%;
-	height: auto;
-	max-width: 100%;
-	display: block;
+.carousel-item img {
+	max-height: 600px;
 	object-fit: cover;
+	width: 100%;
+}
+
+/* .mm {
+	position: relative;
+	height: 100vh;
+	overflow: hidden;
+	padding-bottom: 150px;
+}
+
+.mm .cover {
+	width: 100%;
+	max-height: 650px;
+	max-width: 100%;
+	object-fit: cover;
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 1;
+} */
+
+.mm .judul {
+	position: relative;
+	z-index: 50;
+	margin-top: -50px;
 }
 
 .image-2 {
