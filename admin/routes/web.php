@@ -6,6 +6,10 @@ Route::get('/', function () {
     return view('dashboard.dashboard');
 });
 
+Route::get('/login', function () {
+    return view('login');
+});
+
 Route::get('/personalBrand', function () {
     return view('personalBrand.personal');
 });
