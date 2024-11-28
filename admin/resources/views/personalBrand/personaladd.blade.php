@@ -17,7 +17,8 @@
         </div>
         <div class="row">
             <div class="col-lg-12 col-md-12 col-12">
-                <form>
+                <form action="{{ route('personal.tambah') }}" method="POST">
+                    @csrf
                     <div class="card">
                         <div class="card-header pb-1 pt-2">
                             <h4 class="card-title">Tambah Data Personal Branding</h4>
@@ -28,18 +29,36 @@
                                 <div class="col-sm-10">
                                     <input type="text" class="form-control" id="title" name="title"
                                         placeholder="Judul">
+
+                                    {{-- @error('title')
+                                        <div class="invalid-feedback">
+                                            {{ $message }}
+                                        </div>
+                                    @enderror --}}
                                 </div>
                             </div>
                             <div class="row mb-2 align-items-center">
                                 <label for="context" class="col-sm-2 col-form-label">Deskripsi</label>
                                 <div class="col-sm-10">
                                     <textarea class="form-control" name="context" id="context" cols="30" rows="5" placeholder="Deskripsi"></textarea>
+
+                                    {{-- @error('context')
+                                        <div class="invalid-feedback">
+                                            {{ $message }}
+                                        </div>
+                                    @enderror --}}
                                 </div>
                             </div>
                             <div class="row mb-2 align-items-center">
                                 <label for="ket" class="col-sm-2 col-form-label">Keterangan</label>
                                 <div class="col-sm-10">
                                     <textarea class="form-control" name="ket" id="ket" cols="30" rows="5" placeholder="Keterangan"></textarea>
+
+                                    {{-- @error('ket')
+                                        <div class="invalid-feedback">
+                                            {{ $message }}
+                                        </div>
+                                    @enderror --}}
                                 </div>
                             </div>
                         </div>
@@ -58,4 +77,22 @@
             </div>
         </div>
     </section>
+
+    {{-- <script>
+        $(document).ready(function() {
+            $("#formPersonalBrand").on('submit', function(e) {
+                e.preventDefault()
+                $.ajax({
+                    type: 'POST',
+                    url: {{ route('personaltambah') }},
+                    data: $(this).serialize(),
+                    success: function(hasil) {
+                        if (hasil == 'N') {
+                            swal.fire('huhu')
+                        }
+                    }
+                })
+            })
+        })
+    </script> --}}
 @endsection

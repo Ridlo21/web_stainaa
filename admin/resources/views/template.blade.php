@@ -22,7 +22,10 @@
 
     <!-- Theme CSS -->
     <link rel="stylesheet" href="assets/css/theme.min.css">
-    <link rel="canonical" href="admin-dashboard.html" />
+    <script src="assets/libs/%40popperjs/core/dist/umd/popper.min.js"></script>
+    <script src="assets/libs/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="assets/jquery/jquery-3.7.1.min.js"></script>
+    <script src="assets/sweetalert2/sweetalert2.all.min.js"></script>
     <title>@yield('title')</title>
 </head>
 
@@ -506,10 +509,6 @@
     </div>
 
     <!-- Script -->
-
-    <!-- Libs JS -->
-    <script src="assets/libs/%40popperjs/core/dist/umd/popper.min.js"></script>
-    <script src="assets/libs/bootstrap/dist/js/bootstrap.min.js"></script>
     <script src="assets/libs/simplebar/dist/simplebar.min.js"></script>
 
     <!-- Theme JS -->
@@ -519,6 +518,7 @@
     <script src="assets/js/vendors/chart.js"></script>
     <script src="assets/libs/flatpickr/dist/flatpickr.min.js"></script>
     <script src="assets/js/vendors/flatpickr.js"></script>
+    <!-- Libs JS -->
 </body>
 
 
