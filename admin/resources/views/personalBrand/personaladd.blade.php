@@ -17,8 +17,8 @@
         </div>
         <div class="row">
             <div class="col-lg-12 col-md-12 col-12">
-                <form action="{{ route('personal.tambah') }}" method="POST">
-                    @csrf
+                <form id="formPersonalBrand" alamat="{{ route('personal.tambah') }}" method="POST">
+                    {{ csrf_field() }}
                     <div class="card">
                         <div class="card-header pb-1 pt-2">
                             <h4 class="card-title">Tambah Data Personal Branding</h4>
@@ -78,13 +78,14 @@
         </div>
     </section>
 
-    {{-- <script>
+    <script>
         $(document).ready(function() {
             $("#formPersonalBrand").on('submit', function(e) {
                 e.preventDefault()
+                var url = $(this).attr("alamat")
                 $.ajax({
                     type: 'POST',
-                    url: {{ route('personaltambah') }},
+                    url: url,
                     data: $(this).serialize(),
                     success: function(hasil) {
                         if (hasil == 'N') {
@@ -94,5 +95,5 @@
                 })
             })
         })
-    </script> --}}
+    </script>
 @endsection
