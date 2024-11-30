@@ -41,21 +41,6 @@ class PersonalBrandController extends Controller
         $data->save();
 
         return response()->json(['message' => 'Data berhasil disimpan'], 201);
-
-        // $data = array();
-        // $data['title'] = $request->title;
-        // $data['context'] = $request->context;
-        // $data['tanggal'] = date('Y-m-d');
-        // $data['ket'] = $request->ket;
-        // $data['status'] = 'aktif';
-
-        // DB::table("personal_branding")
-        //     ->insert($data);
-        // if ($insert == 0 || $insert == 1) {
-        //     return 'N';
-        // }
-
-        // return redirect()->route('personalBrandAdd')->with('success', 'Data berhasil disimpan');
     }
 
     public function edit()

@@ -16,10 +16,9 @@ Route::get('/', [home::class, 'index'])->middleware('admin');
 Route::get('/login', [Login::class, 'index']);
 Route::post('/singin', [Login::class, 'singin'])->name('singin');
 
-Route::get('/personalBrand', [PersonalBrandController::class, 'index']);
-
-Route::get('/personalBrandAdd', [PersonalBrandController::class, 'create']);
-
-Route::get('/personalBrandEdit', [PersonalBrandController::class, 'edit']);
-
-Route::post('personaltambah', [PersonalBrandController::class, 'store'])->name('personal.tambah');
+Route::controller(PersonalBrandController::class)->group(function () {
+    Route::get('/personalBrand', 'index')->name('personal.Brand');
+    Route::get('/personalBrandAdd', 'create')->name('personalBrand.Add');
+    Route::get('/personalBrandEdit', 'edit')->name('personalBrand.Edit');
+    Route::post('personaltambah', 'store')->name('personal.tambah');
+});
