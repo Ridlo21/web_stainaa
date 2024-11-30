@@ -13,7 +13,8 @@ class PersonalBrandController extends Controller
 {
     public function index()
     {
-        return view('personalBrand.personal');
+        $data = PersonalBrandModel::where('status', 'aktif')->paginate(9);
+        return view('personalBrand.personal', compact('data'));
     }
 
     public function create()
@@ -43,9 +44,10 @@ class PersonalBrandController extends Controller
         return response()->json(['message' => 'Data berhasil disimpan'], 201);
     }
 
-    public function edit()
+    public function edit($uuid)
     {
-        return view('personalBrand.personaledit');
+        $data = PersonalBrandModel::where('id_personal_branding', $uuid);
+        return view('personalBrand.personaledit', compact('data'));
     }
 
     public function update(Request $request)

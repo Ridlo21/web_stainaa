@@ -17,7 +17,7 @@
         </div>
         <div class="row">
             <div class="col-lg-12 col-md-12 col-12">
-                <form id="formPersonalBrand" alamat="{{ route('personal.tambah') }}" method="POST">
+                <form id="formPersonalBrand" alamat="{{ route('personal.tambah') }}" data-parsley-validate method="POST">
                     {{ csrf_field() }}
                     <div class="card">
                         <div class="card-header pb-1 pt-2">
@@ -27,45 +27,29 @@
                             <div class="row mb-2 align-items-center">
                                 <label for="title" class="col-sm-2 col-form-label">Judul</label>
                                 <div class="col-sm-10">
-                                    <input type="text" class="form-control" id="title" name="title"
+                                    <input type="text" class="form-control" required id="title" name="title"
                                         placeholder="Judul">
-
-                                    {{-- @error('title')
-                                        <div class="invalid-feedback">
-                                            {{ $message }}
-                                        </div>
-                                    @enderror --}}
                                 </div>
                             </div>
                             <div class="row mb-2 align-items-center">
                                 <label for="context" class="col-sm-2 col-form-label">Deskripsi</label>
                                 <div class="col-sm-10">
-                                    <textarea class="form-control" name="context" id="context" cols="30" rows="5" placeholder="Deskripsi"></textarea>
-
-                                    {{-- @error('context')
-                                        <div class="invalid-feedback">
-                                            {{ $message }}
-                                        </div>
-                                    @enderror --}}
+                                    <textarea class="form-control" required name="context" id="context" cols="30" rows="5"
+                                        placeholder="Deskripsi"></textarea>
                                 </div>
                             </div>
                             <div class="row mb-2 align-items-center">
                                 <label for="ket" class="col-sm-2 col-form-label">Keterangan</label>
                                 <div class="col-sm-10">
-                                    <textarea class="form-control" name="ket" id="ket" cols="30" rows="5" placeholder="Keterangan"></textarea>
-
-                                    {{-- @error('ket')
-                                        <div class="invalid-feedback">
-                                            {{ $message }}
-                                        </div>
-                                    @enderror --}}
+                                    <textarea class="form-control" required name="ket" id="ket" cols="30" rows="5"
+                                        placeholder="Keterangan"></textarea>
                                 </div>
                             </div>
                         </div>
                         <div class="card-footer">
                             <div class="row">
                                 <div class="col text-start">
-                                    <a href="{{ url('/personalBrand') }}" class="btn btn-danger btn-sm">Batal</a>
+                                    <button type="button" id="batal" class="btn btn-danger btn-sm">Batal</button>
                                 </div>
                                 <div class="col text-end">
                                     <button class="btn btn-success btn-sm">Simpan</button>
@@ -83,14 +67,47 @@
             $("#formPersonalBrand").on('submit', function(e) {
                 e.preventDefault()
                 var url = $(this).attr("alamat")
-                $.ajax({
-                    type: 'POST',
-                    url: url,
-                    data: $(this).serialize(),
-                    success: function(hasil) {
-                        if (hasil == 'N') {
-                            swal.fire('huhu')
+                $(this).parsley().validate()
+                if ($(this).parsley().isValid()) {
+                    $('#spinnerWrapper').css('display', 'flex')
+                    $.ajax({
+                        type: 'POST',
+                        url: url,
+                        data: $(this).serialize(),
+                        success: function(response) {
+                            $('#spinnerWrapper').css('display', 'none')
+                            swal.fire({
+                                title: "Berhasil",
+                                text: response.message,
+                                icon: "success"
+                            }).then(function() {
+                                $('#spinnerWrapper').css('display', 'flex')
+                                window.location.href = "{{ url('/personalBrand') }}"
+                            })
                         }
+                    })
+                }
+            })
+
+            $("#batal").on('click', function() {
+                Swal.fire({
+                    title: "Apakah anda yakin?",
+                    text: "Anda tidak dapat mengembalikan ini!",
+                    icon: "warning",
+                    showCancelButton: true,
+                    confirmButtonColor: "#3085d6",
+                    cancelButtonColor: "#d33",
+                    confirmButtonText: "Yes, batalkan"
+                }).then((result) => {
+                    if (result.isConfirmed) {
+                        Swal.fire({
+                            title: "Dibatalkan",
+                            text: "Input data berhasil dibatalkan",
+                            icon: "success"
+                        }).then(function() {
+                            $('#spinnerWrapper').css('display', 'flex')
+                            window.location.href = "{{ url('/personalBrand') }}"
+                        })
                     }
                 })
             })

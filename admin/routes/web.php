@@ -19,6 +19,6 @@ Route::post('/singin', [Login::class, 'singin'])->name('singin');
 Route::controller(PersonalBrandController::class)->group(function () {
     Route::get('/personalBrand', 'index')->name('personal.Brand');
     Route::get('/personalBrandAdd', 'create')->name('personalBrand.Add');
-    Route::get('/personalBrandEdit', 'edit')->name('personalBrand.Edit');
+    Route::get('/personalBrandEdit/{uuid}', 'edit')->name('personalBrand.Edit');
     Route::post('personaltambah', 'store')->name('personal.tambah');
 });

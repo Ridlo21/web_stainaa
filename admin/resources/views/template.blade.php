@@ -19,6 +19,7 @@
     <link href="assets/fonts/feather/feather.css" rel="stylesheet" />
     <link href="assets/libs/bootstrap-icons/font/bootstrap-icons.min.css" rel="stylesheet" />
     <link href="assets/libs/simplebar/dist/simplebar.min.css" rel="stylesheet" />
+    <link href="assets/css/style.css" rel="stylesheet" />
 
     <!-- Theme CSS -->
     <link rel="stylesheet" href="assets/css/theme.min.css">
@@ -26,10 +27,17 @@
     <script src="assets/libs/bootstrap/dist/js/bootstrap.min.js"></script>
     <script src="assets/jquery/jquery-3.7.1.min.js"></script>
     <script src="assets/sweetalert2/sweetalert2.all.min.js"></script>
+    <script src="assets/parsleyjs/parsley.min.js"></script>
+    <script src="assets/parsleyjs/i18n/id.js"></script>
     <title>@yield('title')</title>
 </head>
 
 <body>
+    <div class="spinner-wrapper" id="spinnerWrapper">
+        <div class="spinner-border text-light" role="status" style="width: 100px; height: 100px;">
+            <span class="visually-hidden">Loading...</span>
+        </div>
+    </div>
     <!-- Wrapper -->
     <div id="db-wrapper">
         <!-- navbar vertical -->
