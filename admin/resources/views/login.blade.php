@@ -40,17 +40,17 @@
                   </div>
                   <!-- Form -->
                   <form class="needs-validation" novalidate method="POST" action="{{ route('singin') }}" >
-                    <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                    @csrf
                     <!-- Username --> 
                     <div class="mb-3">
                       <label for="signInEmail" class="form-label">Username or email</label>
-                      <input type="text" id="signInEmail" class="form-control" name="signInEmail" placeholder="Email address here" required />
+                      <input type="text" id="signInEmail" class="form-control" name="username" placeholder="Email address here" required />
                       <div class="invalid-feedback">Please enter valid username.</div>
                     </div>
                     <!-- Password -->
                     <div class="mb-3">
                       <label for="signInPassword" class="form-label">Password</label>
-                      <input type="password" id="signInPassword" class="form-control" name="signInPassword" placeholder="**************" required />
+                      <input type="password" id="signInPassword" class="form-control" name="password" placeholder="**************" required />
                       <div class="invalid-feedback">Please enter valid password.</div>
                     </div>
                     <!-- Checkbox -->
