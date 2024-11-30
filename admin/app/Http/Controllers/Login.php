@@ -21,7 +21,7 @@ class Login extends Controller
             ->where("password", $req->signInPassword)
             ->where("status", "aktif")
             ->first();
-        if (!$data) {
+        if ($data != null) {
             return "data salah";
         }
         // $username = $req->signInEmail;
