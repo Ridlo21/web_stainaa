@@ -5,15 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="author" content="Codescandy" />
 
-    <link rel="shortcut icon" type="image/x-icon" href="../assets/images/stainaa.png" />
+    <link rel="shortcut icon" type="image/x-icon" href="assets/images/stainaa.png" />
 
-    <script src="../assets/js/vendors/darkMode.js"></script>
+    <script src="assets/js/vendors/darkMode.js"></script>
 
-    <link href="../assets/fonts/feather/feather.css" rel="stylesheet" />
-    <link href="../assets/libs/bootstrap-icons/font/bootstrap-icons.min.css" rel="stylesheet" />
-    <link href="../assets/libs/simplebar/dist/simplebar.min.css" rel="stylesheet" />
+    <link href="assets/fonts/feather/feather.css" rel="stylesheet" />
+    <link href="assets/libs/bootstrap-icons/font/bootstrap-icons.min.css" rel="stylesheet" />
+    <link href="assets/libs/simplebar/dist/simplebar.min.css" rel="stylesheet" />
 
-    <link rel="stylesheet" href="../assets/css/theme.min.css">
+    <link rel="stylesheet" href="assets/css/theme.min.css">
     <link rel="canonical" href="https://geeksui.codescandy.com/geeks/pages/sign-in.html" />
     <title>Login</title>
 </head>
@@ -29,7 +29,7 @@
                 <!-- Card body -->
                 <div class="card-body py-3 px-6 d-flex flex-column gap-4">
                   <div>
-                    <a href="../index.html"><img src="../assets/images/stainaa.png" class="mb-4" style="width: 18%; height: 20%;" alt="logo-icon" /></a>
+                    <a href="index.html"><img src="assets/images/stainaa.png" class="mb-4" style="width: 18%; height: 20%;" alt="logo-icon" /></a>
                     <div class="d-flex flex-column gap-1">
                       <h1 class="mb-0 fw-bold">Sign in</h1>
                       <span>
@@ -38,6 +38,13 @@
                       </span>
                     </div>
                   </div>
+                  <div id="pesan">
+                    @if (session()->has('error'))
+                        <div class="alert alert-success">
+                            {{ session('error') }}
+                        </div>
+                    @endif
+                </div>
                   <!-- Form -->
                   <form class="needs-validation" novalidate method="POST" action="{{ route('singin') }}" >
                     @csrf
@@ -131,13 +138,22 @@
         </div>
       </div>
     </main>
-<script src="../assets/libs/@popperjs/core/dist/umd/popper.min.js"></script>
-<script src="../assets/libs/bootstrap/dist/js/bootstrap.min.js"></script>
-<script src="../assets/libs/simplebar/dist/simplebar.min.js"></script>
+<script src="assets/libs/@popperjs/core/dist/umd/popper.min.js"></script>
+<script src="assets/libs/bootstrap/dist/js/bootstrap.min.js"></script>
+<script src="assets/libs/simplebar/dist/simplebar.min.js"></script>
 
 <!-- Theme JS -->
-<script src="../assets/js/theme.min.js"></script>
+  <script src="assets/js/theme.min.js"></script>
 
-    <script src="../assets/js/vendors/validation.js"></script>
+    <script src="assets/js/vendors/validation.js"></script>
+    <script src="assets/jquery/jquery-3.7.1.min.js"></script>
+
+    <script>
+      $(function () {
+        setTimeout(() => {
+          $("#pesan").html("")
+        }, 5000);
+      })
+    </script>
   </body>
 </html>

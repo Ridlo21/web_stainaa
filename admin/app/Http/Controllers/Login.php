@@ -29,7 +29,7 @@ class Login extends Controller
         if (Auth::Attempt($data)) {
             return redirect('home');
         }else{
-            // Session::flash('error', 'Email atau Password Salah');
+            session()->flash('error', 'Email atau Password Salah');
             return redirect('/');
         }
     }
