@@ -3,32 +3,32 @@
 
 
 <head>
-    <link rel="stylesheet" href="assets/libs/flatpickr/dist/flatpickr.min.css" />
+    <link rel="stylesheet" href="{{ asset('assets') }}/libs/flatpickr/dist/flatpickr.min.css" />
     <!-- Required meta tags -->
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="author" content="Codescandy" />
 
     <!-- Favicon icon-->
-    <link rel="shortcut icon" type="image/x-icon" href="assets/images/favicon/favicon.ico" />
+    <link rel="shortcut icon" type="image/x-icon" href="{{ asset('assets') }}/images/favicon/favicon.ico" />
 
     <!-- darkmode js -->
-    <script src="assets/js/vendors/darkMode.js"></script>
+    <script src="{{ asset('assets') }}/js/vendors/darkMode.js"></script>
 
     <!-- Libs CSS -->
-    <link href="assets/fonts/feather/feather.css" rel="stylesheet" />
-    <link href="assets/libs/bootstrap-icons/font/bootstrap-icons.min.css" rel="stylesheet" />
-    <link href="assets/libs/simplebar/dist/simplebar.min.css" rel="stylesheet" />
-    <link href="assets/css/style.css" rel="stylesheet" />
+    <link href="{{ asset('assets') }}/fonts/feather/feather.css" rel="stylesheet" />
+    <link href="{{ asset('assets') }}/libs/bootstrap-icons/font/bootstrap-icons.min.css" rel="stylesheet" />
+    <link href="{{ asset('assets') }}/libs/simplebar/dist/simplebar.min.css" rel="stylesheet" />
+    <link href="{{ asset('assets') }}/css/style.css" rel="stylesheet" />
 
     <!-- Theme CSS -->
-    <link rel="stylesheet" href="assets/css/theme.min.css">
-    <script src="assets/libs/%40popperjs/core/dist/umd/popper.min.js"></script>
-    <script src="assets/libs/bootstrap/dist/js/bootstrap.min.js"></script>
-    <script src="assets/jquery/jquery-3.7.1.min.js"></script>
-    <script src="assets/sweetalert2/sweetalert2.all.min.js"></script>
-    <script src="assets/parsleyjs/parsley.min.js"></script>
-    <script src="assets/parsleyjs/i18n/id.js"></script>
+    <link rel="stylesheet" href="{{ asset('assets') }}/css/theme.min.css">
+    <script src="{{ asset('assets') }}/libs/%40popperjs/core/dist/umd/popper.min.js"></script>
+    <script src="{{ asset('assets') }}/libs/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="{{ asset('assets') }}/jquery/jquery-3.7.1.min.js"></script>
+    <script src="{{ asset('assets') }}/sweetalert2/sweetalert2.all.min.js"></script>
+    <script src="{{ asset('assets') }}/parsleyjs/parsley.min.js"></script>
+    <script src="{{ asset('assets') }}/parsleyjs/i18n/id.js"></script>
     <title>@yield('title')</title>
 </head>
 
@@ -285,7 +285,7 @@
                                                     <div class="col">
                                                         <a class="text-body" href="#">
                                                             <div class="d-flex">
-                                                                <img src="assets/images/avatar/avatar-1.jpg"
+                                                                <img src="{{ asset('assets') }}/images/avatar/avatar-1.jpg"
                                                                     alt="" class="avatar-md rounded-circle" />
                                                                 <div class="ms-3">
                                                                     <h5 class="fw-bold mb-1">Kristin Watson:</h5>
@@ -322,7 +322,7 @@
                                                     <div class="col">
                                                         <a class="text-body" href="#">
                                                             <div class="d-flex">
-                                                                <img src="assets/images/avatar/avatar-2.jpg"
+                                                                <img src="{{ asset('assets') }}/images/avatar/avatar-2.jpg"
                                                                     alt="" class="avatar-md rounded-circle" />
                                                                 <div class="ms-3">
                                                                     <h5 class="fw-bold mb-1">Brooklyn Simmons</h5>
@@ -352,7 +352,7 @@
                                                     <div class="col">
                                                         <a class="text-body" href="#">
                                                             <div class="d-flex">
-                                                                <img src="assets/images/avatar/avatar-3.jpg"
+                                                                <img src="{{ asset('assets') }}/images/avatar/avatar-3.jpg"
                                                                     alt="" class="avatar-md rounded-circle" />
                                                                 <div class="ms-3">
                                                                     <h5 class="fw-bold mb-1">Jenny Wilson</h5>
@@ -382,7 +382,7 @@
                                                     <div class="col">
                                                         <a class="text-body" href="#">
                                                             <div class="d-flex">
-                                                                <img src="assets/images/avatar/avatar-4.jpg"
+                                                                <img src="{{ asset('assets') }}/images/avatar/avatar-4.jpg"
                                                                     alt="" class="avatar-md rounded-circle" />
                                                                 <div class="ms-3">
                                                                     <h5 class="fw-bold mb-1">Sina Ray</h5>
@@ -420,7 +420,7 @@
                                 <a class="rounded-circle" href="#" role="button" id="dropdownUser"
                                     data-bs-toggle="dropdown" aria-expanded="false">
                                     <div class="avatar avatar-md avatar-indicators avatar-online">
-                                        <img alt="avatar" src="assets/images/avatar/avatar-1.jpg"
+                                        <img alt="avatar" src="{{ asset('assets') }}/images/avatar/avatar-1.jpg"
                                             class="rounded-circle" />
                                     </div>
                                 </a>
@@ -428,7 +428,8 @@
                                     <div class="dropdown-item">
                                         <div class="d-flex">
                                             <div class="avatar avatar-md avatar-indicators avatar-online">
-                                                <img alt="avatar" src="assets/images/avatar/avatar-1.jpg"
+                                                <img alt="avatar"
+                                                    src="{{ asset('assets') }}/images/avatar/avatar-1.jpg"
                                                     class="rounded-circle" />
                                             </div>
                                             <div class="ms-3 lh-1">
@@ -496,8 +497,7 @@
                                     <div class="dropdown-divider"></div>
                                     <ul class="list-unstyled">
                                         <li>
-                                            <a class="dropdown-item"
-                                                href="{{ route('logout') }}">
+                                            <a class="dropdown-item" href="{{ route('logout') }}">
                                                 <i class="fe fe-power me-2"></i>
                                                 Sign Out
                                             </a>
@@ -517,15 +517,15 @@
     </div>
 
     <!-- Script -->
-    <script src="assets/libs/simplebar/dist/simplebar.min.js"></script>
+    <script src="{{ asset('assets') }}/libs/simplebar/dist/simplebar.min.js"></script>
 
     <!-- Theme JS -->
-    <script src="assets/js/theme.min.js"></script>
+    <script src="{{ asset('assets') }}/js/theme.min.js"></script>
 
-    <script src="assets/libs/apexcharts/dist/apexcharts.min.js"></script>
-    <script src="assets/js/vendors/chart.js"></script>
-    <script src="assets/libs/flatpickr/dist/flatpickr.min.js"></script>
-    <script src="assets/js/vendors/flatpickr.js"></script>
+    <script src="{{ asset('assets') }}/libs/apexcharts/dist/apexcharts.min.js"></script>
+    <script src="{{ asset('assets') }}/js/vendors/chart.js"></script>
+    <script src="{{ asset('assets') }}/libs/flatpickr/dist/flatpickr.min.js"></script>
+    <script src="{{ asset('assets') }}/js/vendors/flatpickr.js"></script>
     <!-- Libs JS -->
 </body>
 

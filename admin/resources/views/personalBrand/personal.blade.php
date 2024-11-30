@@ -104,14 +104,12 @@
     <script>
         $(document).ready(function() {
             $('#btTambah').on('click', function() {
-                $('#spinnerWrapper').css('display', 'flex')
                 window.location.href = "{{ route('personalBrand.Add') }}"
             })
 
             $('.btEdit').on('click', function() {
-                var uuid = $(this).attr('data')
-                $('#spinnerWrapper').css('display', 'flex')
-                window.location.href = "{{ url('personalBrand.Edit') }}/" + uuid
+                var id = $(this).attr('data')
+                window.location.href = "{{ url('personalBrandEdit') }}/" + id
             })
         })
     </script>
