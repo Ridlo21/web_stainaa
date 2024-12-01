@@ -57,6 +57,12 @@
                             <span>Dashboard</span>
                         </a>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link " href="{{ route('cover.index') }}">
+                            <i class="nav-icon fe fe-home me-2"></i>
+                            <span>Cover</span>
+                        </a>
+                    </li>
                     <!-- Nav item -->
                     <li class="nav-item">
                         <a class="nav-link  collapsed " href="#" data-bs-toggle="collapse"
