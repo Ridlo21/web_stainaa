@@ -17,4 +17,6 @@ Route::controller(PersonalBrandController::class)->group(function () {
     Route::get('/personalBrandAdd', 'create')->name('personalBrand.Add');
     Route::get('/personalBrandEdit/{id}', 'edit')->name('personalBrand.Edit');
     Route::post('personaltambah', 'store')->name('personal.tambah');
+    Route::post('personalupdate', 'update')->name('personal.update');
+    Route::post('personalnonaktif', 'nonaktifkan')->name('personal.nonaktif');
 });

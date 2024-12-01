@@ -2,8 +2,6 @@
 
 namespace App\Http\Controllers;
 
-// use App\Models\PersonalBrandModel;
-
 use App\Models\PersonalBrandModel;
 use Illuminate\Container\Attributes\DB;
 use Illuminate\Http\Request;
@@ -11,10 +9,21 @@ use Illuminate\Support\Str;
 
 class PersonalBrandController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
-        $data = PersonalBrandModel::where('status', 'aktif')->paginate(9);
-        return view('personalBrand.personal', compact('data'));
+        $search = $request->search;
+
+        $query = PersonalBrandModel::where('status', 'aktif');
+
+        $query->orderBy('tanggal', 'DESC');
+
+        if ($search) {
+            $query->where('title', 'like', '%' . $search . '%');
+        }
+
+        $data = $query->paginate(9);
+
+        return view('personalBrand.personal', compact('data', 'search',));
     }
 
     public function create()
@@ -26,18 +35,12 @@ class PersonalBrandController extends Controller
     {
         $id_personal_branding = Str::uuid()->toString();
 
-        $validated = $request->validate([
-            'title' => 'required|string',
-            'context' => 'required|string',
-            'ket' => 'required|string',
-        ]);
-
         $data = new PersonalBrandModel();
         $data->id_personal_branding = $id_personal_branding;
-        $data->title = $validated['title'];
-        $data->context = $validated['context'];
+        $data->title = $request->title;
+        $data->context = $request->context;
         $data->tanggal = date('Y-m-d');
-        $data->ket = $validated['ket'];
+        $data->ket = $request->ket;
         $data->status = 'aktif';
         $data->save();
 
@@ -46,12 +49,27 @@ class PersonalBrandController extends Controller
 
     public function edit($id)
     {
-        $data = PersonalBrandModel::where('id_personal_branding', $id);
+        $data = PersonalBrandModel::find($id);
         return view('personalBrand.personaledit', compact('data'));
     }
 
     public function update(Request $request)
     {
-        // 
+        PersonalBrandModel::where('id_personal_branding', $request->id)->update([
+            'title' => $request->title,
+            'context' => $request->context,
+            'ket' => $request->ket
+        ]);
+
+        return response()->json(['message' => 'Data berhasil diubah'], 201);
+    }
+
+    public function nonaktifkan(Request $request)
+    {
+        PersonalBrandModel::where('id_personal_branding', $request->id)->update([
+            'status' => 'tidak',
+        ]);
+
+        return response()->json(['message' => 'Data berhasil dinonaktifkan'], 201);
     }
 }
