@@ -15,7 +15,7 @@ Route::get('/logout', [Login::class, 'logout'])->name('logout');
 Route::controller(PersonalBrandController::class)->group(function () {
     Route::get('/personalBrand', 'index')->name('personal.Brand');
     Route::get('/personalBrandAdd', 'create')->name('personalBrand.Add');
-    Route::get('/personalBrandEdit/{uuid}', 'edit')->name('personalBrand.Edit');
+    Route::get('/personalBrandEdit/{id}', 'edit')->name('personalBrand.Edit');
     Route::post('personaltambah', 'store')->name('personal.tambah');
 });
 

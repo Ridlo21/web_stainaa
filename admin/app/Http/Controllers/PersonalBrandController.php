@@ -44,9 +44,9 @@ class PersonalBrandController extends Controller
         return response()->json(['message' => 'Data berhasil disimpan'], 201);
     }
 
-    public function edit($uuid)
+    public function edit($id)
     {
-        $data = PersonalBrandModel::where('id_personal_branding', $uuid);
+        $data = PersonalBrandModel::where('id_personal_branding', $id);
         return view('personalBrand.personaledit', compact('data'));
     }
 
