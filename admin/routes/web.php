@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Login;
 use App\Http\Controllers\Home;
 use App\Http\Controllers\PersonalBrandController;
-
+use App\Http\Controllers\Cover;
 
 
 Route::get('/', [Login::class, 'index']);
@@ -20,3 +20,5 @@ Route::controller(PersonalBrandController::class)->group(function () {
     Route::post('personalupdate', 'update')->name('personal.update');
     Route::post('personalnonaktif', 'nonaktifkan')->name('personal.nonaktif');
 });
+
+Route::resource('cover',Cover::class);
