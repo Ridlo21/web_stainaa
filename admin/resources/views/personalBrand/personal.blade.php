@@ -24,7 +24,7 @@
                     <div>
                         <form action="{{ route('personal.Brand') }}" method="GET">
                             <input type="search" id="searchInput" class="form-control" name="search" placeholder="Cari"
-                                value="{{ old('search', $search) }}" oninput="this.form.submit()" />
+                                value="{{ old('search', $search) }}" oninput="this.form.submit()" autocomplete="off" />
                         </form>
                     </div>
                 </div>
@@ -105,6 +105,7 @@
                     </div>
                 </div>
             </div>
+        </div>
     </section>
     <script>
         let timeout = null;

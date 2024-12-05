@@ -5,7 +5,7 @@ use App\Http\Controllers\Login;
 use App\Http\Controllers\Home;
 use App\Http\Controllers\PersonalBrandController;
 use App\Http\Controllers\Cover;
-
+use App\Http\Controllers\PengumumanController;
 
 Route::get('/', [Login::class, 'index']);
 Route::get('/home', [Home::class, 'index']);
@@ -21,4 +21,10 @@ Route::controller(PersonalBrandController::class)->group(function () {
     Route::post('personalnonaktif', 'nonaktifkan')->name('personal.nonaktif');
 });
 
-Route::resource('cover',Cover::class);
+Route::resource('cover', Cover::class);
+
+Route::controller(PengumumanController::class)->group(function () {
+    Route::get('/pengumumanList', 'index')->name('pengumuman.list');
+    Route::get('/pengumumanAdd', 'create')->name('pengumuman.Add');
+    Route::post('pengumumantambah', 'store')->name('pengumuman.Tambah');
+});
