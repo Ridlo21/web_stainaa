@@ -19,6 +19,7 @@
     <link href="{{ asset('assets') }}/fonts/feather/feather.css" rel="stylesheet" />
     <link href="{{ asset('assets') }}/libs/bootstrap-icons/font/bootstrap-icons.min.css" rel="stylesheet" />
     <link href="{{ asset('assets') }}/libs/simplebar/dist/simplebar.min.css" rel="stylesheet" />
+    <link href="{{ asset('assets') }}/summernote/summernote-bs5.min.css" rel="stylesheet">
     <link href="{{ asset('assets') }}/css/style.css" rel="stylesheet" />
     <link  href="{{ asset('assets') }}/crooper/cropper.css" rel="stylesheet">
 
@@ -30,6 +31,7 @@
     <script src="{{ asset('assets') }}/sweetalert2/sweetalert2.all.min.js"></script>
     <script src="{{ asset('assets') }}/parsleyjs/parsley.min.js"></script>
     <script src="{{ asset('assets') }}/parsleyjs/i18n/id.js"></script>
+    <script src="{{ asset('assets') }}/summernote/summernote-bs5.min.js"></script>
     <title>@yield('title')</title>
 </head>
 
@@ -64,78 +66,6 @@
                             <span>Cover</span>
                         </a>
                     </li>
-                    <!-- Nav item -->
-                    <li class="nav-item">
-                        <a class="nav-link  collapsed " href="#" data-bs-toggle="collapse"
-                            data-bs-target="#navecommerce" aria-expanded="false" aria-controls="navecommerce">
-                            <i class="nav-icon fe fe-shopping-bag me-2"></i>
-                            Ecommerce
-                        </a>
-                        <div id="navecommerce" class="collapse " data-bs-parent="#sideNavbar">
-                            <ul class="nav flex-column">
-                                <li class="nav-item">
-                                    <a class="nav-link  collapsed " href="#" data-bs-toggle="collapse"
-                                        data-bs-target="#navproduct" aria-expanded="false" aria-controls="navproduct">
-                                        Product
-                                    </a>
-                                    <div id="navproduct" class="collapse " data-bs-parent="#navProduct">
-                                        <ul class="nav flex-column">
-                                            <li class="nav-item">
-                                                <a class="nav-link " href="ecommerce/product-grid.html">Grid</a>
-                                            </li>
-                                            <li class="nav-item">
-                                                <a class="nav-link "
-                                                    href="ecommerce/product-grid-with-sidebar.html">Grid Sidebar</a>
-                                            </li>
-                                            <li class="nav-item">
-                                                <a class="nav-link " href="ecommerce/products.html">Products</a>
-                                            </li>
-                                            <li class="nav-item">
-                                                <a class="nav-link " href="ecommerce/product-single.html">Product
-                                                    Single</a>
-                                            </li>
-                                            <li class="nav-item">
-                                                <a class="nav-link " href="ecommerce/product-single-v2.html">Product
-                                                    Single v2</a>
-                                            </li>
-                                            <li class="nav-item">
-                                                <a class="nav-link " href="ecommerce/add-product.html">Add Product</a>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link " href="ecommerce/shopping-cart.html">Shopping Cart</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link " href="ecommerce/checkout.html">Checkout</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link " href="ecommerce/order.html">Order</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link " href="ecommerce/order-single.html">Order Single</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link " href="ecommerce/order-history.html">Order History</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link " href="ecommerce/order-summary.html">Order Summary</a>
-                                </li>
-
-                                <li class="nav-item">
-                                    <a class="nav-link " href="ecommerce/customers.html">Customers</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link " href="ecommerce/customer-single.html">Customer Single</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link " href="ecommerce/add-customer.html">Add Customer</a>
-                                </li>
-                            </ul>
-                        </div>
-                    </li>
-                    <!-- Nav item -->
                     <li class="nav-item">
                         <a class="nav-link " href="{{ url('/personalBrand') }}">
                             <span>
@@ -154,6 +84,23 @@
                             </span>
                             <span class="ms-2">Personal Branding</span>
                         </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link  collapsed " href="#" data-bs-toggle="collapse"
+                            data-bs-target="#navecommerce" aria-expanded="false" aria-controls="navecommerce">
+                            <i class="nav-icon fe fe-shopping-bag me-2"></i>
+                            Pengumuman
+                        </a>
+                        <div id="navecommerce" class="collapse " data-bs-parent="#sideNavbar">
+                            <ul class="nav flex-column">
+                                <li class="nav-item">
+                                    <a class="nav-link " href="ecommerce/shopping-cart.html">Mod Pengumuman</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link " href="{{ route('pengumuman.list') }}">Pengumuman</a>
+                                </li>
+                            </ul>
+                        </div>
                     </li>
                     <!-- Nav item -->
                     <li class="nav-item">

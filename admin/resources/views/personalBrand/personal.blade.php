@@ -22,7 +22,10 @@
                         <button type="button" id="btTambah" class="btn btn-sm btn-success">Tambah Data</button>
                     </div>
                     <div>
-                        <input type="search" class="form-control" placeholder="Cari" />
+                        <form action="{{ route('personal.Brand') }}" method="GET">
+                            <input type="search" id="searchInput" class="form-control" name="search" placeholder="Cari"
+                                value="{{ old('search', $search) }}" oninput="this.form.submit()" autocomplete="off" />
+                        </form>
                     </div>
                 </div>
             </div>
@@ -61,9 +64,11 @@
                                                                 <i class="fe fe-edit dropdown-item-icon"></i>
                                                                 Edit
                                                             </a>
-                                                            <a class="dropdown-item" href="#">
+                                                            <a class="dropdown-item btNonaktif" style="cursor: pointer"
+                                                                data="{{ $item->id_personal_branding }}"
+                                                                alamat="{{ route('personal.nonaktif') }}">
                                                                 <i class="fe fe-trash dropdown-item-icon"></i>
-                                                                Hapus
+                                                                Nonaktifkan
                                                             </a>
                                                         </div>
                                                     </div>
@@ -100,8 +105,17 @@
                     </div>
                 </div>
             </div>
+        </div>
     </section>
     <script>
+        let timeout = null;
+        document.getElementById('searchInput').addEventListener('input', function() {
+            clearTimeout(timeout);
+            timeout = setTimeout(function() {
+                document.querySelector('form').submit();
+            }, 800);
+        });
+
         $(document).ready(function() {
             $('#btTambah').on('click', function() {
                 window.location.href = "{{ route('personalBrand.Add') }}"
@@ -110,6 +124,44 @@
             $('.btEdit').on('click', function() {
                 var id = $(this).attr('data')
                 window.location.href = "{{ url('personalBrandEdit') }}/" + id
+            })
+
+            $('.btNonaktif').on('click', function() {
+                var url = $(this).attr("alamat")
+                var id = $(this).attr("data")
+                Swal.fire({
+                    title: "Apakah anda yakin?",
+                    text: "Anda tidak dapat mengembalikan ini!",
+                    icon: "warning",
+                    showCancelButton: true,
+                    confirmButtonColor: "#3085d6",
+                    cancelButtonColor: "#d33",
+                    confirmButtonText: "Ya, nonaktifkan"
+                }).then((result) => {
+                    if (result.isConfirmed) {
+                        $('#spinnerWrapper').css('display', 'flex')
+                        $.ajax({
+                            type: 'POST',
+                            url: url,
+                            data: {
+                                "_token": "{{ csrf_token() }}",
+                                "id": id
+                            },
+                            success: function(response) {
+                                $('#spinnerWrapper').css('display', 'none')
+                                swal.fire({
+                                    title: "Berhasil",
+                                    text: response.message,
+                                    icon: "success"
+                                }).then(function() {
+                                    $('#spinnerWrapper').css('display', 'flex')
+                                    window.location.href =
+                                        "{{ url('/personalBrand') }}"
+                                })
+                            }
+                        })
+                    }
+                })
             })
         })
     </script>
