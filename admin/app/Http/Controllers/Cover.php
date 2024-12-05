@@ -30,7 +30,19 @@ class Cover extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $imageName = uniqid().time().'.png';
+        $request->croppedImg->move(public_path('/image/cover/'), $imageName);
+
+        $data["nama_cover"] = $request->nama;
+        $data["cover"] = $imageName;
+        $data["tanggal"] = date('Y-m-d h:i:s');
+        $data["status"] = "aktif";
+        $insert = DB::table('cover')->insert($data);
+
+        if ($insert) {
+            //redirect to index
+            return redirect()->route('cover.index')->with(['success' => 'Data Berhasil Dihapus!']);
+        }
     }
 
     /**
@@ -62,6 +74,13 @@ class Cover extends Controller
      */
     public function destroy(string $id)
     {
-        //
+
+
+       $data = DB::table('cover')->where('id_cover',$id)->first();
+       $deleteImage = unlink(public_path('/image/cover/'.$data->cover));
+       $deleteData = DB::table('cover')->where('id_cover', $id)->delete();
+
+        //redirect to index
+        return redirect()->route('cover.index')->with(['success' => 'Data Berhasil Dihapus!']);
     }
 }

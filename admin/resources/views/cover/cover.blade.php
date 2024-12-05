@@ -4,6 +4,11 @@
     Cover
 @endsection
 
+<?php 
+    $dataCount = DB::table('cover')->where('status','aktif')->count();
+    $dataProgres = $dataCount*25;
+?>
+
 @section('konten')
     <section class="container-fluid p-4">
         <div class="row">
@@ -17,56 +22,58 @@
             </div>
         </div>
         <div class="row">
-            <div class="card">
-                <div class="row">
-                <div class="col-md-12">
+            <div class="col-md-12">
+                <div class="card">
                     <div class="border-bottom p-4 d-flex flex-column gap-3">
-                    <div class="d-flex flex-column gap-4">
-                        <div class="col-lg-12">
-                            <div class="row">
-                                <div class="col-6">
-                                    <a href="{{ route('cover.create') }}" class="btn btn-sm btn-success">Tambah Data</a>
+                        <div class="d-flex flex-column gap-4">
+                            <div class="col-lg-12">
+                                <div class="row">
+                                    <div class="col-6">
+                                        @if ($dataCount==4)
+                                        <a href='#' class='btn btn-sm btn-danger'>Data Sudah Maksimal Harap dihapus jika ingin menambahkan</a>
+                                        @else
+                                        <a href="{{ route('cover.create') }}" class="btn btn-sm btn-success">Tambah Data</a>
+                                        @endif
+                                    </div>
+                                    <div class="col-6">
+                                        <h1 class="mb-0 h3 fw-bold text-center">Cover Website maksimal hanya 4</h1>
+                                    </div>
                                 </div>
-                                <div class="col-6">
-                                    <h1 class="mb-0 h3 fw-bold text-center">Cover Website maksimal hanya 4</h1>
+                            </div>
+                            <div class="d-flex justify-content-between">
+                                <div>
+                                    <span>
+                                        (<?= $dataCount;?> isi)
+                                    </span>
+                                </div>
+                                <div>
+                                    <span>
+                                        (<?= 4-$dataCount;?> kosong)
+                                    </span>
                                 </div>
                             </div>
                         </div>
-                        <div class="d-flex justify-content-between">
-                        <div>
-                            <span>
-                            (3 aktif)
-                            </span>
-                        </div>
-                        <div>
-                            <span>
-                            1 non aktif
-                            </span>
-                        </div>
+                        <div class="progress" style="height: 8px">
+                            <div class="progress-bar" role="progressbar" style="width: <?= $dataProgres ?>%" aria-valuenow="90"
+                                aria-valuemin="0" aria-valuemax="100"></div>
+                            <div class="progress-bar bg-danger" role="progressbar" style="<?= $dataProgres-25?>%" aria-valuenow="10"
+                                aria-valuemin="0" aria-valuemax="100"></div>
                         </div>
                     </div>
-                    <div class="progress" style="height: 8px">
-                        <div class="progress-bar" role="progressbar" style="width: <?= 4?>%" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
-                        <div class="progress-bar bg-danger" role="progressbar" style="width: 10%" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100"></div>
-                    </div>
-                    </div>
-                </div>
                 </div>
             </div>
-            <div class="col-md-12 col-12 mt-3">
-                <div class="row gy-4">
+            <div class="col-md-12 mt-3">
+                <div class="row gy-3">
                     @foreach ($data as $item)
-                        <div class="col-xxl-3 col-xl-4 col-lg-6 col-12">
+                        <div class="col-xxl-6 col-xl-6 col-lg-6 col-12">
                             <div class="card h-100">
                                 <div class="card-body">
-                                    <div class="d-flex flex-column gap-4">
-                                        <div class="d-flex flex-column gap-3">
+                                    <div class="d-flex flex-column ">
+                                        <div class="d-flex flex-column">
                                             <div class="d-flex align-items-center justify-content-between">
                                                 <div>
                                                     <h4 class="mb-0">
-                                                        <a href="#" class="text-inherit">
-                                                            {{ $item->nama_cover }}
-                                                        </a>
+                                                        {{ $item->nama_cover }}
                                                     </h4>
                                                 </div>
                                                 <div class="d-flex align-items-center">
@@ -79,23 +86,20 @@
                                                         </a>
                                                         <div class="dropdown-menu" aria-labelledby="dropdownProjectOne">
                                                             <span class="dropdown-header">Settings</span>
-                                                            <a class="dropdown-item btEdit" style="cursor: pointer"
-                                                                data="{{ $item->cover }}">
-                                                                <i class="fe fe-edit dropdown-item-icon"></i>
-                                                                Edit
-                                                            </a>
-                                                            <a class="dropdown-item" href="#">
-                                                                <i class="fe fe-trash dropdown-item-icon"></i>
-                                                                Hapus
-                                                            </a>
+                                                            <form action="{{route('cover.destroy',$item->id_cover)}}" method="post">
+                                                                @csrf
+                                                                @method('DELETE')
+                                                                <button type="submit" class="dropdown-item">
+                                                                    <i class="fe fe-trash dropdown-item-icon"></i>
+                                                                    Hapus
+                                                                </button>
+                                                            </form>
                                                         </div>
                                                     </div>
                                                 </div>
                                             </div>
                                             <div class="">
-                                                <p class="mb-0">
-                                                    {{ $item->nama_cover }}
-                                                </p>
+                                                <img src="{{asset('image')}}/cover/{{ $item->cover }}" class="img-fluid" alt="">
                                             </div>
                                         </div>
                                     </div>
@@ -122,5 +126,23 @@
             </div>
         </div>
     </section>
-  
+    <script>
+        @if(session('success'))
+            Swal.fire({
+                icon: "success",
+                title: "BERHASIL",
+                text: "{{ session('success') }}",
+                showConfirmButton: false,
+                timer: 2000
+            });
+        @elseif(session('error'))
+            Swal.fire({
+                icon: "error",
+                title: "GAGAL!",
+                text: "{{ session('error') }}",
+                showConfirmButton: false,
+                timer: 2000
+            });
+        @endif
+    </script>
 @endsection
