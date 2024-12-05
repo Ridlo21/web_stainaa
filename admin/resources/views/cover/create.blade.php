@@ -16,111 +16,154 @@
                 </div>
             </div>
         </div>
-        {{-- <div class="row">
-            <div class="card">
-                <div class="row">
-                <div class="col-md-12">
-                    <div class="border-bottom p-4 d-flex flex-column gap-3">
-                    <div class="d-flex flex-column gap-4">
-                        <div class="col-lg-12">
-                            <div class="row">
-                                <div class="col-6">
-                                    <a href="{{route('')}}" class="btn btn-sm btn-success">Tambah Data</button>
-                                </div>
-                                <div class="col-6">
-                                    <h1 class="mb-0 h3 fw-bold text-center">Cover Website maksimal hanya 4</h1>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="d-flex justify-content-between">
-                        <div>
-                            <span>
-                            (3 aktif)
-                            </span>
-                        </div>
-                        <div>
-                            <span>
-                            1 non aktif
-                            </span>
-                        </div>
-                        </div>
-                    </div>
-                    <div class="progress" style="height: 8px">
-                        <div class="progress-bar" role="progressbar" style="width: <?= 4?>%" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
-                        <div class="progress-bar bg-danger" role="progressbar" style="width: 10%" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100"></div>
-                    </div>
-                    </div>
+        
+        <div class="row">
+          <div class="col-xl-12 col-lg-8 col-md-12 col-12">
+            <!-- Card -->
+            <div class="card border-0">
+              <!-- Card header -->
+              <div class="card-header">
+                <h4 class="mb-0">Create Post</h4>
+              </div>
+              <form class="needs-validation" method="POST" action="{{ route('cover.store')}}" enctype="multipart/form-data" novalidate>
+                @csrf
+                <div class="card-body">
+                  <div class="mb-3 col-md-12">
+
+                    <label class="form-label" for="option1">
+                      <i class="fe fe-image me-1 "></i>
+                      Photo
+                    </label>
+                    <input type="file" id="selectedImg" class="form-control" accept="image/png, image/gif, image/jpeg" required>
+                    <input type="file" id="croppedImg" name="croppedImg" class="form-control" hidden>
+                    <div id="my-dropzone" class="dropzone mt-4 border-dashed"></div>
+                  </div>
+                  <!-- Add the "Upload" button -->
+                  <div class="mt-4">
+                      <div class="mb-3 col-md-12">
+                        <!-- Title -->
+                        <label for="postTitle" class="form-label">Title</label>
+                        <input type="text" id="postTitle" class="form-control text-dark" placeholder="Post Title"
+                          required name="nama" />
+                        <small>Keep your post titles under 60 characters. Write heading that describe the topic content.
+                          Contextualize for Your Audience.</small>
+                        <div class="invalid-feedback">Please enter title.</div>
+                      </div>
+                  </div>
+                  <!-- button -->
+                  <button type="submit" class="btn btn-primary">Save</button>
+                  <a type="button" href="{{route('cover.index')}}" class="btn btn-danger">batal</a>
                 </div>
-                </div>
+              </form>
             </div>
-            <div class="col-md-12 col-12 mt-3">
-                <div class="row gy-4">
-                    @foreach ($data as $item)
-                        <div class="col-xxl-3 col-xl-4 col-lg-6 col-12">
-                            <div class="card h-100">
-                                <div class="card-body">
-                                    <div class="d-flex flex-column gap-4">
-                                        <div class="d-flex flex-column gap-3">
-                                            <div class="d-flex align-items-center justify-content-between">
-                                                <div>
-                                                    <h4 class="mb-0">
-                                                        <a href="#" class="text-inherit">
-                                                            {{ $item->nama_cover }}
-                                                        </a>
-                                                    </h4>
-                                                </div>
-                                                <div class="d-flex align-items-center">
-                                                    <div class="dropdown dropstart">
-                                                        <a href="#"
-                                                            class="btn-icon btn btn-ghost btn-sm rounded-circle"
-                                                            id="dropdownProjectOne" data-bs-toggle="dropdown"
-                                                            aria-haspopup="true" aria-expanded="false">
-                                                            <i class="bi bi-three-dots-vertical"></i>
-                                                        </a>
-                                                        <div class="dropdown-menu" aria-labelledby="dropdownProjectOne">
-                                                            <span class="dropdown-header">Settings</span>
-                                                            <a class="dropdown-item btEdit" style="cursor: pointer"
-                                                                data="{{ $item->cover }}">
-                                                                <i class="fe fe-edit dropdown-item-icon"></i>
-                                                                Edit
-                                                            </a>
-                                                            <a class="dropdown-item" href="#">
-                                                                <i class="fe fe-trash dropdown-item-icon"></i>
-                                                                Hapus
-                                                            </a>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="">
-                                                <p class="mb-0">
-                                                    {{ $item->nama_cover }}
-                                                </p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <!-- card footer -->
-                                <div class="card-footer p-0">
-                                    <div class="d-flex justify-content-between">
-                                        <div class="w-50 py-3 px-4">
-                                            <h6 class="mb-0">Tanggal:</h6>
-                                            <p class="text-dark fs-6 fw-semibold mb-0">
-                                                {{ date('d-M-Y', strtotime($item->tanggal)) }}</p>
-                                        </div>
-                                        <div class="border-start w-50 py-3 px-4">
-                                            <h6 class="mb-0">Status:</h6>
-                                            <span
-                                                class="badge {{ $item->status == 'aktif' ? 'bg-success' : 'bg-danger' }}">{{ $item->status == 'aktif' ? 'Aktif' : 'Tidak Aktif' }}</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    @endforeach
-                </div>
-            </div>
-        </div> --}}
+          </div>
+        </div>
     </section>
+<!-- Modal -->
+<div class="modal fade modal-lg" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" data-bs-backdrop="static">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">Crop Image Cover Website</h1>
+      </div>
+      <div class="modal-body">
+        <div class="d-flex p-2">
+          <div class="p-2">
+            <button id="crop" class="mt-2 mb-2 btn btn-primary" hidden>Crop</button>
+            <button id="batal" class="mt-2 mb-2 btn btn-danger" >batal</button>
+            <button type="submit" id="submit" class="mt-2 mb-2 btn btn-success" disabled>ready</button>
+            <img src="" alt="" id="image" class="img-fluid">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<script>
+  $(function () {
+    setTimeout(() => {
+      $("#pesan").html("")
+    }, 5000);
+  })
+
+  let cropper;
+  document.addEventListener('DOMContentLoaded', () => {
+
+    const imageInput = document.getElementById('selectedImg');
+
+    imageInput.addEventListener('change', () => {
+        $("#submit").attr('disabled',true);
+        // Destroy previous CropperJS instance if it exists
+        if (typeof cropper != 'undefined') {
+            console.log("Destroy previous");
+            cropper.destroy();
+            cropper = null;
+        }
+        const file = imageInput.files[0];
+        if (file && file.type.startsWith('image/')) {
+            const reader = new FileReader();
+            reader.onload = (e) => {
+                // console.log(e,e.target);
+                const imgResult = e.target.result;
+
+                const image = document.getElementById('image');
+                image.src = imgResult;
+                cropper = new Cropper(image, {
+                    aspectRatio: 16/9,
+                    cropBoxResizable: false,
+                    cropBoxMovable: true,
+                    crop(event) {
+                        $("#submit").attr('disabled',true);
+                    }
+                });
+                $("#crop").attr('hidden',false);
+            };
+            reader.readAsDataURL(file);
+        }
+    });
+});
+
+$('#selectedImg').on('click', function () {
+    $('#exampleModal').modal('show'); 
+})
+
+$("#batal").click(function () {
+  $('#exampleModal').modal('hide'); 
+  $('#image').val(""); 
+  $('#croppedImage').val("")
   
+})
+
+$("#crop").click(function () {
+    let canvas = cropper.getCroppedCanvas();
+    canvas.toBlob(function (blob) {
+        const file = new File([blob], 'croppedImage.png', { type: blob.type });
+        const dataTransfer = new DataTransfer();
+        dataTransfer.items.add(file);
+        const croppedImageInput = $("input[name='croppedImg']");
+        croppedImageInput[0].files = dataTransfer.files;
+        $("#submit").attr('disabled',false);
+        $('#exampleModal').modal('hide');
+    });
+
+});
+
+  @if(session('success'))
+      Swal.fire({
+          icon: "success",
+          title: "BERHASIL",
+          text: "{{ session('success') }}",
+          showConfirmButton: false,
+          timer: 2000
+      });
+  @elseif(session('error'))
+      Swal.fire({
+          icon: "error",
+          title: "GAGAL!",
+          text: "{{ session('error') }}",
+          showConfirmButton: false,
+          timer: 2000
+      });
+  @endif
+</script>
 @endsection

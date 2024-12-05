@@ -20,6 +20,7 @@
     <link href="{{ asset('assets') }}/libs/bootstrap-icons/font/bootstrap-icons.min.css" rel="stylesheet" />
     <link href="{{ asset('assets') }}/libs/simplebar/dist/simplebar.min.css" rel="stylesheet" />
     <link href="{{ asset('assets') }}/css/style.css" rel="stylesheet" />
+    <link  href="{{ asset('assets') }}/crooper/cropper.css" rel="stylesheet">
 
     <!-- Theme CSS -->
     <link rel="stylesheet" href="{{ asset('assets') }}/css/theme.min.css">
@@ -533,6 +534,7 @@
     <script src="{{ asset('assets') }}/libs/flatpickr/dist/flatpickr.min.js"></script>
     <script src="{{ asset('assets') }}/js/vendors/flatpickr.js"></script>
     <!-- Libs JS -->
+    <script src="{{ asset('assets') }}/crooper/cropper.js"></script>
 </body>
 
 
