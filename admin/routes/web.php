@@ -6,6 +6,7 @@ use App\Http\Controllers\Home;
 use App\Http\Controllers\PersonalBrandController;
 use App\Http\Controllers\Cover;
 use App\Http\Controllers\PengumumanController;
+use App\Http\Controllers\Tentang;
 
 Route::get('/', [Login::class, 'index']);
 Route::get('/home', [Home::class, 'index']);
@@ -27,4 +28,13 @@ Route::controller(PengumumanController::class)->group(function () {
     Route::get('/pengumumanList', 'index')->name('pengumuman.list');
     Route::get('/pengumumanAdd', 'create')->name('pengumuman.Add');
     Route::post('pengumumantambah', 'store')->name('pengumuman.Tambah');
+});
+
+Route::controller(Tentang::class)->group(function () {
+    Route::get('/tentangModIndex', 'modIndex')->name('tentang.modIndex');
+    Route::get('/tentangModAdd', 'modCreate')->name('tentang.modCreate');
+    Route::get('/tentangModShow/{id}', 'modShow')->name('tentang.modShow');
+    Route::post('/tentangModInsert', 'modStore')->name('tentang.modStore');
+    Route::post('/tentangModUpdate', 'modUpdate')->name('tentang.modUpdate');
+    Route::post('/tentangModDelete', 'modDestroy')->name('tentang.modDestroy');
 });
