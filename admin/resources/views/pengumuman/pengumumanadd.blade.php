@@ -61,7 +61,7 @@
                                         </div>
                                     </div>
                                     <div class="row">
-                                        <span><i class="text-danger">*</i><i> gambar harus berjenis png/jpg serta memiliki
+                                        <span><i class="text-danger">*</i><i> gambar harus berjenis jpg serta memiliki
                                                 aspek
                                                 rasio
                                                 16:9</i></span>
@@ -88,7 +88,7 @@
                                         </div>
                                     </div>
                                     <div class="row">
-                                        <span><i class="text-danger">*</i><i> gambar harus berjenis png/jpg serta memiliki
+                                        <span><i class="text-danger">*</i><i> gambar harus berjenis jpg serta memiliki
                                                 aspek
                                                 rasio
                                                 16:9</i></span>
