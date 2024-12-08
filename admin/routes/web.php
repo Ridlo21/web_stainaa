@@ -37,4 +37,11 @@ Route::controller(Tentang::class)->group(function () {
     Route::post('/tentangModInsert', 'modStore')->name('tentang.modStore');
     Route::post('/tentangModUpdate', 'modUpdate')->name('tentang.modUpdate');
     Route::post('/tentangModDelete', 'modDestroy')->name('tentang.modDestroy');
+    Route::get('/tentangProfilIndex', 'profilIndex')->name('tentang.profilIndex');
+    Route::get('/tentangProfilAdd', 'profilCreate')->name('tentang.profilCreate');
+    Route::post('/tentangProfilInsert', 'profilStore')->name('tentang.profilStore');
+    Route::get('/tentangProfilShow/{id}', 'profilShow')->name('tentang.profilShow');
+    Route::get('/tentangProfilDetail/{id}', 'profilDetail')->name('tentang.profilDetail');
+    Route::post('/tentangProfilUpdate', 'profilUpdate')->name('tentang.profilUpdate');
+    Route::post('/tentangProfilDelete', 'profilDestroy')->name('tentang.profilDestroy');
 });

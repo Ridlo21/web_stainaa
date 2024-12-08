@@ -1,7 +1,6 @@
 <!doctype html>
 <html lang="en">
 
-
 <head>
     <link rel="stylesheet" href="{{ asset('assets') }}/libs/flatpickr/dist/flatpickr.min.css" />
     <!-- Required meta tags -->
@@ -114,7 +113,7 @@
                                     <a class="nav-link " href="{{route('tentang.modIndex')}}">Mod Tentang</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link " href="{{ route('pengumuman.list') }}">Pengumuman</a>
+                                    <a class="nav-link " href="{{ route('tentang.profilIndex') }}">Profil</a>
                                 </li>
                             </ul>
                         </div>
