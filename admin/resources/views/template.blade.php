@@ -115,6 +115,18 @@
                                 <li class="nav-item">
                                     <a class="nav-link " href="{{ route('tentang.profilIndex') }}">Profil</a>
                                 </li>
+                                <li class="nav-item">
+                                    <a class="nav-link " href="{{ route('tentang.sejarahIndex') }}">Sejarah</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link " href="{{ route('tentang.visiIndex') }}">Visi</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link " href="{{ route('tentang.misiIndex') }}">Misi</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link " href="{{ route('tentang.mottoIndex') }}">Motto</a>
+                                </li>
                             </ul>
                         </div>
                     </li>

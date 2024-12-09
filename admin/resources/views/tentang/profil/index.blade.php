@@ -3,27 +3,6 @@
 @section('title')
     Profil
 @endsection
-
-<style>
-* {
-    margin: 0px;
-    padding: 0px;
-}
-
-.Main-Text:hover + .Extra-Text {
-    display: block;
-}
-
-.Extra-Text {
-    background-color: #FFFFFF;
-    margin-top: 10px;
-    width: 200px;
-    border: 2px solid #000000;
-    padding: 10px;
-    font-size: 16px;
-    display: none;
-}
-</style>
 @section('konten')
     <!-- Container fluid -->
     <section class="container-fluid p-4">
@@ -109,7 +88,7 @@
                                         <a href="#" class="btn-icon btn btn-ghost btn-sm rounded-circle"
                                             id="dropdownProjectOne" data-bs-toggle="dropdown" aria-haspopup="true"
                                             aria-expanded="false" title="selengkapnya">
-                                            <i class="bi bi-caret-right-square-fill"></i>
+                                            <i class="bi bi-chat-right-text-fill"></i>
                                         </a>
                                         <div class="dropdown-menu" aria-labelledby="dropdownProjectOne" style="width: 600px">
                                             <span class="dropdown-header">Biografi</span>

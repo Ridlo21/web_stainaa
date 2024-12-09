@@ -37,6 +37,7 @@ Route::controller(Tentang::class)->group(function () {
     Route::post('/tentangModInsert', 'modStore')->name('tentang.modStore');
     Route::post('/tentangModUpdate', 'modUpdate')->name('tentang.modUpdate');
     Route::post('/tentangModDelete', 'modDestroy')->name('tentang.modDestroy');
+    // profil
     Route::get('/tentangProfilIndex', 'profilIndex')->name('tentang.profilIndex');
     Route::get('/tentangProfilAdd', 'profilCreate')->name('tentang.profilCreate');
     Route::post('/tentangProfilInsert', 'profilStore')->name('tentang.profilStore');
@@ -44,4 +45,33 @@ Route::controller(Tentang::class)->group(function () {
     Route::get('/tentangProfilDetail/{id}', 'profilDetail')->name('tentang.profilDetail');
     Route::post('/tentangProfilUpdate', 'profilUpdate')->name('tentang.profilUpdate');
     Route::post('/tentangProfilDelete', 'profilDestroy')->name('tentang.profilDestroy');
+    // sejarah
+    Route::get('/tentangSejarahIndex', 'sejarahIndex')->name('tentang.sejarahIndex');
+    Route::get('/tentangSejarahAdd', 'sejarahCreate')->name('tentang.sejarahCreate');
+    Route::post('/tentangSejarahInsert', 'sejarahStore')->name('tentang.sejarahStore');
+    Route::get('/tentangSejarahShow/{id}', 'sejarahShow')->name('tentang.sejarahShow');
+    Route::post('/tentangSejarahUpdate', 'sejarahUpdate')->name('tentang.sejarahUpdate');
+    Route::post('/tentangSejarahDelete', 'sejarahDestroy')->name('tentang.sejarahDestroy');
+    // Visi
+    Route::get('/tentangVisiIndex', 'visiIndex')->name('tentang.visiIndex');
+    Route::get('/tentangVisiAdd', 'visiCreate')->name('tentang.visiCreate');
+    Route::post('/tentangVisiInsert', 'visiStore')->name('tentang.visiStore');
+    Route::get('/tentangVisiShow/{id}', 'visiShow')->name('tentang.visiShow');
+    Route::post('/tentangVisiUpdate', 'visiUpdate')->name('tentang.visiUpdate');
+    Route::post('/tentangVisiDelete', 'visiDestroy')->name('tentang.visiDestroy');
+    // Misi
+    Route::get('/tentangMisiIndex','misiIndex')->name('tentang.misiIndex');
+    Route::get('/tentangMisiAdd', 'misiCreate')->name('tentang.misiCreate');
+    Route::post('/tentangMisiInsert', 'misiStore')->name('tentang.misiStore');
+    Route::get('/tentangMisiShow/{id}', 'misiShow')->name('tentang.misiShow');
+    Route::post('/tentangMisiUpdate', 'misiUpdate')->name('tentang.misiUpdate');
+    Route::post('/tentangMisiDelete', 'misiDestroy')->name('tentang.misiDestroy');
+    // Motto
+    Route::get('/tentangMottoIndex','mottoIndex')->name('tentang.mottoIndex');
+    Route::get('/tentangMottoAdd', 'mottoCreate')->name('tentang.mottoCreate');
+    Route::post('/tentangMottoInsert', 'mottoStore')->name('tentang.mottoStore');
+    Route::get('/tentangMottoShow/{id}', 'mottoShow')->name('tentang.mottoShow');
+    Route::post('/tentangMottoUpdate', 'mottoUpdate')->name('tentang.mottoUpdate');
+    Route::post('/tentangMottoDelete', 'mottoDestroy')->name('tentang.mottoDestroy');
+
 });

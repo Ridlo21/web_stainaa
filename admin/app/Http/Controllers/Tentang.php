@@ -135,4 +135,200 @@ class Tentang extends Controller
             return response()->json(['message' => 'Data Berhasil Dihapus !']);
         }
     }
+
+    public function sejarahIndex() : View 
+    {
+        $data = DB::table('tentang_sejarah')->where('status','aktif')->get();
+        return view('tentang.sejarah.index', compact("data"));
+    }
+
+    public function sejarahCreate() : View 
+    {
+        return view('tentang.sejarah.create');
+    }
+
+    public function sejarahStore(Request $req) 
+    {
+        $data["judul"] = $req->judul;
+        $data["sub_judul"] = $req->subJudul;
+        $data["isi_sejarah"] =  $req->isi;
+        $data["penulis"] =  $req->penulis;
+        $data["tanggal"] = $req->tanggal;
+        $data["status"] = "aktif";
+        $insert = DB::table('tentang_sejarah')->insert($data);
+        if ($insert) {
+            return response()->json(['message' => 'Data Berhasil Disimpan']);
+        }
+    }
+
+    public function sejarahShow($id) 
+    {
+        return view('tentang.sejarah.update', compact('id'));
+    }
+
+    public function sejarahUpdate(Request $req) 
+    {
+        $data["judul"] = $req->judul;
+        $data["sub_judul"] = $req->subJudul;
+        $data["isi_sejarah"] =  $req->isi;
+        $data["penulis"] =  $req->penulis;
+        $data["tanggal"] = $req->tanggal;
+        $data["status"] = "aktif";
+        $update = DB::table('tentang_sejarah')->where('id_tentang_sejarah', $req->id)->update($data);
+        if ($update) {
+            return response()->json(['message' => 'Data Berhasil Diedit']);
+        }
+    }
+
+    public function sejarahDestroy(Request $req)
+    {
+        $id = $req->id;
+        $destroy = DB::table('tentang_sejarah')
+            ->where('id_tentang_sejarah', $id)
+            ->update(['status' => 'tidak']);
+        if ($destroy) {
+            return response()->json(['message' => 'Data Berhasil Dihapus !']);
+        }
+    }
+
+    public function visiIndex() : View 
+    {
+        $data = DB::table('tentang_visi')->where('status','aktif')->get();
+        return view('tentang.visi.index', compact("data"))->with('no', 1);
+    }
+
+    public function visiCreate() : View 
+    {
+        return view('tentang.visi.create');
+    }
+
+    public function visiStore(Request $req) 
+    {
+        $data["isi_visi"] =  $req->visi;
+        $data["tanggal"] = date('Y-m-d h:i:s');
+        $data["status"] = "aktif";
+        $insert = DB::table('tentang_visi')->insert($data);
+        if ($insert) {
+            return response()->json(['message' => 'Data Berhasil Disimpan']);
+        }
+    }
+
+    public function visiShow($id) 
+    {
+        return view('tentang.visi.update', compact('id'));
+    }
+
+    public function visiUpdate(Request $req) 
+    {
+        $data["isi_visi"] =  $req->visi;
+        $update = DB::table('tentang_visi')->where('id_tentang_visi', $req->id)->update($data);
+        if ($update) {
+            return response()->json(['message' => 'Data Berhasil Diedit']);
+        }
+    }
+
+    public function visiDestroy(Request $req)
+    {
+        $id = $req->id;
+        $destroy = DB::table('tentang_visi')
+            ->where('id_tentang_visi', $id)
+            ->update(['status' => 'tidak']);
+        if ($destroy) {
+            return response()->json(['message' => 'Data Berhasil Dihapus !']);
+        }
+    }
+
+    public function misiIndex() : View 
+    {
+        $data = DB::table('tentang_misi')->where('status','aktif')->get();
+        return view('tentang.misi.index', compact("data"))->with('no', 1);
+    }
+
+    public function misiCreate() : View 
+    {
+        return view('tentang.misi.create');
+    }
+
+    public function misiStore(Request $req) 
+    {
+        $data["isi_misi"] =  $req->misi;
+        $data["tanggal"] = date('Y-m-d h:i:s');
+        $data["status"] = "aktif";
+        $insert = DB::table('tentang_misi')->insert($data);
+        if ($insert) {
+            return response()->json(['message' => 'Data Berhasil Disimpan']);
+        }
+    }
+
+    public function misiShow($id) 
+    {
+        return view('tentang.misi.update', compact('id'));
+    }
+
+    public function misiUpdate(Request $req) 
+    {
+        $data["isi_misi"] =  $req->misi;
+        $update = DB::table('tentang_misi')->where('id_tentang_misi', $req->id)->update($data);
+        if ($update) {
+            return response()->json(['message' => 'Data Berhasil Diedit']);
+        }
+    }
+
+    public function misiDestroy(Request $req)
+    {
+        $id = $req->id;
+        $destroy = DB::table('tentang_misi')
+            ->where('id_tentang_misi', $id)
+            ->update(['status' => 'tidak']);
+        if ($destroy) {
+            return response()->json(['message' => 'Data Berhasil Dihapus !']);
+        }
+    }
+
+    public function mottoIndex() : View 
+    {
+        $data = DB::table('tentang_motto')->where('status','aktif')->get();
+        return view('tentang.motto.index', compact("data"))->with('no', 1);
+    }
+
+    public function mottoCreate() : View 
+    {
+        return view('tentang.motto.create');
+    }
+
+    public function mottoStore(Request $req) 
+    {
+        $data["isi_motto"] =  $req->motto;
+        $data["tanggal"] = date('Y-m-d h:i:s');
+        $data["status"] = "aktif";
+        $insert = DB::table('tentang_motto')->insert($data);
+        if ($insert) {
+            return response()->json(['message' => 'Data Berhasil Disimpan']);
+        }
+    }
+
+    public function mottoShow($id) 
+    {
+        return view('tentang.motto.update', compact('id'));
+    }
+
+    public function mottoUpdate(Request $req) 
+    {
+        $data["isi_motto"] =  $req->motto;
+        $update = DB::table('tentang_motto')->where('id_tentang_motto', $req->id)->update($data);
+        if ($update) {
+            return response()->json(['message' => 'Data Berhasil Diedit']);
+        }
+    }
+
+    public function mottoDestroy(Request $req)
+    {
+        $id = $req->id;
+        $destroy = DB::table('tentang_motto')
+            ->where('id_tentang_motto', $id)
+            ->update(['status' => 'tidak']);
+        if ($destroy) {
+            return response()->json(['message' => 'Data Berhasil Dihapus !']);
+        }
+    }
 }
