@@ -1,7 +1,6 @@
 <!doctype html>
 <html lang="en">
 
-
 <head>
     <link rel="stylesheet" href="{{ asset('assets') }}/libs/flatpickr/dist/flatpickr.min.css" />
     <!-- Required meta tags -->
@@ -98,6 +97,35 @@
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link " href="{{ route('pengumuman.list') }}">Pengumuman</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link  collapsed " href="#" data-bs-toggle="collapse"
+                            data-bs-target="#navetentang" aria-expanded="false" aria-controls="navetentang">
+                            <i class="nav-icon fe fe-shopping-bag me-2"></i>
+                            Tentang
+                        </a>
+                        <div id="navetentang" class="collapse " data-bs-parent="#sideNavbar">
+                            <ul class="nav flex-column">
+                                <li class="nav-item">
+                                    <a class="nav-link " href="{{route('tentang.modIndex')}}">Mod Tentang</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link " href="{{ route('tentang.profilIndex') }}">Profil</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link " href="{{ route('tentang.sejarahIndex') }}">Sejarah</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link " href="{{ route('tentang.visiIndex') }}">Visi</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link " href="{{ route('tentang.misiIndex') }}">Misi</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link " href="{{ route('tentang.mottoIndex') }}">Motto</a>
                                 </li>
                             </ul>
                         </div>
