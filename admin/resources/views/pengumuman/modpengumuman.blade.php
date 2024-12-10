@@ -1,6 +1,7 @@
 @extends('template')
+
 @section('title')
-    Personal Branding
+    Mod menu pengumuman
 @endsection
 
 @section('konten')
@@ -10,7 +11,7 @@
                 <div
                     class="border-bottom pb-3 mb-3 d-flex flex-column flex-lg-row gap-3 justify-content-between align-items-lg-center">
                     <div>
-                        <h1 class="mb-0 h2 fw-bold">Personal Branding</h1>
+                        <h1 class="mb-0 h2 fw-bold">Mod Pengumuman</h1>
                     </div>
                 </div>
             </div>
@@ -21,30 +22,25 @@
                     <div>
                         <button type="button" id="btTambah" class="btn btn-sm btn-success">Tambah Data</button>
                     </div>
-                    <div>
-                        <form action="{{ route('personal.Brand') }}" method="GET">
-                            <input type="search" id="searchInput" class="form-control" name="search" placeholder="Cari"
-                                value="{{ old('search', $search) }}" oninput="this.form.submit()" autocomplete="off" />
-                        </form>
-                    </div>
                 </div>
             </div>
             <div class="col-md-12 col-12">
-                <div class="row gy-4">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <p></p>
+                    </div>
+                </div>
+                <div class="row">
                     @foreach ($data as $item)
-                        <div class="col-xxl-3 col-xl-4 col-lg-6 col-12">
-                            <div class="card h-100">
+                        <div class="col-xxl-4 col-xl-4 col-lg-6 col-12">
+                            <div class="card">
+                                <img src="{{ asset('image') }}/mod_pengumuman/{{ $item->gambar }}" class="card-img-top"
+                                    alt="">
                                 <div class="card-body">
                                     <div class="d-flex flex-column gap-4">
                                         <div class="d-flex flex-column gap-3">
                                             <div class="d-flex align-items-center justify-content-between">
-                                                <div>
-                                                    <h4 class="mb-0">
-                                                        <a href="#" class="text-inherit">
-                                                            {{ $item->title }}
-                                                        </a>
-                                                    </h4>
-                                                </div>
+                                                <h5 class="card-title">{{ $item->title }}</h5>
                                                 <div class="d-flex align-items-center">
                                                     <div class="dropdown dropstart">
                                                         <a href="#"
@@ -55,34 +51,28 @@
                                                         </a>
                                                         <div class="dropdown-menu" aria-labelledby="dropdownProjectOne">
                                                             <span class="dropdown-header">Settings</span>
-                                                            {{-- <a class="dropdown-item" href="#">
-                                                                <i class="fe fe-info dropdown-item-icon"></i>
-                                                                Detail
-                                                            </a> --}}
-                                                            <a class="dropdown-item btEdit" style="cursor: pointer"
-                                                                data="{{ $item->id_personal_branding }}">
-                                                                <i class="fe fe-edit dropdown-item-icon"></i>
-                                                                Edit
-                                                            </a>
-                                                            <a class="dropdown-item btNonaktif" style="cursor: pointer"
-                                                                data="{{ $item->id_personal_branding }}"
-                                                                alamat="{{ route('personal.nonaktif') }}">
-                                                                <i class="fe fe-trash dropdown-item-icon"></i>
-                                                                Nonaktifkan
-                                                            </a>
+                                                            @if ($item->status == 'aktif')
+                                                                <a class="dropdown-item btEdit" style="cursor: pointer"
+                                                                    data="{{ $item->id_landing_pengumuman }}">
+                                                                    <i class="fe fe-edit dropdown-item-icon"></i>
+                                                                    Edit
+                                                                </a>
+                                                            @else
+                                                                <a class="dropdown-item btHapus" style="cursor: pointer"
+                                                                    data="{{ $item->id_landing_pengumuman }}"
+                                                                    alamat="{{ route('modpengumuman.hapus') }}">
+                                                                    <i class="fe fe-trash dropdown-item-icon"></i>
+                                                                    Hapus
+                                                                </a>
+                                                            @endif
                                                         </div>
                                                     </div>
                                                 </div>
                                             </div>
-                                            <div class="">
-                                                <p class="mb-0">
-                                                    {{ $item->context }}
-                                                </p>
-                                            </div>
                                         </div>
                                     </div>
+                                    <p class="card-text">{{ $item->descripton }}</p>
                                 </div>
-                                <!-- card footer -->
                                 <div class="card-footer p-0">
                                     <div class="d-flex justify-content-between">
                                         <div class="w-50 py-3 px-4">
@@ -101,6 +91,7 @@
                             </div>
                         </div>
                     @endforeach
+
                     <div class="col-lg-12 col-md-12 col-12">
                         {{ $data->links('pagination::bootstrap-5') }}
                     </div>
@@ -109,25 +100,17 @@
         </div>
     </section>
     <script>
-        let timeout = null;
-        document.getElementById('searchInput').addEventListener('input', function() {
-            clearTimeout(timeout);
-            timeout = setTimeout(function() {
-                document.querySelector('form').submit();
-            }, 800);
-        });
-
         $(document).ready(function() {
             $('#btTambah').on('click', function() {
-                window.location.href = "{{ route('personalBrand.Add') }}"
+                window.location.href = "{{ route('pengumuman.mod.Add') }}"
             })
 
             $('.btEdit').on('click', function() {
                 var id = $(this).attr('data')
-                window.location.href = "{{ url('personalBrandEdit') }}/" + id
+                window.location.href = "{{ url('modpengumumanEdit') }}/" + id
             })
 
-            $('.btNonaktif').on('click', function() {
+            $('.btHapus').on('click', function() {
                 var url = $(this).attr("alamat")
                 var id = $(this).attr("data")
                 Swal.fire({
@@ -137,7 +120,7 @@
                     showCancelButton: true,
                     confirmButtonColor: "#3085d6",
                     cancelButtonColor: "#d33",
-                    confirmButtonText: "Ya, nonaktifkan"
+                    confirmButtonText: "Ya, hapus"
                 }).then((result) => {
                     if (result.isConfirmed) {
                         $('#spinnerWrapper').css('display', 'flex')
@@ -157,7 +140,7 @@
                                 }).then(function() {
                                     $('#spinnerWrapper').css('display', 'flex')
                                     window.location.href =
-                                        "{{ url('/personalBrand') }}"
+                                        "{{ url('/pengumumanMod') }}"
                                 })
                             }
                         })

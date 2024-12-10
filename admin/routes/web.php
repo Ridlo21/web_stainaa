@@ -28,7 +28,17 @@ Route::resource('cover', Cover::class);
 Route::controller(PengumumanController::class)->group(function () {
     Route::get('/pengumumanList', 'index')->name('pengumuman.list');
     Route::get('/pengumumanAdd', 'create')->name('pengumuman.Add');
+    Route::get('/pengumumanEdit/{id}', 'edit')->name('pengumuman.Edit');
+    Route::get('/pengumumanInfo/{id}', 'show')->name('pengumuman.Info');
     Route::post('pengumumantambah', 'store')->name('pengumuman.Tambah');
+    Route::post('pengumumanupdate', 'update')->name('pengumuman.update');
+    Route::post('pengumumannonaktif', 'nonaktifkan')->name('pengumuman.nonaktif');
+    Route::get('/pengumumanMod', 'showMod')->name('pengumuman.mod');
+    Route::get('/pengumumanModAdd', 'createMod')->name('pengumuman.mod.Add');
+    Route::get('/modpengumumanEdit/{id}', 'edit_mod')->name('modpengumuman.Edit');
+    Route::post('modpengumumantambah', 'store_mod')->name('modpengumuman.Tambah');
+    Route::post('modpengumumanupdate', 'update_mod')->name('modpengumuman.update');
+    Route::post('modpengumumanhapus', 'destroy')->name('modpengumuman.hapus');
 });
 
 Route::controller(Tentang::class)->group(function () {

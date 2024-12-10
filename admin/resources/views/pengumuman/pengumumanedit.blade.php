@@ -1,7 +1,7 @@
 @extends('template')
 
 @section('title')
-    Pengumuman | Tambah
+    Pengumuman | Edit
 @endsection
 
 @section('konten')
@@ -18,39 +18,43 @@
         </div>
         <div class="row">
             <div class="col-lg-12 col-md-12 col-sm-12">
-                <form id="form_pengumuman" alamat="{{ route('pengumuman.Tambah') }}" data-parsley-validate
+                <form id="form_pengumuman" alamat="{{ route('pengumuman.update') }}" data-parsley-validate
                     enctype="multipart/form-data" method="POST">
                     {{ csrf_field() }}
+                    <input type="hidden" name="id" value="{{ $data->id_pengumuman }}">
+                    <input type="hidden" name="gambar1_old" value="{{ $data->gambar1 }}">
+                    <input type="hidden" name="gambar2_old" value="{{ $data->gambar2 }}">
                     <div class="card">
                         <div class="card-header pb-1 pt-2">
-                            <h4 class="card-title">Tambah Data Pengumuman</h4>
+                            <h4 class="card-title">Edit Data Pengumuman</h4>
                         </div>
                         <div class="card-body">
                             <div class="row mb-2 align-items-center">
                                 <label for="judul" class="col-sm-2 col-form-label">Judul</label>
                                 <div class="col-sm-10">
                                     <input type="text" class="form-control text-uppercase" required id="judul"
-                                        name="judul" autocomplete="off" placeholder="Judul">
+                                        name="judul" autocomplete="off" placeholder="Judul" value="{{ $data->judul }}">
                                 </div>
                             </div>
                             <div class="row mb-2 align-items-center">
                                 <label for="sub_judul" class="col-sm-2 col-form-label">Sub Judul</label>
                                 <div class="col-sm-10">
                                     <input type="text" class="form-control text-uppercase" required id="sub_judul"
-                                        name="sub_judul" autocomplete="off" placeholder="Sub Judul">
+                                        name="sub_judul" autocomplete="off" placeholder="Sub Judul"
+                                        value="{{ $data->sub_judul }}">
                                 </div>
                             </div>
                             <div class="row mb-2 align-items-center">
                                 <label for="isi_pengumuman" class="col-sm-2 col-form-label">Isi Pengumuman</label>
                                 <div class="col-sm-10">
-                                    <textarea name="isi_pengumuman" required id="isi_pengumuman"></textarea>
+                                    <textarea name="isi_pengumuman" required id="isi_pengumuman"><?= $data->isi_pengumuman ?></textarea>
                                 </div>
                             </div>
                             <div class="row mb-2 align-items-center">
                                 <label for="penulis" class="col-sm-2 col-form-label">Penulis</label>
                                 <div class="col-sm-10">
                                     <input type="text" class="form-control" required id="penulis" name="penulis"
-                                        autocomplete="off" placeholder="Penulis">
+                                        autocomplete="off" placeholder="Penulis" value="{{ $data->penulis }}">
                                 </div>
                             </div>
                             <div class="row mb-2 align-items-center">
@@ -58,6 +62,12 @@
                                 <div class="col-sm-10">
                                     <div class="row">
                                         <div class="col-sm-6">
+                                            @if ($data->gambar1)
+                                                <div class="shadow border border-success rounded image-preview"
+                                                    id="eprev_a"
+                                                    style="height: 250px; background-size: cover; background-repeat: no-repeat; background-image: url('{{ asset('image') }}/pengumuman/{{ $data->gambar1 }}')">
+                                                </div>
+                                            @endif
                                             <div class="shadow border border-success rounded image-preview" id="prev_a"
                                                 style="height: 250px; background-size: cover; background-repeat: no-repeat;">
                                             </div>
@@ -85,6 +95,12 @@
                                 <div class="col-sm-10">
                                     <div class="row">
                                         <div class="col-sm-6">
+                                            @if ($data->gambar2)
+                                                <div class="shadow border border-success rounded image-preview"
+                                                    id="eprev_b"
+                                                    style="height: 250px; background-size: cover; background-repeat: no-repeat; background-image: url('{{ asset('image') }}/pengumuman/{{ $data->gambar2 }}')">
+                                                </div>
+                                            @endif
                                             <div class="shadow border border-success rounded image-preview" id="prev_b"
                                                 style="height: 250px; background-size: cover; background-repeat: no-repeat;">
                                             </div>
@@ -110,15 +126,16 @@
                             <div class="row mb-2 align-items-center">
                                 <label for="ket_gambar" class="col-sm-2 col-form-label">Ket Gambar</label>
                                 <div class="col-sm-10">
-                                    <input type="text" class="form-control" required id="ket_gambar" name="ket_gambar"
-                                        autocomplete="off" placeholder="Keterangan Gambar">
+                                    <input type="text" class="form-control" required id="ket_gambar"
+                                        name="ket_gambar" autocomplete="off" placeholder="Keterangan Gambar"
+                                        value="{{ $data->ket_gambar }}">
                                 </div>
                             </div>
                             <div class="row mb-2 align-items-center">
                                 <label for="tag" class="col-sm-2 col-form-label">Tag</label>
                                 <div class="col-sm-10">
                                     <input type="text" class="form-control" id="tag" required name="tag"
-                                        autocomplete="off" placeholder="Tag">
+                                        autocomplete="off" placeholder="Tag" value="{{ $data->tag }}">
                                 </div>
                             </div>
                         </div>
@@ -163,6 +180,7 @@
                 if (this.files) {
                     var prev = new FileReader()
                     prev.onload = function(e) {
+                        $("#eprev_a").css("display", "none");
                         $("#prev_a").css("display", "block");
                         $("#prev_a").css("background-image", 'url(' + e.target.result + ')');
                         $("#clear_button_a").css("display", "block");
@@ -175,6 +193,7 @@
             $("#clear_button_a").on('click', function() {
                 $("#gambar_a").val("")
                 $("#prev_a").css("display", "none")
+                $("#eprev_a").css("display", "block")
                 $("#clear_button_a").css("display", "none")
             })
 
@@ -183,6 +202,7 @@
                 if (this.files) {
                     var prev = new FileReader()
                     prev.onload = function(e) {
+                        $("#eprev_b").css("display", "none");
                         $("#prev_b").css("display", "block");
                         $("#prev_b").css("background-image", 'url(' + e.target.result + ')');
                         $("#clear_button_b").css("display", "block");
@@ -195,6 +215,7 @@
             $("#clear_button_b").on('click', function() {
                 $("#gambar_b").val("")
                 $("#prev_b").css("display", "none")
+                $("#eprev_b").css("display", "block")
                 $("#clear_button_b").css("display", "none")
             })
 

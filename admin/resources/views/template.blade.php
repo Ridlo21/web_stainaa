@@ -20,7 +20,7 @@
     <link href="{{ asset('assets') }}/libs/simplebar/dist/simplebar.min.css" rel="stylesheet" />
     <link href="{{ asset('assets') }}/summernote/summernote-bs5.min.css" rel="stylesheet">
     <link href="{{ asset('assets') }}/css/style.css" rel="stylesheet" />
-    <link  href="{{ asset('assets') }}/crooper/cropper.css" rel="stylesheet">
+    <link href="{{ asset('assets') }}/crooper/cropper.css" rel="stylesheet">
 
     <!-- Theme CSS -->
     <link rel="stylesheet" href="{{ asset('assets') }}/css/theme.min.css">
@@ -93,7 +93,7 @@
                         <div id="navecommerce" class="collapse " data-bs-parent="#sideNavbar">
                             <ul class="nav flex-column">
                                 <li class="nav-item">
-                                    <a class="nav-link " href="ecommerce/shopping-cart.html">Mod Pengumuman</a>
+                                    <a class="nav-link " href="{{ route('pengumuman.mod') }}">Mod Pengumuman</a>
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link " href="{{ route('pengumuman.list') }}">Pengumuman</a>
