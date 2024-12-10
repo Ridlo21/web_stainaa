@@ -7,6 +7,7 @@ use App\Http\Controllers\PersonalBrandController;
 use App\Http\Controllers\Cover;
 use App\Http\Controllers\PengumumanController;
 use App\Http\Controllers\Tentang;
+use App\Http\Controllers\Pendidikan;
 
 Route::get('/', [Login::class, 'index']);
 Route::get('/home', [Home::class, 'index']);
@@ -73,5 +74,23 @@ Route::controller(Tentang::class)->group(function () {
     Route::get('/tentangMottoShow/{id}', 'mottoShow')->name('tentang.mottoShow');
     Route::post('/tentangMottoUpdate', 'mottoUpdate')->name('tentang.mottoUpdate');
     Route::post('/tentangMottoDelete', 'mottoDestroy')->name('tentang.mottoDestroy');
-
 });
+
+Route::controller(Pendidikan::class)->group(function () {
+    Route::get('/pendidikanModIndex', 'modIndex')->name('pendidikan.modIndex');
+    Route::get('/pendidikanModAdd', 'modCreate')->name('pendidikan.modCreate');
+    Route::get('/pendidikanModShow/{id}', 'modShow')->name('pendidikan.modShow');
+    Route::post('/pendidikanModInsert', 'modStore')->name('pendidikan.modStore');
+    Route::post('/pendidikanModUpdate', 'modUpdate')->name('pendidikan.modUpdate');
+    Route::post('/pendidikanModDelete', 'modDestroy')->name('pendidikan.modDestroy');
+    //education
+    Route::get('/pendidikanEducationIndex', 'educationIndex')->name('pendidikan.educationIndex');
+    Route::get('/pendidikanEducationAdd', 'educationCreate')->name('pendidikan.educationCreate');
+    Route::get('/pendidikanEducationShow/{id}', 'educationShow')->name('pendidikan.educationShow');
+    Route::get('/pendidikanEducationDetail/{id}', 'educationDetail')->name('pendidikan.educationDetail');
+    Route::post('/pendidikanEducationInsert', 'educationStore')->name('pendidikan.educationStore');
+    Route::post('/pendidikanEducationUpdate', 'educationUpdate')->name('pendidikan.educationUpdate');
+    Route::post('/pendidikanEducationDelete', 'educationDestroy')->name('pendidikan.educationDestroy');
+});
+
+
