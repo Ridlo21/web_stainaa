@@ -229,7 +229,7 @@ class BeritaController extends Controller
     }
 
     // Mod
-    public function showMod(Request $request)
+    public function showMod()
     {
 
         $query = DB::table('landing_berita')->orderBy('id_landing_berita', 'DESC');

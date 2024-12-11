@@ -167,6 +167,21 @@
                             </ul>
                         </div>
                     </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link  collapsed " href="#" data-bs-toggle="collapse"
+                            data-bs-target="#navartikel" aria-expanded="false" aria-controls="navartikel">
+                            <i class="nav-icon fe fe-shopping-bag me-2"></i>
+                            Artikel
+                        </a>
+                        <div id="navartikel" class="collapse " data-bs-parent="#sideNavbar">
+                            <ul class="nav flex-column">
+                                <li class="nav-item">
+                                    <a class="nav-link " href="{{ route('artikel.mod') }}">Mod Artikel</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
                     <!-- Nav item -->
                     <li class="nav-item">
                         <div class="nav-divider"></div>

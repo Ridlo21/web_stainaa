@@ -182,7 +182,7 @@
                             icon: "success"
                         }).then(function() {
                             $('#spinnerWrapper').css('display', 'flex')
-                            window.location.href = "{{ route('pengumuman.mod') }}"
+                            window.location.href = "{{ route('berita.mod') }}"
                         })
                     }
                 })

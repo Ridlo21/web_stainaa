@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ArtikelController;
 use App\Http\Controllers\BeritaController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Login;
@@ -118,4 +119,13 @@ Route::controller(BeritaController::class)->group(function () {
     Route::post('modberitatambah', 'store_mod')->name('modberita.Tambah');
     Route::post('modberitaupdate', 'update_mod')->name('modberita.update');
     Route::post('modberitahapus', 'destroy')->name('modberita.hapus');
+});
+
+Route::controller(ArtikelController::class)->group(function () {
+    Route::get('/artikelMod', 'showMod')->name('artikel.mod');
+    Route::get('/artikelModAdd', 'createMod')->name('artikel.mod.Add');
+    Route::get('/modartikelEdit/{id}', 'edit_mod')->name('modartikel.Edit');
+    Route::post('modartikeltambah', 'store_mod')->name('modartikel.Tambah');
+    Route::post('modartikelupdate', 'update_mod')->name('modartikel.update');
+    Route::post('modartikelhapus', 'destroy')->name('modartikel.hapus');
 });

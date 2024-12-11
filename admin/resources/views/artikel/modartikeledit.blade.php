@@ -1,7 +1,7 @@
 @extends('template')
 
 @section('title')
-    Tambah mod berita
+    Edit mod Arikel
 @endsection
 
 @section('konten')
@@ -11,31 +11,33 @@
                 <div
                     class="border-bottom pb-3 mb-3 d-flex flex-column flex-lg-row gap-3 justify-content-between align-items-lg-center">
                     <div>
-                        <h1 class="mb-0 h2 fw-bold">Mod Berita</h1>
+                        <h1 class="mb-0 h2 fw-bold">Mod Artikel</h1>
                     </div>
                 </div>
             </div>
         </div>
         <div class="row">
             <div class="col-lg-12 col-md-12 col-12">
-                <form id="formberita" data-parsley-validate method="POST">
+                <form id="formArtikel" data-parsley-validate method="POST">
                     {{ csrf_field() }}
+                    <input type="hidden" name="id" value="{{ $data->id_landing_artikel }}">
+                    <input type="hidden" name="gambar_old" value="{{ $data->gambar }}">
                     <div class="card">
                         <div class="card-header pb-1 pt-2">
-                            <h4 class="card-title">Tambah Mod Berita</h4>
+                            <h4 class="card-title">Edit Mod Artikel</h4>
                         </div>
                         <div class="card-body">
                             <div class="row mb-2 align-items-center">
                                 <label for="title" class="col-sm-2 col-form-label">Judul</label>
                                 <div class="col-sm-10">
                                     <input type="text" class="form-control" required id="title" name="title"
-                                        autocomplete="off" placeholder="Judul">
+                                        autocomplete="off" placeholder="Judul" value="{{ $data->title }}">
                                 </div>
                             </div>
                             <div class="row mb-2 align-items-center">
                                 <label for="descripton" class="col-sm-2 col-form-label">Deskripsi</label>
                                 <div class="col-sm-10">
-                                    <textarea class="form-control" name="descripton" required id="descripton" cols="30" rows="10"></textarea>
+                                    <textarea class="form-control" name="descripton" required id="descripton" cols="30" rows="10">{{ $data->descripton }}</textarea>
                                 </div>
                             </div>
                             <div class="row mb-2 align-items-center">
@@ -43,6 +45,12 @@
                                 <div class="col-sm-10">
                                     <div class="row">
                                         <div class="col-sm-6">
+                                            @if ($data->gambar)
+                                                <div class="shadow border border-success rounded image-preview"
+                                                    id="eprev"
+                                                    style="height: 250px; background-size: cover; background-repeat: no-repeat; background-image: url('{{ asset('image') }}/mod_artikel/{{ $data->gambar }}')">
+                                                </div>
+                                            @endif
                                             <div class="shadow border border-success rounded image-preview" id="prev"
                                                 style="height: 250px; background-size: cover; background-repeat: no-repeat;">
                                             </div>
@@ -60,7 +68,7 @@
                                 <label for="gambar" class="col-sm-2 col-form-label">Sampul</label>
                                 <div class="col-sm-10">
                                     <div class="input-group">
-                                        <input type="file" class="form-control" required
+                                        <input type="file" class="form-control"
                                             data-parsley-required-message="tidak boleh kosong" id="gambar"
                                             name="gambar">
                                         <button class="btn btn-danger" type="button" id="clear_button">Batal</button>
@@ -96,6 +104,7 @@
                 if (this.files) {
                     var prev = new FileReader()
                     prev.onload = function(e) {
+                        $("#eprev").css("display", "none");
                         $("#prev").css("display", "block");
                         $("#prev").css("background-image", 'url(' + e.target.result + ')');
                         $("#clear_button").css("display", "block");
@@ -107,9 +116,9 @@
                 }
             })
 
-            $('#formberita').on('submit', function(e) {
+            $('#formArtikel').on('submit', function(e) {
                 e.preventDefault()
-                var url = "{{ route('modberita.Tambah') }}"
+                var url = "{{ route('modartikel.update') }}"
                 var form = $(this)
                 var data = new FormData(this)
                 form.parsley().validate()
@@ -130,7 +139,7 @@
                                 icon: response.icon
                             }).then(function() {
                                 $('#spinnerWrapper').css('display', 'flex')
-                                window.location.href = "{{ route('berita.mod') }}"
+                                window.location.href = "{{ route('artikel.mod') }}"
                             })
                         }
                     })
@@ -150,6 +159,7 @@
                 const fileInput = $('#gambar');
                 $("#gambar").val("")
                 $("#prev").css("display", "none")
+                $("#eprev").css("display", "block")
                 $("#clear_button").css("display", "none")
                 $("#clear").css("display", "block")
                 fileInput.parsley().reset();
@@ -172,7 +182,7 @@
                             icon: "success"
                         }).then(function() {
                             $('#spinnerWrapper').css('display', 'flex')
-                            window.location.href = "{{ route('berita.mod') }}"
+                            window.location.href = "{{ route('artikel.mod') }}"
                         })
                     }
                 })
