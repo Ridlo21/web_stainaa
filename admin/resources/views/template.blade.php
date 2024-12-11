@@ -132,6 +132,26 @@
                     </li>
                     <li class="nav-item">
                         <a class="nav-link  collapsed " href="#" data-bs-toggle="collapse"
+                            data-bs-target="#navependidikan" aria-expanded="false" aria-controls="navependidikan">
+                            <i class="nav-icon fe fe-shopping-bag me-2"></i>
+                            Pendidikan
+                        </a>
+                        <div id="navependidikan" class="collapse " data-bs-parent="#sideNavbar">
+                            <ul class="nav flex-column">
+                                <li class="nav-item">
+                                    <a class="nav-link " href="{{ route('pendidikan.modIndex') }}">Mod Pendidikan</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link "
+                                        href="{{ route('pendidikan.educationIndex') }}">Education</a>
+                                </li>
+
+
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link  collapsed " href="#" data-bs-toggle="collapse"
                             data-bs-target="#navberita" aria-expanded="false" aria-controls="navberita">
                             <i class="nav-icon fe fe-shopping-bag me-2"></i>
                             Berita
