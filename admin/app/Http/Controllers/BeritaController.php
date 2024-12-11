@@ -228,6 +228,7 @@ class BeritaController extends Controller
         return response()->json(['message' => 'Data berhasil dinonaktifkan'], 201);
     }
 
+    // Mod
     public function showMod(Request $request)
     {
 
@@ -309,8 +310,8 @@ class BeritaController extends Controller
             }
             $img = Image::read($image->path());
             $img->resize(840, 464, function ($constraint) {
-                $constraint->aspectRatio(); // Menjaga rasio gambar
-                $constraint->upsize();      // Mencegah gambar menjadi lebih besar dari aslinya
+                $constraint->aspectRatio();
+                $constraint->upsize();
             });
             $img->save($destinationPath . '/' . $imagename, 100);
             $data['gambar'] = $imagename;
@@ -323,13 +324,13 @@ class BeritaController extends Controller
         if ($simpan == 0 || $simpan == 1) {
             return response()->json([
                 'title' => 'Berhasil',
-                'message' => 'Data berhasil disimpan',
+                'message' => 'Data berhasil diedit',
                 'icon' => 'success'
             ], 201);
         } else {
             return response()->json([
                 'title' => 'Gagal',
-                'message' => 'Data gagal disimpan',
+                'message' => 'Data gagal diedit',
                 'icon' => 'error'
             ], 400);
         }
@@ -337,7 +338,6 @@ class BeritaController extends Controller
 
     public function destroy(Request $request)
     {
-
         $data = DB::table('landing_berita')->where('id_landing_berita', $request->id)->first();
 
         if ($data->gambar) {
