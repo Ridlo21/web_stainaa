@@ -110,7 +110,7 @@
                         <div id="navetentang" class="collapse " data-bs-parent="#sideNavbar">
                             <ul class="nav flex-column">
                                 <li class="nav-item">
-                                    <a class="nav-link " href="{{route('tentang.modIndex')}}">Mod Tentang</a>
+                                    <a class="nav-link " href="{{ route('tentang.modIndex') }}">Mod Tentang</a>
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link " href="{{ route('tentang.profilIndex') }}">Profil</a>
@@ -126,6 +126,23 @@
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link " href="{{ route('tentang.mottoIndex') }}">Motto</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link  collapsed " href="#" data-bs-toggle="collapse"
+                            data-bs-target="#navberita" aria-expanded="false" aria-controls="navberita">
+                            <i class="nav-icon fe fe-shopping-bag me-2"></i>
+                            Berita
+                        </a>
+                        <div id="navberita" class="collapse " data-bs-parent="#sideNavbar">
+                            <ul class="nav flex-column">
+                                <li class="nav-item">
+                                    <a class="nav-link " href="{{ route('berita.mod') }}">Mod Berita</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link " href="{{ route('berita.list') }}">Berita</a>
                                 </li>
                             </ul>
                         </div>

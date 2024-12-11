@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\BeritaController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Login;
 use App\Http\Controllers\Home;
@@ -70,18 +71,33 @@ Route::controller(Tentang::class)->group(function () {
     Route::post('/tentangVisiUpdate', 'visiUpdate')->name('tentang.visiUpdate');
     Route::post('/tentangVisiDelete', 'visiDestroy')->name('tentang.visiDestroy');
     // Misi
-    Route::get('/tentangMisiIndex','misiIndex')->name('tentang.misiIndex');
+    Route::get('/tentangMisiIndex', 'misiIndex')->name('tentang.misiIndex');
     Route::get('/tentangMisiAdd', 'misiCreate')->name('tentang.misiCreate');
     Route::post('/tentangMisiInsert', 'misiStore')->name('tentang.misiStore');
     Route::get('/tentangMisiShow/{id}', 'misiShow')->name('tentang.misiShow');
     Route::post('/tentangMisiUpdate', 'misiUpdate')->name('tentang.misiUpdate');
     Route::post('/tentangMisiDelete', 'misiDestroy')->name('tentang.misiDestroy');
     // Motto
-    Route::get('/tentangMottoIndex','mottoIndex')->name('tentang.mottoIndex');
+    Route::get('/tentangMottoIndex', 'mottoIndex')->name('tentang.mottoIndex');
     Route::get('/tentangMottoAdd', 'mottoCreate')->name('tentang.mottoCreate');
     Route::post('/tentangMottoInsert', 'mottoStore')->name('tentang.mottoStore');
     Route::get('/tentangMottoShow/{id}', 'mottoShow')->name('tentang.mottoShow');
     Route::post('/tentangMottoUpdate', 'mottoUpdate')->name('tentang.mottoUpdate');
     Route::post('/tentangMottoDelete', 'mottoDestroy')->name('tentang.mottoDestroy');
+});
 
+Route::controller(BeritaController::class)->group(function () {
+    Route::get('/beritaList', 'index')->name('berita.list');
+    Route::get('/beritaAdd', 'create')->name('berita.Add');
+    Route::get('/beritaEdit/{id}', 'edit')->name('berita.Edit');
+    Route::get('/beritaInfo/{id}', 'show')->name('berita.Info');
+    Route::post('beritatambah', 'store')->name('berita.Tambah');
+    Route::post('beritaupdate', 'update')->name('berita.update');
+    Route::post('beritanonaktif', 'nonaktifkan')->name('berita.nonaktif');
+    Route::get('/beritaMod', 'showMod')->name('berita.mod');
+    Route::get('/beritaModAdd', 'createMod')->name('berita.mod.Add');
+    Route::get('/modberitaEdit/{id}', 'edit_mod')->name('modberita.Edit');
+    Route::post('modberitatambah', 'store_mod')->name('modberita.Tambah');
+    Route::post('modberitaupdate', 'update_mod')->name('modberita.update');
+    Route::post('modberitahapus', 'destroy')->name('modberita.hapus');
 });
