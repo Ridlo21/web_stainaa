@@ -145,8 +145,6 @@
                                     <a class="nav-link "
                                         href="{{ route('pendidikan.educationIndex') }}">Education</a>
                                 </li>
-
-
                             </ul>
                         </div>
                     </li>
@@ -163,6 +161,23 @@
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link " href="{{ route('berita.list') }}">Berita</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link  collapsed " href="#" data-bs-toggle="collapse"
+                            data-bs-target="#navKemahasiswaan" aria-expanded="false" aria-controls="navKemahasiswaan">
+                            <i class="nav-icon fe fe-shopping-bag me-2"></i>
+                            Kemahasiswaan
+                        </a>
+                        <div id="navKemahasiswaan" class="collapse " data-bs-parent="#sideNavbar">
+                            <ul class="nav flex-column">
+                                <li class="nav-item">
+                                    <a class="nav-link " href="{{ route('kemahasiswaan.modIndex') }}">Mod Kemahasiswaan</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link " href="{{ route('kemahasiswaan.bemIndex') }}">Bem</a>
                                 </li>
                             </ul>
                         </div>

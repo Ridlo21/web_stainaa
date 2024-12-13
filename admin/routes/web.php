@@ -9,6 +9,7 @@ use App\Http\Controllers\Cover;
 use App\Http\Controllers\PengumumanController;
 use App\Http\Controllers\Tentang;
 use App\Http\Controllers\Pendidikan;
+use App\Http\Controllers\Kemahasiswaan;
 
 Route::get('/', [Login::class, 'index']);
 Route::get('/home', [Home::class, 'index']);
@@ -118,4 +119,20 @@ Route::controller(BeritaController::class)->group(function () {
     Route::post('modberitatambah', 'store_mod')->name('modberita.Tambah');
     Route::post('modberitaupdate', 'update_mod')->name('modberita.update');
     Route::post('modberitahapus', 'destroy')->name('modberita.hapus');
+});
+
+Route::controller(Kemahasiswaan::class)->group(function () {
+    Route::get('/kemahasiswaanModIndex', 'modIndex')->name('kemahasiswaan.modIndex');
+    Route::get('/kemahasiswaanModAdd', 'modCreate')->name('kemahasiswaan.modCreate');
+    Route::get('/kemahasiswaanModShow/{id}', 'modShow')->name('kemahasiswaan.modShow');
+    Route::post('/kemahasiswaanModInsert', 'modStore')->name('kemahasiswaan.modStore');
+    Route::post('/kemahasiswaanModUpdate', 'modUpdate')->name('kemahasiswaan.modUpdate');
+    Route::post('/kemahasiswaanModDelete', 'modDestroy')->name('kemahasiswaan.modDestroy');
+    //Bem
+    Route::get('/kemahasiswaanBemIndex', 'bemIndex')->name('kemahasiswaan.bemIndex');
+    Route::get('/kemahasiswaanBemAdd', 'bemCreate')->name('kemahasiswaan.bemCreate');
+    Route::get('/kemahasiswaanBemShow/{id}', 'bemShow')->name('kemahasiswaan.bemShow');
+    Route::post('/kemahasiswaanBemInsert', 'bemStore')->name('kemahasiswaan.bemStore');
+    Route::post('/kemahasiswaanBemUpdate', 'bemUpdate')->name('kemahasiswaan.bemUpdate');
+    Route::post('/kemahasiswaanBemDelete', 'bemDestroy')->name('kemahasiswaan.bemDestroy');
 });
