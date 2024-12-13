@@ -18,13 +18,13 @@
         </div>
         <div class="row">
             <div class="col-lg-12 col-md-12 col-12">
-                <form id="formPengumuman" data-parsley-validate method="POST">
+                <form id="formBerita" data-parsley-validate method="POST">
                     {{ csrf_field() }}
-                    <input type="text" name="id" value="{{ $data->id_landing_berita }}">
-                    <input type="text" name="gambar_old" value="{{ $data->gambar }}">
+                    <input type="hidden" name="id" value="{{ $data->id_landing_berita }}">
+                    <input type="hidden" name="gambar_old" value="{{ $data->gambar }}">
                     <div class="card">
                         <div class="card-header pb-1 pt-2">
-                            <h4 class="card-title">Tambah Mod Berita</h4>
+                            <h4 class="card-title">Edit Mod Berita</h4>
                         </div>
                         <div class="card-body">
                             <div class="row mb-2 align-items-center">
@@ -48,7 +48,7 @@
                                             @if ($data->gambar)
                                                 <div class="shadow border border-success rounded image-preview"
                                                     id="eprev"
-                                                    style="height: 250px; background-size: cover; background-repeat: no-repeat; background-image: url('{{ asset('image') }}/mod_pengumuman/{{ $data->gambar }}')">
+                                                    style="height: 250px; background-size: cover; background-repeat: no-repeat; background-image: url('{{ asset('image') }}/mod_berita/{{ $data->gambar }}')">
                                                 </div>
                                             @endif
                                             <div class="shadow border border-success rounded image-preview" id="prev"
@@ -116,7 +116,7 @@
                 }
             })
 
-            $('#formPengumuman').on('submit', function(e) {
+            $('#formBerita').on('submit', function(e) {
                 e.preventDefault()
                 var url = "{{ route('modberita.update') }}"
                 var form = $(this)
@@ -182,7 +182,7 @@
                             icon: "success"
                         }).then(function() {
                             $('#spinnerWrapper').css('display', 'flex')
-                            window.location.href = "{{ route('pengumuman.mod') }}"
+                            window.location.href = "{{ route('berita.mod') }}"
                         })
                     }
                 })

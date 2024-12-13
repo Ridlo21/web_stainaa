@@ -1,7 +1,7 @@
 @extends('template')
 
 @section('title')
-    Tambah mod berita
+    Tambah mod artikel
 @endsection
 
 @section('konten')
@@ -11,18 +11,18 @@
                 <div
                     class="border-bottom pb-3 mb-3 d-flex flex-column flex-lg-row gap-3 justify-content-between align-items-lg-center">
                     <div>
-                        <h1 class="mb-0 h2 fw-bold">Mod Berita</h1>
+                        <h1 class="mb-0 h2 fw-bold">Mod Artikel</h1>
                     </div>
                 </div>
             </div>
         </div>
         <div class="row">
             <div class="col-lg-12 col-md-12 col-12">
-                <form id="formberita" data-parsley-validate method="POST">
+                <form id="formArtikel" data-parsley-validate method="POST">
                     {{ csrf_field() }}
                     <div class="card">
                         <div class="card-header pb-1 pt-2">
-                            <h4 class="card-title">Tambah Mod Berita</h4>
+                            <h4 class="card-title">Tambah Mod Artikel</h4>
                         </div>
                         <div class="card-body">
                             <div class="row mb-2 align-items-center">
@@ -107,9 +107,9 @@
                 }
             })
 
-            $('#formberita').on('submit', function(e) {
+            $('#formArtikel').on('submit', function(e) {
                 e.preventDefault()
-                var url = "{{ route('modberita.Tambah') }}"
+                var url = "{{ route('modartikel.Tambah') }}"
                 var form = $(this)
                 var data = new FormData(this)
                 form.parsley().validate()
@@ -130,7 +130,7 @@
                                 icon: response.icon
                             }).then(function() {
                                 $('#spinnerWrapper').css('display', 'flex')
-                                window.location.href = "{{ route('berita.mod') }}"
+                                window.location.href = "{{ route('artikel.mod') }}"
                             })
                         }
                     })
@@ -138,11 +138,11 @@
             })
 
             $('#gambar').parsley().on('field:validated', function() {
-                var errorContainer = $('#error-gambar'); // Elemen khusus untuk pesan error
+                var errorContainer = $('#error-gambar');
                 if (this.validationResult === true) {
-                    errorContainer.text(''); // Hapus pesan jika valid
+                    errorContainer.text('');
                 } else {
-                    errorContainer.text(this.getErrorsMessages()[0]); // Tampilkan pesan error pertama
+                    errorContainer.text(this.getErrorsMessages()[0]);
                 }
             });
 

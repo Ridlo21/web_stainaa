@@ -90,17 +90,17 @@
                                     </div>
                                 </div>
                                 <ul class="list-group list-group-flush">
-                                    <li class="list-group-item">{{ $item->hari }},
+                                    <li class="list-group-item">
+                                        {{ $item->hari }},
                                         {{ Carbon\Carbon::parse($item->tanggal)->locale('id')->translatedFormat('d F Y') }}
-                                        {{ Carbon\Carbon::parse($item->jam)->locale('id')->translatedFormat('H:i') }} WIB
+                                        {{ Carbon\Carbon::parse($item->jam)->locale('id')->translatedFormat('H:i') }}
+                                        WIB
                                     </li>
                                     <li class="list-group-item">{{ $item->dibaca }} x dibaca</li>
                                 </ul>
                             </div>
-
                         </div>
                     @endforeach
-
                     <div class="col-lg-12 col-md-12 col-12">
                         {{ $data->links('pagination::bootstrap-5') }}
                     </div>

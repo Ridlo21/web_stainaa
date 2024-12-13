@@ -178,6 +178,16 @@
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link " href="{{ route('kemahasiswaan.bemIndex') }}">Bem</a>
+                    <li class="nav-item">
+                        <a class="nav-link  collapsed " href="#" data-bs-toggle="collapse"
+                            data-bs-target="#navartikel" aria-expanded="false" aria-controls="navartikel">
+                            <i class="nav-icon fe fe-shopping-bag me-2"></i>
+                            Artikel
+                        </a>
+                        <div id="navartikel" class="collapse " data-bs-parent="#sideNavbar">
+                            <ul class="nav flex-column">
+                                <li class="nav-item">
+                                    <a class="nav-link " href="{{ route('artikel.mod') }}">Mod Artikel</a>
                                 </li>
                             </ul>
                         </div>
