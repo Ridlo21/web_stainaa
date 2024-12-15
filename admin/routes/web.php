@@ -11,6 +11,7 @@ use App\Http\Controllers\PengumumanController;
 use App\Http\Controllers\Tentang;
 use App\Http\Controllers\Pendidikan;
 use App\Http\Controllers\Kemahasiswaan;
+use App\Http\Controllers\Akreditasi;
 
 Route::get('/', [Login::class, 'index']);
 Route::get('/home', [Home::class, 'index']);
@@ -144,6 +145,23 @@ Route::controller(Kemahasiswaan::class)->group(function () {
     Route::post('/kemahasiswaanUkmInsert', 'ukmStore')->name('kemahasiswaan.ukmStore');
     Route::post('/kemahasiswaanUkmUpdate', 'ukmUpdate')->name('kemahasiswaan.ukmUpdate');
     Route::post('/kemahasiswaanUkmDelete', 'ukmDestroy')->name('kemahasiswaan.ukmDestroy');
+});
+
+Route::controller(Akreditasi::class)->group(function () {
+    Route::get('/akreditasiModIndex', 'modIndex')->name('akreditasi.modIndex');
+    Route::get('/akreditasiModAdd', 'modCreate')->name('akreditasi.modCreate');
+    Route::get('/akreditasiModShow/{id}', 'modShow')->name('akreditasi.modShow');
+    Route::post('/akreditasiModInsert', 'modStore')->name('akreditasi.modStore');
+    Route::post('/akreditasiModUpdate', 'modUpdate')->name('akreditasi.modUpdate');
+    Route::post('/akreditasiModDelete', 'modDestroy')->name('akreditasi.modDestroy');
+    //accreditation
+    Route::get('/akreditasiAccreditationIndex', 'accreditationIndex')->name('akreditasi.accreditationIndex');
+    Route::get('/akreditasiAccreditationAdd', 'accreditationCreate')->name('akreditasi.accreditationCreate');
+    Route::get('/akreditasiAccreditationShow/{id}', 'accreditationShow')->name('akreditasi.accreditationShow');
+    Route::get('/akreditasiAccreditationDetail/{id}', 'accreditationDetail')->name('akreditasi.accreditationDetail');
+    Route::post('/akreditasiAccreditationInsert', 'accreditationStore')->name('akreditasi.accreditationStore');
+    Route::post('/akreditasiAccreditationUpdate', 'accreditationUpdate')->name('akreditasi.accreditationUpdate');
+    Route::post('/akreditasiAccreditationDelete', 'accreditationDestroy')->name('akreditasi.accreditationDestroy');
 });
 
 Route::controller(ArtikelController::class)->group(function () {

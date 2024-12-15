@@ -185,6 +185,24 @@
                             </ul>
                         </div>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link  collapsed " href="#" data-bs-toggle="collapse"
+                            data-bs-target="#navAkreditasi" aria-expanded="false" aria-controls="navAkreditasi">
+                            <i class="nav-icon fe fe-shopping-bag me-2"></i>
+                            Akreditasi
+                        </a>
+                        <div id="navAkreditasi" class="collapse " data-bs-parent="#sideNavbar">
+                            <ul class="nav flex-column">
+                                <li class="nav-item">
+                                    <a class="nav-link " href="{{ route('akreditasi.modIndex') }}">Mod Akreditasi</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link " href="{{ route('akreditasi.accreditationIndex') }}">Accreditation</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                   
                     <!-- Nav item -->
                     <li class="nav-item">
                         <div class="nav-divider"></div>
