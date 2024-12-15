@@ -179,6 +179,9 @@
                                 <li class="nav-item">
                                     <a class="nav-link " href="{{ route('kemahasiswaan.bemIndex') }}">Bem</a>
                                 </li>
+                                <li class="nav-item">
+                                    <a class="nav-link " href="{{ route('kemahasiswaan.ukmIndex') }}">Ukm</a>
+                                </li>
                             </ul>
                         </div>
                     </li>

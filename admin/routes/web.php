@@ -136,6 +136,14 @@ Route::controller(Kemahasiswaan::class)->group(function () {
     Route::post('/kemahasiswaanBemInsert', 'bemStore')->name('kemahasiswaan.bemStore');
     Route::post('/kemahasiswaanBemUpdate', 'bemUpdate')->name('kemahasiswaan.bemUpdate');
     Route::post('/kemahasiswaanBemDelete', 'bemDestroy')->name('kemahasiswaan.bemDestroy');
+    //Ukm
+    Route::get('/kemahasiswaanUkmIndex', 'ukmIndex')->name('kemahasiswaan.ukmIndex');
+    Route::get('/kemahasiswaanUkmAdd', 'ukmCreate')->name('kemahasiswaan.ukmCreate');
+    Route::get('/kemahasiswaanUkmShow/{id}', 'ukmShow')->name('kemahasiswaan.ukmShow');
+    Route::get('/kemahasiswaanUkmDetail/{id}', 'ukmDetail')->name('kemahasiswaan.ukmDetail');
+    Route::post('/kemahasiswaanUkmInsert', 'ukmStore')->name('kemahasiswaan.ukmStore');
+    Route::post('/kemahasiswaanUkmUpdate', 'ukmUpdate')->name('kemahasiswaan.ukmUpdate');
+    Route::post('/kemahasiswaanUkmDelete', 'ukmDestroy')->name('kemahasiswaan.ukmDestroy');
 });
 
 Route::controller(ArtikelController::class)->group(function () {

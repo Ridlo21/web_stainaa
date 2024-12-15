@@ -9,6 +9,15 @@ use Illuminate\Support\Facades\DB;
 
 class Kemahasiswaan extends Controller
 {
+    public function seo_title($s)
+    {
+        $c = array(' ');
+        $d = array('-', '/', '\\', ',', '.', '#', ':', ';', '\'', '"', '[', ']', '{', '}', ')', '(', '|', '`', '~', '!', '@', '%', '$', '^', '&', '*', '=', '?', '+', '–');
+        $s = str_replace($d, '', $s); // Hilangkan karakter yang telah disebutkan di array $d
+        $s = strtolower(str_replace($c, '-', $s)); // Ganti spasi dengan tanda - dan ubah hurufnya menjadi kecil semua
+        return $s;
+    }
+
     public function modIndex() : View 
     {
         $data = DB::table('landing_kemahasiswaan')->where('status','aktif')->get();
@@ -125,6 +134,101 @@ class Kemahasiswaan extends Controller
         $id = $req->id;
         $destroy = DB::table('bem')
             ->where('id_bem', $id)
+            ->update(['status' => 'tidak']);
+        if ($destroy) {
+            return response()->json(['message' => 'Data Berhasil Dihapus !']);
+        }
+    }
+
+    public function ukmIndex() : View 
+    {
+        $data = DB::table('ukm')->where('status','aktif')->get();
+        return view('kemahasiswaan.ukm.index', compact("data"))->with('no', 1);
+    }
+
+    public function ukmCreate() : View 
+    {
+        return view('Kemahasiswaan.ukm.create');
+    }
+
+    public function ukmStore(Request $req) 
+    {
+        $imageName1 = uniqid().time().'.png';
+        $req->gambarSatu->move(public_path('/image/kemahasiswaan/'), $imageName1);
+        $imageName2 = uniqid().time().'.png';
+        $req->gambarDua->move(public_path('/image/kemahasiswaan/'), $imageName2);
+        $data["judul"] = $req->judul;
+        $data["sub_judul"] = $req->subJudul;
+        $data["judul_seo"] =  $this->seo_title($req->judulSeo);
+        $data["isi_ukm"] = $req->isiUkm;
+        $data["sub_isi_ukm"] = $req->subIsiUkm;
+        $data["gambar1"] =  $imageName1;
+        $data["gambar2"] =  $imageName2;
+        $data["ket_gambar"] =  $req->ketGambar;
+        $data["hari"] = $req->hari;
+        $data["tanggal"] = date('Y-m-d', strtotime($req->tanggal));
+        $data["jam"] = $req->jam;
+        $data["penulis"] = $req->penulis;
+        $data["tag"] = $req->tag;
+        $data["dibaca"] = 0;
+        $data["status"] = "aktif";
+        $insert = DB::table('ukm')->insert($data);
+        if ($insert) {
+            return response()->json(['message' => 'Data Berhasil Disimpan']);
+        }
+
+    }
+
+    public function ukmShow($id) 
+    {
+        return view('kemahasiswaan.ukm.update', compact('id'));
+    }
+
+    public function ukmUpdate(Request $req) 
+    {
+        if ($req->gambarSatu != "") {
+            $imageName1 = uniqid().time().'.png';
+            $deleteImage = unlink(public_path('/image/kemahasiswaan/'.$req->gambarLama1));
+            $req->gambarSatu->move(public_path('/image/kemahasiswaan/'), $imageName1);
+            $data["gambar1"] = $imageName1;
+        } else {
+            $data["gambar1"] = $req->gambarLama1;
+        }
+        if ($req->gambarDua != "") {
+            $imageName2 = uniqid().time().'.png';
+            $deleteImage = unlink(public_path('/image/kemahasiswaan/'.$req->gambarLama2));
+            $req->gambarDua->move(public_path('/image/kemahasiswaan/'), $imageName2);
+            $data["gambar2"] = $imageName2;
+        } else {
+            $data["gambar2"] = $req->gambarLama2;
+        }
+        $data["judul"] = $req->judul;
+        $data["sub_judul"] = $req->subJudul;
+        $data["judul_seo"] =  $this->seo_title($req->judulSeo);
+        $data["isi_ukm"] = $req->isiUkm;
+        $data["sub_isi_ukm"] = $req->subIsiUkm;
+        $data["ket_gambar"] =  $req->ketGambar;
+        $data["hari"] = $req->hari;
+        $data["tanggal"] = date('Y-m-d', strtotime($req->tanggal));
+        $data["jam"] = $req->jam;
+        $data["penulis"] = $req->penulis;
+        $data["tag"] = $req->tag;
+        $update = DB::table('ukm')->where('id_ukm', $req->id)->update($data);
+        if ($update) {
+            return response()->json(['message' => 'Data Berhasil Diedit']);
+        }
+    }
+
+    public function ukmDetail($id) 
+    {
+        return view('kemahasiswaan.ukm.detail', compact('id'));
+    }
+
+    public function ukmDestroy(Request $req)
+    {
+        $id = $req->id;
+        $destroy = DB::table('ukm')
+            ->where('id_ukm', $id)
             ->update(['status' => 'tidak']);
         if ($destroy) {
             return response()->json(['message' => 'Data Berhasil Dihapus !']);
