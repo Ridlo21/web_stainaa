@@ -12,6 +12,8 @@ use App\Http\Controllers\Tentang;
 use App\Http\Controllers\Pendidikan;
 use App\Http\Controllers\Kemahasiswaan;
 use App\Http\Controllers\Akreditasi;
+use App\Http\Controllers\Contact;
+
 
 Route::get('/', [Login::class, 'index']);
 Route::get('/home', [Home::class, 'index']);
@@ -163,6 +165,23 @@ Route::controller(Akreditasi::class)->group(function () {
     Route::post('/akreditasiAccreditationUpdate', 'accreditationUpdate')->name('akreditasi.accreditationUpdate');
     Route::post('/akreditasiAccreditationDelete', 'accreditationDestroy')->name('akreditasi.accreditationDestroy');
 });
+
+Route::controller(Contact::class)->group(function () {
+    Route::get('/contactModIndex', 'modIndex')->name('contact.modIndex');
+    Route::get('/contactModAdd', 'modCreate')->name('contact.modCreate');
+    Route::get('/contactModShow/{id}', 'modShow')->name('contact.modShow');
+    Route::post('/contactModInsert', 'modStore')->name('contact.modStore');
+    Route::post('/contactModUpdate', 'modUpdate')->name('contact.modUpdate');
+    Route::post('/contactModDelete', 'modDestroy')->name('contact.modDestroy');
+    //Mail
+    Route::get('/contactMailIndex', 'mailIndex')->name('contact.mailIndex');
+    Route::get('/contactMailShow/{id}', 'mailShow')->name('contact.mailShow');
+    Route::get('/contactMailDetail/{id}', 'mailDetail')->name('contact.mailDetail');
+    Route::post('/contactMailReplay', 'mailReplay')->name('contact.mailReplay');
+    Route::post('/contactMailDelete', 'mailDestroy')->name('contact.mailDestroy');
+});
+
+
 
 Route::controller(ArtikelController::class)->group(function () {
     Route::get('/artikelMod', 'showMod')->name('artikel.mod');
