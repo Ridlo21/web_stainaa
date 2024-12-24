@@ -66,6 +66,12 @@
                         </a>
                     </li>
                     <li class="nav-item">
+                        <a class="nav-link " href="{{ route('profil.index') }}">
+                            <i class="nav-icon fe fe-home me-2"></i>
+                            <span>Profil</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
                         <a class="nav-link " href="{{ url('/personalBrand') }}">
                             <span>
                                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"

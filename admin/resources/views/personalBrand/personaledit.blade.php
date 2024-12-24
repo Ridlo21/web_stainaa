@@ -33,6 +33,13 @@
                                 </div>
                             </div>
                             <div class="row mb-2 align-items-center">
+                                <label for="title" class="col-sm-2 col-form-label">Icon</label>
+                                <div class="col-sm-10">
+                                    <input type="text" class="form-control" required id="icon" name="icon"
+                                        placeholder="Icon"  value="{{ old('icon', $data->icon) }}">
+                                </div>
+                            </div>
+                            <div class="row mb-2 align-items-center">
                                 <label for="context" class="col-sm-2 col-form-label">Deskripsi</label>
                                 <div class="col-sm-10">
                                     <textarea class="form-control" name="context" id="context" cols="30" rows="5" required
@@ -43,7 +50,7 @@
                                 <label for="ket" class="col-sm-2 col-form-label">Keterangan</label>
                                 <div class="col-sm-10">
                                     <textarea class="form-control" name="ket" id="ket" cols="30" rows="5" required
-                                        placeholder="Keterangan">{{ old('context', $data->context) }}</textarea>
+                                        placeholder="Keterangan">{{ old('context', $data->ket) }}</textarea>
                                 </div>
                             </div>
                         </div>

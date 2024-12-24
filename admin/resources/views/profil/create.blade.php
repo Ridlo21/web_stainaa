@@ -1,6 +1,6 @@
 @extends('template')
 @section('title')
-    Personal Branding | Tambah
+    Profil
 @endsection
 
 @section('konten')
@@ -10,18 +10,19 @@
                 <div
                     class="border-bottom pb-3 mb-3 d-flex flex-column flex-lg-row gap-3 justify-content-between align-items-lg-center">
                     <div>
-                        <h1 class="mb-0 h2 fw-bold">Personal Branding</h1>
+                        <h1 class="mb-0 h2 fw-bold">Profil</h1>
                     </div>
                 </div>
             </div>
         </div>
         <div class="row">
             <div class="col-lg-12 col-md-12 col-12">
-                <form id="formPersonalBrand" alamat="{{ route('personal.tambah') }}" data-parsley-validate method="POST">
-                    {{ csrf_field() }}
+                <form id="formProfil" alamat="{{ route('profil.store') }}" data-parsley-validate method="POST" enctype="multipart/form-data">
+                    @csrf
+                    {{-- {{ csrf_field() }} --}}
                     <div class="card">
                         <div class="card-header pb-1 pt-2">
-                            <h4 class="card-title">Tambah Data Personal Branding</h4>
+                            <h4 class="card-title">Tambah Data </h4>
                         </div>
                         <div class="card-body">
                             <div class="row mb-2 align-items-center">
@@ -32,24 +33,32 @@
                                 </div>
                             </div>
                             <div class="row mb-2 align-items-center">
-                                <label for="title" class="col-sm-2 col-form-label">Icon</label>
-                                <div class="col-sm-10">
-                                    <input type="text" class="form-control" required id="icon" name="icon"
-                                        placeholder="Icon">
-                                </div>
-                            </div>
-                            <div class="row mb-2 align-items-center">
                                 <label for="context" class="col-sm-2 col-form-label">Deskripsi</label>
                                 <div class="col-sm-10">
-                                    <textarea class="form-control" required name="context" id="context" cols="30" rows="5"
+                                    <textarea class="form-control" required name="deskripsi" id="context" cols="30" rows="5"
                                         placeholder="Deskripsi"></textarea>
                                 </div>
                             </div>
                             <div class="row mb-2 align-items-center">
-                                <label for="ket" class="col-sm-2 col-form-label">Keterangan</label>
+                                <label for="ket" class="col-sm-2 col-form-label">gambar</label>
                                 <div class="col-sm-10">
-                                    <textarea class="form-control" required name="ket" id="ket" cols="30" rows="5"
-                                        placeholder="Keterangan"></textarea>
+                                    <div class="form-group">
+                                        <label class="form-label" for="option1">
+                                            <i class="fe fe-image me-1 "></i>
+                                            Photo
+                                          </label>
+                                        <div id="priview3" class="col-md-12 mb-3 p-1 border" style="height:250px;">
+                                            <div id="pr_img3" style="width:100%;height:100%;">
+                                            </div>
+                                        </div>
+                                        <div id="batal3" class="col-md-12 p-0 mt-1 mb-1">
+                                            <button type="button" class="btn btn-xs btn-warning">
+                                                <i class="fas fa-times"></i>
+                                                Batal
+                                            </button>
+                                        </div>
+                                        <input class="form-control" type="file"  name="gambarProfil" id="gambarProfil" required>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -71,16 +80,20 @@
 
     <script>
         $(document).ready(function() {
-            $("#formPersonalBrand").on('submit', function(e) {
+            $("#formProfil").on('submit', function(e) {
                 e.preventDefault()
                 var url = $(this).attr("alamat")
+                var data = new FormData(this);
                 $(this).parsley().validate()
                 if ($(this).parsley().isValid()) {
                     $('#spinnerWrapper').css('display', 'flex')
                     $.ajax({
                         type: 'POST',
                         url: url,
-                        data: $(this).serialize(),
+                        data: data,
+                        contentType: false,
+                        cache: false,
+                        processData: false,
                         success: function(response) {
                             $('#spinnerWrapper').css('display', 'none')
                             swal.fire({
@@ -89,7 +102,7 @@
                                 icon: "success"
                             }).then(function() {
                                 $('#spinnerWrapper').css('display', 'flex')
-                                window.location.href = "{{ url('/personalBrand') }}"
+                                window.location.href = "{{ url('/profilIndex') }}"
                             })
                         }
                     })
@@ -113,11 +126,46 @@
                             icon: "success"
                         }).then(function() {
                             $('#spinnerWrapper').css('display', 'flex')
-                            window.location.href = "{{ url('/personalBrand') }}"
+                            window.location.href = "{{ url('/profilIndex') }}"
                         })
                     }
                 })
             })
+        })
+
+        $(function () {
+            $("#priview3").css("display", "none");
+            $("#batal3").css("display", "none");
+            $("#gambarProfil").change(function(){
+                if (this.files && this.files[0]) {
+                    var size = this.files[0].size;
+                    if (size > 100000000) {
+                        alert("Maximum file size 1000px exceeds");
+                        $("#gambarProfil").val("")
+                        return;
+                    } else {
+                        if (this.files && this.files[0]) {
+                            var reader = new FileReader();
+                            reader.onload = function (e) {
+                                $("#ed_priview3").css("display", "none");
+                                $("#priview3").css("display", "block");
+                                $("#batal3").css("display", "block");
+                                $("#pr_img3").css('background-image', 'url(' + e.target.result + ')');
+                                $("#pr_img3").css("background-position", "left");
+                                $("#pr_img3").css("background-size", "contain");
+                                $("#pr_img3").css("background-repeat", "no-repeat");
+                            };
+                            reader.readAsDataURL(this.files[0]);
+                        }
+                    }
+                }
+            });
+            $("#batal3").click(function(){
+                $("#gambarProfil").val("");
+                $("#priview3").css("display", "none");
+                $("#batal3").css("display", "none");
+                $("#ed_priview3").css("display", "block");
+            });
         })
     </script>
 @endsection

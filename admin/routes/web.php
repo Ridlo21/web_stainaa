@@ -13,7 +13,7 @@ use App\Http\Controllers\Pendidikan;
 use App\Http\Controllers\Kemahasiswaan;
 use App\Http\Controllers\Akreditasi;
 use App\Http\Controllers\Contact;
-
+use App\Http\Controllers\Profil;
 
 Route::get('/', [Login::class, 'index']);
 Route::get('/home', [Home::class, 'index']);
@@ -27,6 +27,15 @@ Route::controller(PersonalBrandController::class)->group(function () {
     Route::post('personaltambah', 'store')->name('personal.tambah');
     Route::post('personalupdate', 'update')->name('personal.update');
     Route::post('personalnonaktif', 'nonaktifkan')->name('personal.nonaktif');
+});
+
+Route::controller(Profil::class)->group(function () {
+    Route::get('/profilIndex', 'index')->name('profil.index');
+    Route::get('/profilAdd', 'create')->name('profil.create');
+    Route::get('/profilShow/{id}', 'show')->name('profil.show');
+    Route::post('/profilInsert', 'store')->name('profil.store');
+    Route::post('/profilUpdate', 'update')->name('profil.update');
+    Route::post('/profilDelete', 'destroy')->name('profil.destroy');
 });
 
 Route::resource('cover', Cover::class);
@@ -180,8 +189,6 @@ Route::controller(Contact::class)->group(function () {
     Route::post('/contactMailReplay', 'mailReplay')->name('contact.mailReplay');
     Route::post('/contactMailDelete', 'mailDestroy')->name('contact.mailDestroy');
 });
-
-
 
 Route::controller(ArtikelController::class)->group(function () {
     Route::get('/artikelMod', 'showMod')->name('artikel.mod');

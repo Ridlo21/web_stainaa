@@ -11,5 +11,5 @@ class PersonalBrandModel extends Model
     public $incrementing = false;
     protected $keyType = 'string';
     public $timestamps = false;
-    protected $fillable = ['id_personal_branding', 'title', 'context', 'tanggal', 'ket', 'status'];
+    protected $fillable = ['id_personal_branding', 'title', 'context', 'tanggal', 'ket','icon', 'status'];
 }
