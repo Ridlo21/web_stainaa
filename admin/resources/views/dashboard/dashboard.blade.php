@@ -33,21 +33,19 @@
                     <div class="card-body d-flex flex-column gap-3">
                         <div class="d-flex align-items-center justify-content-between lh-1">
                             <div>
-                                <span class="fs-6 text-uppercase fw-semibold ls-md">Sales</span>
+                                <span class="fs-6 text-uppercase fw-semibold ls-md">Pengunjung Website</span>
                             </div>
                             <div>
                                 <span class="fe fe-shopping-bag fs-3 text-primary"></span>
                             </div>
                         </div>
                         <div class="d-flex flex-column gap-1">
-                            <h2 class="fw-bold mb-0">$10,800</h2>
+                            <h2 class="fw-bold mb-0">{{$dataPengunjung}}</h2>
                             <div class="d-flex flex-row gap-2">
                                 <span class="text-success fw-semibold">
                                     <i class="fe fe-trending-up me-1"></i>
-                                    +20.9$
+                                    Website Stainaa
                                 </span>
-
-                                <span class="fw-medium">Number of sales</span>
                             </div>
                         </div>
                     </div>
@@ -60,17 +58,19 @@
                     <div class="card-body d-flex flex-column gap-3">
                         <div class="d-flex align-items-center justify-content-between lh-1">
                             <div>
-                                <span class="fs-6 text-uppercase fw-semibold ls-md">Courses</span>
+                                <span class="fs-6 text-uppercase fw-semibold ls-md">Berita</span>
                             </div>
                             <div>
                                 <span class="fe fe-book-open fs-3 text-primary"></span>
                             </div>
                         </div>
                         <div class="d-flex flex-column gap-1">
-                            <h2 class="fw-bold mb-0">2,456</h2>
+                            <h2 class="fw-bold mb-0">{{$dataBerita}}</h2>
                             <div class="d-flex flex-row gap-2">
-                                <span class="text-danger fw-semibold">120+</span>
-                                <span class="fw-medium">Number of pending</span>
+                                <span class="text-success fw-semibold">
+                                    <i class="fe fe-trending-up me-1"></i>
+                                    Berita Website
+                                </span>
                             </div>
                         </div>
                     </div>
@@ -83,20 +83,19 @@
                     <div class="card-body d-flex flex-column gap-3">
                         <div class="d-flex align-items-center justify-content-between lh-1">
                             <div>
-                                <span class="fs-6 text-uppercase fw-semibold ls-md">Students</span>
+                                <span class="fs-6 text-uppercase fw-semibold ls-md">Pengumuman</span>
                             </div>
                             <div>
                                 <span class="fe fe-users fs-3 text-primary"></span>
                             </div>
                         </div>
                         <div class="d-flex flex-column gap-1">
-                            <h2 class="fw-bold mb-0">1,22,456</h2>
+                            <h2 class="fw-bold mb-0">{{$dataPengumuman}}</h2>
                             <div class="d-flex flex-row gap-2">
                                 <span class="text-success fw-semibold">
                                     <i class="fe fe-trending-up me-1"></i>
-                                    +1200
+                                    Pengumuman Website
                                 </span>
-                                <span class="fw-medium">Students</span>
                             </div>
                         </div>
                     </div>
@@ -109,20 +108,19 @@
                     <div class="card-body d-flex flex-column gap-3">
                         <div class="d-flex align-items-center justify-content-between lh-1">
                             <div>
-                                <span class="fs-6 text-uppercase fw-semibold ls-md">Instructor</span>
+                                <span class="fs-6 text-uppercase fw-semibold ls-md">Artikel</span>
                             </div>
                             <div>
                                 <span class="fe fe-user-check fs-3 text-primary"></span>
                             </div>
                         </div>
                         <div class="d-flex flex-column gap-1">
-                            <h2 class="fw-bold mb-0">22,786</h2>
+                            <h2 class="fw-bold mb-0">{{$dataArtikel}}</h2>
                             <div class="d-flex flex-row gap-1">
                                 <span class="text-success fw-semibold">
                                     <i class="fe fe-trending-up me-1"></i>
-                                    +200
+                                    Artikel Website
                                 </span>
-                                <span class="ms-1 fw-medium">Instructor</span>
                             </div>
                         </div>
                     </div>
