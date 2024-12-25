@@ -30,12 +30,92 @@ class ArtikelController extends Controller
     }
 
     // Artikel
-    public function index() {}
-    public function create() {}
-    public function store(Request $request) {}
+    public function index()
+    {
+        $query = DB::table('artikel')->where('status', 'aktif')->orderBy('id_kategori_artikel', 'DESC');
+        return view('artikel.artikel');
+    }
+
+    public function create()
+    {
+        $kategory = DB::table('kategori_artikel')->where('status', 'aktif')->orderBy('id_kategori_artikel', 'DESC')->get();
+        return view('artikel.artikelAdd', compact('kategory'));
+    }
+
+    public function store(Request $request)
+    {
+        $data = array();
+
+        Carbon::setLocale('id');
+        $hariIni = Carbon::now()->translatedFormat('l');
+
+        $data['judul'] = strtoupper($request->judul);
+        $data['sub_judul'] = strtoupper($request->sub_judul);
+        $data['judul_seo'] = $this->seo_title($request->judul);
+        $data['id_kategori_artikel'] = $request->kategori;
+        $data['isi_artikel'] = $request->isi_artikel;
+        $data['sub_isi_artikel'] = $request->sub_isi_artikel;
+        $data['ket_gambar'] = $request->ket_gambar;
+        $data['hari'] = $hariIni;
+        $data['tanggal'] = date('Y-m-d');
+        $data['jam'] = Carbon::now('Asia/Jakarta')->toTimeString();
+        $data['penulis'] = $request->penulis;
+        $data['tag'] = $request->tag;
+        $data['dibaca'] = 0;
+        $data['status'] = 'aktif';
+
+        if ($request->file('gambar_a')) {
+            $image1 = $request->file('gambar_a');
+            $imagename1 = 'img1' . str_pad(rand(0, 99999), 5, '0', STR_PAD_LEFT) . $this->acak(32) . ".jpg";
+            $destinationPath = public_path('/image/artikel');
+            $img = Image::read($image1->path());
+            $img->resize(840, 464, function ($constraint) {
+                $constraint->aspectRatio(); // Menjaga rasio gambar
+                $constraint->upsize();      // Mencegah gambar menjadi lebih besar dari aslinya
+            });
+            $img->save($destinationPath . '/' . $imagename1, 100);
+            $data['gambar1'] = $imagename1;
+        } else {
+            $data['gambar1'] = "";
+        }
+
+        if ($request->file('gambar_b')) {
+            $image2 = $request->file('gambar_b');
+            $imagename2 = 'img2' . str_pad(rand(0, 99999), 5, '0', STR_PAD_LEFT) . $this->acak(32) . ".jpg";
+            $destinationPath = public_path('/image/artikel');
+            $img = Image::read($image2->path());
+            $img->resize(840, 464, function ($constraint) {
+                $constraint->aspectRatio(); // Menjaga rasio gambar
+                $constraint->upsize();      // Mencegah gambar menjadi lebih besar dari aslinya
+            });
+            $img->save($destinationPath . '/' . $imagename2, 100);
+            $data['gambar2'] = $imagename2;
+        } else {
+            $data['gambar2'] = "";
+        }
+
+        $simpan = DB::table('artikel')->insert($data);
+        if ($simpan == 0 || $simpan == 1) {
+            return response()->json([
+                'title' => 'Berhasil',
+                'message' => 'Data berhasil disimpan',
+                'icon' => 'success'
+            ], 201);
+        } else {
+            return response()->json([
+                'title' => 'Gagal',
+                'message' => 'Data gagal disimpan',
+                'icon' => 'error'
+            ], 400);
+        }
+    }
+
     public function edit($id) {}
+
     public function update(Request $request) {}
+
     public function show() {}
+
     public function nonaktifkan() {}
 
     // Mod Artikel
@@ -46,6 +126,7 @@ class ArtikelController extends Controller
         $data = $query->paginate(9);
         return view('artikel.modartikel', compact('data'));
     }
+
     public function createMod()
     {
         return view('artikel.modartikeladd');
@@ -99,6 +180,7 @@ class ArtikelController extends Controller
         $data = DB::table('landing_artikel')->where('id_landing_artikel', $id)->first();
         return view('artikel.modartikeledit', compact('data'));
     }
+
     public function update_mod(Request $request)
     {
         $data = array();
@@ -141,6 +223,7 @@ class ArtikelController extends Controller
             ], 400);
         }
     }
+
     public function destroy(Request $request)
     {
         $data = DB::table('landing_artikel')->where('id_landing_artikel', $request->id)->first();
@@ -157,4 +240,110 @@ class ArtikelController extends Controller
     }
 
     // Kategori Artikel
+    public function showKat()
+    {
+        $query = DB::table('kategori_artikel')->where('status', 'aktif')->orderBy('id_kategori_artikel', 'DESC');
+        $data = $query->paginate(10);
+        return view('artikel.kategoriartikel', compact('data'));
+    }
+
+    public function store_kat(Request $request)
+    {
+        $data = array();
+        $data['kategori'] = $request->kategori;
+        $data['tanggal'] = date('Y-m-d');
+        $data['status'] = 'aktif';
+
+        $existingCategory = DB::table('kategori_artikel')->where('kategori', $request->kategori)->first();
+
+        if ($existingCategory) {
+            return response()->json([
+                'title' => 'Gagal',
+                'message' => 'Kategori sudah ada',
+                'icon' => 'error'
+            ], 400);
+        }
+
+        $simpan = DB::table('kategori_artikel')->insert($data);
+
+        if ($simpan == 0 || $simpan == 1) {
+            return response()->json([
+                'title' => 'Berhasil',
+                'message' => 'Data berhasil disimpan',
+                'icon' => 'success'
+            ], 201);
+        } else {
+            return response()->json([
+                'title' => 'Gagal',
+                'message' => 'Data gagal disimpan',
+                'icon' => 'error'
+            ], 400);
+        }
+    }
+
+    public function edit_kat($id)
+    {
+        $kategori = DB::table('kategori_artikel')->where('id_kategori_artikel', $id)->first();
+
+        if ($kategori) {
+            return response()->json($kategori, 200);
+        } else {
+            return response()->json([
+                'message' => 'Data tidak ditemukan'
+            ], 404);
+        }
+    }
+
+    public function update_kat(Request $request)
+    {
+        $data = array();
+        $data['kategori'] = $request->kategori;
+
+        $existingCategory = DB::table('kategori_artikel')->where('kategori', $request->kategori)->first();
+
+        if ($existingCategory) {
+            return response()->json([
+                'title' => 'Gagal',
+                'message' => 'Kategori sudah ada',
+                'icon' => 'error'
+            ], 400);
+        }
+
+        $simpan = DB::table('kategori_artikel')->where('id_kategori_artikel', $request->id)->update($data);
+
+        if ($simpan == 0 || $simpan == 1) {
+            return response()->json([
+                'title' => 'Berhasil',
+                'message' => 'Data berhasil diedit',
+                'icon' => 'success'
+            ], 201);
+        } else {
+            return response()->json([
+                'title' => 'Gagal',
+                'message' => 'Data gagal diedit',
+                'icon' => 'error'
+            ], 400);
+        }
+    }
+
+    public function nonaktif_kat(Request $request)
+    {
+        $simpan = DB::table('kategori_artikel')->where('id_kategori_artikel', $request->id)->update([
+            'status' => 'tidak',
+        ]);
+
+        if ($simpan == 0 || $simpan == 1) {
+            return response()->json([
+                'title' => 'Berhasil',
+                'message' => 'Data berhasil dihapus',
+                'icon' => 'success'
+            ], 201);
+        } else {
+            return response()->json([
+                'title' => 'Gagal',
+                'message' => 'Data gagal dihapus',
+                'icon' => 'error'
+            ], 400);
+        }
+    }
 }

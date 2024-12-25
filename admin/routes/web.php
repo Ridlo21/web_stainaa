@@ -191,11 +191,20 @@ Route::controller(Contact::class)->group(function () {
 });
 
 Route::controller(ArtikelController::class)->group(function () {
+    Route::get('/artikelList', 'index')->name('artikel.List');
+    Route::get('/artikelAdd', 'create')->name('artikel.Add');
+    Route::post('artikeltambah', 'store')->name('artikel.Tambah');
+
+
     Route::get('/artikelMod', 'showMod')->name('artikel.mod');
     Route::get('/artikelModAdd', 'createMod')->name('artikel.mod.Add');
     Route::get('/modartikelEdit/{id}', 'edit_mod')->name('modartikel.Edit');
     Route::post('modartikeltambah', 'store_mod')->name('modartikel.Tambah');
     Route::post('modartikelupdate', 'update_mod')->name('modartikel.update');
     Route::post('modartikelhapus', 'destroy')->name('modartikel.hapus');
-    
+    Route::get('/katartikel', 'showKat')->name('artikel.Kat');
+    Route::post('katartikeltambah', 'store_kat')->name('katartikel.Tambah');
+    Route::get('/katartikelEdit/{id}', 'edit_kat')->name('katartikel.Edit');
+    Route::post('katartikelupdate', 'update_kat')->name('katartikel.update');
+    Route::post('katartikelnonaktif', 'nonaktif_kat')->name('katartikel.nonaktif');
 });

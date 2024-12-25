@@ -54,71 +54,91 @@
                 <!-- Navbar nav -->
                 <ul class="navbar-nav flex-column" id="sideNavbar">
                     <li class="nav-item">
-                        <a class="nav-link {{ request()->segment(1) == 'home' ? 'active' : '' }}" href="{{ url('/') }}">
+                        <a class="nav-link {{ request()->segment(1) == 'home' ? 'active' : '' }}"
+                            href="{{ url('/') }}">
                             <i class="nav-icon fe fe-home me-2"></i>
                             <span>Dashboard</span>
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link {{ request()->segment(1) == 'cover' ? 'active' : '' }} " href="{{ route('cover.index') }}">
+                        <a class="nav-link {{ request()->segment(1) == 'cover' ? 'active' : '' }} "
+                            href="{{ route('cover.index') }}">
                             <i class="nav-icon bi bi-border-outer me-2"></i>
                             <span>Cover</span>
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link {{ request()->segment(1) == 'profilIndex' ? 'active' : '' }}" href="{{ route('profil.index') }}">
+                        <a class="nav-link {{ request()->segment(1) == 'profilIndex' ? 'active' : '' }}"
+                            href="{{ route('profil.index') }}">
                             <i class="nav-icon bi bi-box me-2"></i>
                             <span>Profil</span>
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link {{ request()->segment(1) == 'personalBrand' ? 'active' : '' }}" href="{{ url('/personalBrand') }}">
+                        <a class="nav-link {{ request()->segment(1) == 'personalBrand' ? 'active' : '' }}"
+                            href="{{ url('/personalBrand') }}">
                             <i class="nav-icon bi bi-dice-2 me-2"></i>
                             <span class="ms-2">Personal Branding</span>
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link {{ request()->segment(1) == 'pengumumanMod' || 'pengumumanList' ? '' : 'collapsed' }}  " href="#" data-bs-toggle="collapse"
-                            data-bs-target="#navecommerce" aria-expanded="{{ request()->segment(1) == 'pengumumanMod' || 'pengumumanList' ? 'true' : 'false' }}" aria-controls="navecommerce">
+                        <a class="nav-link {{ request()->segment(1) == 'pengumumanMod' || 'pengumumanList' ? '' : 'collapsed' }}  "
+                            href="#" data-bs-toggle="collapse" data-bs-target="#navecommerce"
+                            aria-expanded="{{ request()->segment(1) == 'pengumumanMod' || 'pengumumanList' ? 'true' : 'false' }}"
+                            aria-controls="navecommerce">
                             <i class="nav-icon bi bi-file me-2"></i>
                             Pengumuman
                         </a>
-                        <div id="navecommerce" class="collapse {{ request()->segment(1) == 'pengumumanMod' || 'pengumumanList' ? 'show' : '' }}" data-bs-parent="#sideNavbar">
+                        <div id="navecommerce"
+                            class="collapse {{ request()->segment(1) == 'pengumumanMod' || 'pengumumanList' ? 'show' : '' }}"
+                            data-bs-parent="#sideNavbar">
                             <ul class="nav flex-column active">
                                 <li class="nav-item">
-                                    <a class="nav-link {{ request()->segment(1) == 'pengumumanMod' ? 'active' : '' }}" href="{{ route('pengumuman.mod') }}">Mod Pengumuman</a>
+                                    <a class="nav-link {{ request()->segment(1) == 'pengumumanMod' ? 'active' : '' }}"
+                                        href="{{ route('pengumuman.mod') }}">Mod Pengumuman</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link {{ request()->segment(1) == 'pengumumanList' ? 'active' : '' }}" href="{{ route('pengumuman.list') }}">Pengumuman</a>
+                                    <a class="nav-link {{ request()->segment(1) == 'pengumumanList' ? 'active' : '' }}"
+                                        href="{{ route('pengumuman.list') }}">Pengumuman</a>
                                 </li>
                             </ul>
                         </div>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link {{ request()->segment(1) == 'tentangModIndex' || 'tentangProfilIndex' || 'tentangSejarahIndex' || 'tentangVisiIndex' || 'tentangMisiIndex' || 'tentangMottoIndex'? '' : 'collapsed' }}  " href="#" data-bs-toggle="collapse"
-                            data-bs-target="#navetentang" aria-expanded="{{ request()->segment(1) == 'tentangModIndex' || 'tentangProfilIndex' || 'tentangSejarahIndex' || 'tentangVisiIndex' || 'tentangMisiIndex' || 'tentangMottoIndex' ? 'true' : 'false'}} " aria-controls="navetentang">
+                        <a class="nav-link {{ request()->segment(1) == 'tentangModIndex' || 'tentangProfilIndex' || 'tentangSejarahIndex' || 'tentangVisiIndex' || 'tentangMisiIndex' || 'tentangMottoIndex' ? '' : 'collapsed' }}  "
+                            href="#" data-bs-toggle="collapse" data-bs-target="#navetentang"
+                            aria-expanded="{{ request()->segment(1) == 'tentangModIndex' || 'tentangProfilIndex' || 'tentangSejarahIndex' || 'tentangVisiIndex' || 'tentangMisiIndex' || 'tentangMottoIndex' ? 'true' : 'false' }} "
+                            aria-controls="navetentang">
                             <i class="nav-icon bi bi-floppy2-fill me-2"></i>
                             Tentang
                         </a>
-                        <div id="navetentang" class="collapse {{ request()->segment(1) == 'tentangModIndex' || 'tentangProfilIndex' || 'tentangSejarahIndex' || 'tentangVisiIndex' || 'tentangMisiIndex' || 'tentangMottoIndex'? 'show' : '' }} " data-bs-parent="#sideNavbar">
+                        <div id="navetentang"
+                            class="collapse {{ request()->segment(1) == 'tentangModIndex' || 'tentangProfilIndex' || 'tentangSejarahIndex' || 'tentangVisiIndex' || 'tentangMisiIndex' || 'tentangMottoIndex' ? 'show' : '' }} "
+                            data-bs-parent="#sideNavbar">
                             <ul class="nav flex-column">
                                 <li class="nav-item">
-                                    <a class="nav-link {{ request()->segment(1) == 'tentangModIndex' ? 'active' : '' }} " href="{{ route('tentang.modIndex') }}">Mod Tentang</a>
+                                    <a class="nav-link {{ request()->segment(1) == 'tentangModIndex' ? 'active' : '' }} "
+                                        href="{{ route('tentang.modIndex') }}">Mod Tentang</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link {{ request()->segment(1) == 'tentangProfilIndex' ? 'active' : '' }} " href="{{ route('tentang.profilIndex') }}">Profil</a>
+                                    <a class="nav-link {{ request()->segment(1) == 'tentangProfilIndex' ? 'active' : '' }} "
+                                        href="{{ route('tentang.profilIndex') }}">Profil</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link {{ request()->segment(1) == 'tentangSejarahIndex' ? 'active' : '' }} " href="{{ route('tentang.sejarahIndex') }}">Sejarah</a>
+                                    <a class="nav-link {{ request()->segment(1) == 'tentangSejarahIndex' ? 'active' : '' }} "
+                                        href="{{ route('tentang.sejarahIndex') }}">Sejarah</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link {{ request()->segment(1) == 'tentangVisiIndex' ? 'active' : '' }} " href="{{ route('tentang.visiIndex') }}">Visi</a>
+                                    <a class="nav-link {{ request()->segment(1) == 'tentangVisiIndex' ? 'active' : '' }} "
+                                        href="{{ route('tentang.visiIndex') }}">Visi</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link {{ request()->segment(1) == 'tentangMisiIndex' ? 'active' : '' }} " href="{{ route('tentang.misiIndex') }}">Misi</a>
+                                    <a class="nav-link {{ request()->segment(1) == 'tentangMisiIndex' ? 'active' : '' }} "
+                                        href="{{ route('tentang.misiIndex') }}">Misi</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link {{ request()->segment(1) == 'tentangMottoIndex' ? 'active' : '' }} " href="{{ route('tentang.mottoIndex') }}">Motto</a>
+                                    <a class="nav-link {{ request()->segment(1) == 'tentangMottoIndex' ? 'active' : '' }} "
+                                        href="{{ route('tentang.mottoIndex') }}">Motto</a>
                                 </li>
                             </ul>
                         </div>
@@ -160,14 +180,36 @@
                     </li>
                     <li class="nav-item">
                         <a class="nav-link  collapsed " href="#" data-bs-toggle="collapse"
-                            data-bs-target="#navKemahasiswaan" aria-expanded="false" aria-controls="navKemahasiswaan">
+                            data-bs-target="#navartikel" aria-expanded="false" aria-controls="navartikel">
+                            <i class="nav-icon bi bi-newspaper me-2"></i>
+                            Berita
+                        </a>
+                        <div id="navartikel" class="collapse " data-bs-parent="#sideNavbar">
+                            <ul class="nav flex-column">
+                                <li class="nav-item">
+                                    <a class="nav-link " href="{{ route('artikel.Kat') }}">Kategori Artikel</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link " href="{{ route('artikel.List') }}">Artikel</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link " href="{{ route('artikel.mod') }}">Mod Artikel</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link  collapsed " href="#" data-bs-toggle="collapse"
+                            data-bs-target="#navKemahasiswaan" aria-expanded="false"
+                            aria-controls="navKemahasiswaan">
                             <i class="nav-icon bi bi-pip me-2"></i>
                             Kemahasiswaan
                         </a>
                         <div id="navKemahasiswaan" class="collapse " data-bs-parent="#sideNavbar">
                             <ul class="nav flex-column">
                                 <li class="nav-item">
-                                    <a class="nav-link " href="{{ route('kemahasiswaan.modIndex') }}">Mod Kemahasiswaan</a>
+                                    <a class="nav-link " href="{{ route('kemahasiswaan.modIndex') }}">Mod
+                                        Kemahasiswaan</a>
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link " href="{{ route('kemahasiswaan.bemIndex') }}">Bem</a>
@@ -190,7 +232,8 @@
                                     <a class="nav-link " href="{{ route('akreditasi.modIndex') }}">Mod Akreditasi</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link " href="{{ route('akreditasi.accreditationIndex') }}">Accreditation</a>
+                                    <a class="nav-link "
+                                        href="{{ route('akreditasi.accreditationIndex') }}">Accreditation</a>
                                 </li>
                             </ul>
                         </div>
@@ -209,7 +252,7 @@
                             </ul>
                         </div>
                     </li>
-                   
+
                     <!-- Nav item -->
                     <li class="nav-item">
                         <div class="nav-divider"></div>
@@ -220,7 +263,7 @@
                     </li>
                     <!-- Nav item -->
                     <li class="nav-item">
-                        <a class="nav-link " href="{{route('contact.mailIndex')}}">
+                        <a class="nav-link " href="{{ route('contact.mailIndex') }}">
                             <span>
                                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
                                     viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
@@ -366,8 +409,7 @@
                                     <div class="dropdown-item">
                                         <div class="d-flex">
                                             <div class="avatar avatar-md avatar-indicators avatar-online">
-                                                <img alt="avatar"
-                                                    src="{{ asset('assets') }}/images/user.png"
+                                                <img alt="avatar" src="{{ asset('assets') }}/images/user.png"
                                                     class="rounded-circle" />
                                             </div>
                                             <div class="ms-3 lh-1">

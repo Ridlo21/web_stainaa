@@ -6,12 +6,14 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <link rel="icon" href="{{asset('dist')}}/images/stainaa.png" type="image/x-icon">
+    <link rel="icon" href="{{ asset('dist') }}/images/stainaa.png" type="image/x-icon">
     <link rel="stylesheet" type="text/css"
         href="https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wght@8..144,300;8..144,500&display=swap">
-    <link rel="stylesheet" href="{{asset('dist')}}/css/bootstrap.css">
-    <link rel="stylesheet" href="{{asset('dist')}}/css/fonts.css">
-    <link rel="stylesheet" href="{{asset('dist')}}/css/style.css">
+
+    <link rel="stylesheet" href="{{ asset('dist') }}/css/bootstrap.css">
+    <link rel="stylesheet" href="{{ asset('dist') }}/css/fonts.css">
+    <link rel="stylesheet" href="{{ asset('dist') }}/css/style.css">
+    <script src="{{ asset('dist') }}/jquery/jquery-3.7.1.min.js"></script>
 </head>
 
 <body>
@@ -42,7 +44,7 @@
                             <button class="rd-navbar-toggle" data-custom-toggle=".rd-navbar-nav-wrap"
                                 data-custom-toggle-disable-on-blur="true"><span></span></button><a
                                 class="rd-navbar-brand brand" href="{{ url('/') }}"><img
-                                    src="{{asset('dist')}}/images/stainaa.png" alt="" width="50" /></a>
+                                    src="{{ asset('dist') }}/images/stainaa.png" alt="" width="50" /></a>
                         </div>
                         <div class="rd-navbar-group rd-navbar-search-wrap">
                             <div class="rd-navbar-nav-wrap">
@@ -58,7 +60,8 @@
                                         </li>
                                         <li
                                             class="rd-nav-item {{ request()->segment(1) == 'pendidikan' ? 'active' : '' }}">
-                                            <a class="rd-nav-link" href="{{ route('pendidikan.index') }}">Pendidikan</a>
+                                            <a class="rd-nav-link"
+                                                href="{{ route('pendidikan.index') }}">Pendidikan</a>
                                         </li>
                                         <li
                                             class="rd-nav-item {{ request()->segment(1) == 'kemahasiswaan' ? 'active' : '' }}">
@@ -219,8 +222,8 @@
         </footer>
     </div>
     <div class="snackbars" id="form-output-global"></div>
-    <script src="{{asset('dist')}}/js/core.min.js"></script>
-    <script src="{{asset('dist')}}/js/script.js"></script>
+    <script src="{{ asset('dist') }}/js/core.min.js"></script>
+    <script src="{{ asset('dist') }}/js/script.js"></script>
 </body>
 
 </html>
