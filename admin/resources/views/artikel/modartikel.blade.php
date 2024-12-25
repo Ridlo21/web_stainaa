@@ -23,71 +23,72 @@
                     </div>
                 </div>
             </div>
-        </div>
-        <div class="col-md-12 col-12">
-            <div class="row">
-                @foreach ($data as $item)
-                    <div class="col-xxl-4 col-xl-4 col-lg-6 col-12">
-                        <div class="card">
-                            <img src="{{ asset('image') }}/mod_artikel/{{ $item->gambar }}" class="card-img-top"
-                                alt="">
-                            <div class="card-body">
-                                <div class="d-flex flex-column gap-4">
-                                    <div class="d-flex flex-column gap-3">
-                                        <div class="d-flex align-items-center justify-content-between">
-                                            <h5 class="card-title">{{ $item->title }}</h5>
-                                            <div class="d-flex align-items-center">
-                                                <div class="dropdown dropstart">
-                                                    <a href="#" class="btn-icon btn btn-ghost btn-sm rounded-circle"
-                                                        id="dropdownProjectOne" data-bs-toggle="dropdown"
-                                                        aria-haspopup="true" aria-expanded="false">
-                                                        <i class="bi bi-three-dots-vertical"></i>
-                                                    </a>
-                                                    <div class="dropdown-menu" aria-labelledby="dropdownProjectOne">
-                                                        <span class="dropdown-header">Settings</span>
-                                                        @if ($item->status == 'aktif')
-                                                            <a class="dropdown-item btEdit" style="cursor: pointer"
-                                                                data="{{ $item->id_landing_artikel }}">
-                                                                <i class="fe fe-edit dropdown-item-icon"></i>
-                                                                Edit
-                                                            </a>
-                                                        @else
-                                                            <a class="dropdown-item btHapus" style="cursor: pointer"
-                                                                data="{{ $item->id_landing_artikel }}"
-                                                                alamat="{{ route('modartikel.hapus') }}">
-                                                                <i class="fe fe-trash dropdown-item-icon"></i>
-                                                                Hapus
-                                                            </a>
-                                                        @endif
+            <div class="col-md-12 col-12">
+                <div class="row">
+                    @foreach ($data as $item)
+                        <div class="col-xxl-4 col-xl-4 col-lg-6 col-12">
+                            <div class="card">
+                                <img src="{{ asset('image') }}/mod_artikel/{{ $item->gambar }}" class="card-img-top"
+                                    alt="">
+                                <div class="card-body">
+                                    <div class="d-flex flex-column gap-4">
+                                        <div class="d-flex flex-column gap-3">
+                                            <div class="d-flex align-items-center justify-content-between">
+                                                <h5 class="card-title">{{ $item->title }}</h5>
+                                                <div class="d-flex align-items-center">
+                                                    <div class="dropdown dropstart">
+                                                        <a href="#"
+                                                            class="btn-icon btn btn-ghost btn-sm rounded-circle"
+                                                            id="dropdownProjectOne" data-bs-toggle="dropdown"
+                                                            aria-haspopup="true" aria-expanded="false">
+                                                            <i class="bi bi-three-dots-vertical"></i>
+                                                        </a>
+                                                        <div class="dropdown-menu" aria-labelledby="dropdownProjectOne">
+                                                            <span class="dropdown-header">Settings</span>
+                                                            @if ($item->status == 'aktif')
+                                                                <a class="dropdown-item btEdit" style="cursor: pointer"
+                                                                    data="{{ $item->id_landing_artikel }}">
+                                                                    <i class="fe fe-edit dropdown-item-icon"></i>
+                                                                    Edit
+                                                                </a>
+                                                            @else
+                                                                <a class="dropdown-item btHapus" style="cursor: pointer"
+                                                                    data="{{ $item->id_landing_artikel }}"
+                                                                    alamat="{{ route('modartikel.hapus') }}">
+                                                                    <i class="fe fe-trash dropdown-item-icon"></i>
+                                                                    Hapus
+                                                                </a>
+                                                            @endif
+                                                        </div>
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
+                                    <p class="card-text">{{ $item->descripton }}</p>
                                 </div>
-                                <p class="card-text">{{ $item->descripton }}</p>
-                            </div>
-                            <div class="card-footer p-0">
-                                <div class="d-flex justify-content-between">
-                                    <div class="w-50 py-3 px-4">
-                                        <h6 class="mb-0">Tanggal:</h6>
-                                        <p class="text-dark fs-6 fw-semibold mb-0">
-                                            {{ Carbon\Carbon::parse($item->tanggal)->locale('id')->translatedFormat('d F Y') }}
-                                        </p>
-                                    </div>
-                                    <div class="border-start w-50 py-3 px-4">
-                                        <h6 class="mb-0">Status:</h6>
-                                        <span
-                                            class="badge {{ $item->status == 'aktif' ? 'bg-success' : 'bg-danger' }}">{{ $item->status == 'aktif' ? 'Aktif' : 'Tidak Aktif' }}</span>
+                                <div class="card-footer p-0">
+                                    <div class="d-flex justify-content-between">
+                                        <div class="w-50 py-3 px-4">
+                                            <h6 class="mb-0">Tanggal:</h6>
+                                            <p class="text-dark fs-6 fw-semibold mb-0">
+                                                {{ Carbon\Carbon::parse($item->tanggal)->locale('id')->translatedFormat('d F Y') }}
+                                            </p>
+                                        </div>
+                                        <div class="border-start w-50 py-3 px-4">
+                                            <h6 class="mb-0">Status:</h6>
+                                            <span
+                                                class="badge {{ $item->status == 'aktif' ? 'bg-success' : 'bg-danger' }}">{{ $item->status == 'aktif' ? 'Aktif' : 'Tidak Aktif' }}</span>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                @endforeach
+                    @endforeach
 
-                <div class="col-lg-12 col-md-12 col-12">
-                    {{ $data->links('pagination::bootstrap-5') }}
+                    <div class="col-lg-12 col-md-12 col-12">
+                        {{ $data->links('pagination::bootstrap-5') }}
+                    </div>
                 </div>
             </div>
         </div>

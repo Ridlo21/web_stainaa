@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="dist/css/bootstrap.css">
     <link rel="stylesheet" href="dist/css/fonts.css">
     <link rel="stylesheet" href="dist/css/style.css">
+    <script src="{{ asset('dist') }}/jquery/jquery-3.7.1.min.js"></script>
 </head>
 
 <body>

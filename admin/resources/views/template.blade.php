@@ -177,6 +177,8 @@
                         <div id="navartikel" class="collapse " data-bs-parent="#sideNavbar">
                             <ul class="nav flex-column">
                                 <li class="nav-item">
+                                    <a class="nav-link " href="{{ route('artikel.Kat') }}">Kategori Artikel</a>
+                                    <a class="nav-link " href="{{ route('artikel.List') }}">Artikel</a>
                                     <a class="nav-link " href="{{ route('artikel.mod') }}">Mod Artikel</a>
                                 </li>
                             </ul>

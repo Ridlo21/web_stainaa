@@ -82,7 +82,7 @@
                                                 </div>
                                             </div>
                                             <div>
-                                                <?= substr($item->isi_pengumuman, 0, 200) . '...' ?>
+                                                <?= substr($item->isi_pengumuman, 3, 150) . '...' ?>
                                             </div>
                                         </div>
                                     </div>
