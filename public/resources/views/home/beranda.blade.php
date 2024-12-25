@@ -107,135 +107,30 @@
                         href="{{ url('/semua_pengumuman') }}">Lainnya</a></div>
             </div>
             <div class="row row-20 row-md-40 row-xl-60">
-                <div class="col-sm-6 col-md-4 wow fadeInUp post-preview-wrap" data-wow-delay="0s">
-                    <article class="icon-box-horizontal post post-preview">
-                        <div class="unit unit-spacing-xs">
-                            <div class="unit-left">
-                                <span class="novi-icon icon icomoon-arrow icon-primary"></span>
-                            </div>
-                            <div class="unit-body">
-                                <h4 style="margin-bottom: -20px !important;"><a
-                                        href="{{ url('/pengumuman_detail') }}">Marketing</a></h4>
-                                <div class="post-meta">
-                                    <ul class="list-meta">
-                                        <li>
-                                            <time datetime="2023-02-04">Feb 4, 2023</time>
-                                        </li>
-                                    </ul>
+                    @foreach ($dataPengumuman as $item)
+                    <div class="col-sm-6 col-md-4 wow fadeInUp post-preview-wrap" data-wow-delay="0s">
+                        <article class="icon-box-horizontal post post-preview">
+                            <div class="unit unit-spacing-xs">
+                                <div class="unit-left">
+                                    <span class="novi-icon icon icomoon-arrow icon-primary"></span>
                                 </div>
-                                <p>Understand how marketing concepts work and approach your marketing tasks
-                                    efficiently.</p>
-                            </div>
-                        </div>
-                    </article>
-                </div>
-                <div class="col-sm-6 col-md-4 wow fadeInUp post-preview-wrap" data-wow-delay=".1s">
-                    <article class="icon-box-horizontal post post-preview">
-                        <div class="unit unit-spacing-xs">
-                            <div class="unit-left"><span class="novi-icon icon icomoon-arrow icon-primary"></span>
-                            </div>
-                            <div class="unit-body">
-                                <h4 style="margin-bottom: -20px !important;"><a
-                                        href="{{ url('/pengumuman_detail') }}">Management</a></h4>
-                                <div class="post-meta">
-                                    <ul class="list-meta">
-                                        <li>
-                                            <time datetime="2023-02-04">Feb 4, 2023</time>
-                                        </li>
-                                    </ul>
+                                <div class="unit-body">
+                                    <h4 style="margin-bottom: -20px !important;"><a
+                                            href="{{ url('/pengumuman_detail') }}/{{$item->judul_seo}}">{{$item->judul}}</a></h4>
+                                    <div class="post-meta">
+                                        <ul class="list-meta">
+                                            <li>
+                                                <time datetime="2023-02-04">{{$item->tanggal}}</time>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    {{substr($item->isi_pengumuman, 3,100)}}...
                                 </div>
-                                <p>Learn how to deal with managerial tasks to achieve the set goals for your
-                                    business.</p>
                             </div>
-                        </div>
-                    </article>
+                        </article>
+                    </div>
+                    @endforeach
                 </div>
-                <div class="col-sm-6 col-md-4 wow fadeInUp post-preview-wrap" data-wow-delay=".2s">
-                    <article class="icon-box-horizontal post post-preview">
-                        <div class="unit unit-spacing-xs">
-                            <div class="unit-left"><span class="novi-icon icon icomoon-arrow icon-primary"></span>
-                            </div>
-                            <div class="unit-body">
-                                <h4 style="margin-bottom: -20px !important;"><a
-                                        href="{{ url('/pengumuman_detail') }}">Leadership</a></h4>
-                                <div class="post-meta">
-                                    <ul class="list-meta">
-                                        <li>
-                                            <time datetime="2023-02-04">Feb 4, 2023</time>
-                                        </li>
-                                    </ul>
-                                </div>
-                                <p>Establish powerful leadership in your company’s team through coaching.</p>
-                            </div>
-                        </div>
-                    </article>
-                </div>
-                <div class="col-sm-6 col-md-4 wow fadeInUp post-preview-wrap" data-wow-delay=".3s">
-                    <article class="icon-box-horizontal post post-preview">
-                        <div class="unit unit-spacing-xs">
-                            <div class="unit-left"><span class="novi-icon icon icomoon-arrow icon-primary"></span>
-                            </div>
-                            <div class="unit-body">
-                                <h4 style="margin-bottom: -20px !important;"><a
-                                        href="{{ url('/pengumuman_detail') }}">Finance</a></h4>
-                                <div class="post-meta">
-                                    <ul class="list-meta">
-                                        <li>
-                                            <time datetime="2023-02-04">Feb 4, 2023</time>
-                                        </li>
-                                    </ul>
-                                </div>
-                                <p>Handle your financial challenges easily with professional coaching by Lead
-                                    Planner.</p>
-                            </div>
-                        </div>
-                    </article>
-                </div>
-                <div class="col-sm-6 col-md-4 wow fadeInUp post-preview-wrap" data-wow-delay=".4s">
-                    <article class="icon-box-horizontal post post-preview">
-                        <div class="unit unit-spacing-xs">
-                            <div class="unit-left"><span class="novi-icon icon icomoon-arrow icon-primary"></span>
-                            </div>
-                            <div class="unit-body">
-                                <h4 style="margin-bottom: -20px !important;"><a
-                                        href="{{ url('/pengumuman_detail') }}">Lead generation</a>
-                                </h4>
-                                <div class="post-meta">
-                                    <ul class="list-meta">
-                                        <li>
-                                            <time datetime="2023-02-04">Feb 4, 2023</time>
-                                        </li>
-                                    </ul>
-                                </div>
-                                <p>Increase the consumer interest and discover how to successfully generate leads.
-                                </p>
-                            </div>
-                        </div>
-                    </article>
-                </div>
-                <div class="col-sm-6 col-md-4 wow fadeInUp post-preview-wrap" data-wow-delay=".5s">
-                    <article class="icon-box-horizontal post post-preview">
-                        <div class="unit unit-spacing-xs">
-                            <div class="unit-left"><span class="novi-icon icon icomoon-arrow icon-primary"></span>
-                            </div>
-                            <div class="unit-body">
-                                <h4 style="margin-bottom: -20px !important;"><a
-                                        href="{{ url('/pengumuman_detail') }}">Lead conversion</a>
-                                </h4>
-                                <div class="post-meta">
-                                    <ul class="list-meta">
-                                        <li>
-                                            <time datetime="2023-02-04">Feb 4, 2023</time>
-                                        </li>
-                                    </ul>
-                                </div>
-                                <p>Turn a potential customer into a real and regular one in just a few simple steps.
-                                </p>
-                            </div>
-                        </div>
-                    </article>
-                </div>
-            </div>
         </div>
     </section>
 

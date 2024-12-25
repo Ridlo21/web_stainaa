@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Home;
 use App\Http\Controllers\Pendidikan;
 use App\Http\Controllers\Tentang;
+use App\Http\Controllers\Pengumuman;
 
 Route::get('/', [Home::class, 'index'])->name('home.index');
 
@@ -15,6 +16,18 @@ Route::controller(Tentang::class)->group(function () {
 Route::controller(Pendidikan::class)->group(function () {
     Route::get('/pendidikanIndex', 'index')->name('pendidikan.index');
     Route::get('/pendidikanShow/{id}', 'show')->name('pendidikan.show');
+});
+
+
+Route::controller(Pengumuman::class)->group(function () {
+    Route::get('/pengumuman_detail/{seo}', 'show')->name('pengumuman.show');
+    // Route::get('/semua_pengumuman', function () {
+    //     return view('pengumuman.pengumumanlist');
+    // });
+    
+    // Route::get('/pengumuman_detail', function () {
+    //     return view('pengumuman.pengumumandetail');
+    // });
 });
 
 
@@ -58,10 +71,4 @@ Route::get('/berita_detail', function () {
     return view('berita.beritadetail');
 });
 
-Route::get('/semua_pengumuman', function () {
-    return view('pengumuman.pengumumanlist');
-});
 
-Route::get('/pengumuman_detail', function () {
-    return view('pengumuman.pengumumandetail');
-});
