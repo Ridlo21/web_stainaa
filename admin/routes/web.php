@@ -202,13 +202,9 @@ Route::controller(ArtikelController::class)->group(function () {
     Route::post('modartikeltambah', 'store_mod')->name('modartikel.Tambah');
     Route::post('modartikelupdate', 'update_mod')->name('modartikel.update');
     Route::post('modartikelhapus', 'destroy')->name('modartikel.hapus');
-<<<<<<< HEAD
     Route::get('/katartikel', 'showKat')->name('artikel.Kat');
     Route::post('katartikeltambah', 'store_kat')->name('katartikel.Tambah');
     Route::get('/katartikelEdit/{id}', 'edit_kat')->name('katartikel.Edit');
     Route::post('katartikelupdate', 'update_kat')->name('katartikel.update');
     Route::post('katartikelnonaktif', 'nonaktif_kat')->name('katartikel.nonaktif');
-=======
-    
->>>>>>> 2b6f888c6c96ec2c5203cde4fc4a8e8d43e3cd72
 });
