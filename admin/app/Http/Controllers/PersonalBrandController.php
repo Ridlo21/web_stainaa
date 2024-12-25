@@ -41,6 +41,7 @@ class PersonalBrandController extends Controller
         $data->context = $request->context;
         $data->tanggal = date('Y-m-d');
         $data->ket = $request->ket;
+        $data->icon = $request->icon;
         $data->status = 'aktif';
         $data->save();
 
@@ -58,7 +59,8 @@ class PersonalBrandController extends Controller
         PersonalBrandModel::where('id_personal_branding', $request->id)->update([
             'title' => $request->title,
             'context' => $request->context,
-            'ket' => $request->ket
+            'ket' => $request->ket,
+            'icon' => $request->icon
         ]);
 
         return response()->json(['message' => 'Data berhasil diubah'], 201);

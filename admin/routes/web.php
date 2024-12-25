@@ -10,6 +10,10 @@ use App\Http\Controllers\Cover;
 use App\Http\Controllers\PengumumanController;
 use App\Http\Controllers\Tentang;
 use App\Http\Controllers\Pendidikan;
+use App\Http\Controllers\Kemahasiswaan;
+use App\Http\Controllers\Akreditasi;
+use App\Http\Controllers\Contact;
+use App\Http\Controllers\Profil;
 
 Route::get('/', [Login::class, 'index']);
 Route::get('/home', [Home::class, 'index']);
@@ -23,6 +27,15 @@ Route::controller(PersonalBrandController::class)->group(function () {
     Route::post('personaltambah', 'store')->name('personal.tambah');
     Route::post('personalupdate', 'update')->name('personal.update');
     Route::post('personalnonaktif', 'nonaktifkan')->name('personal.nonaktif');
+});
+
+Route::controller(Profil::class)->group(function () {
+    Route::get('/profilIndex', 'index')->name('profil.index');
+    Route::get('/profilAdd', 'create')->name('profil.create');
+    Route::get('/profilShow/{id}', 'show')->name('profil.show');
+    Route::post('/profilInsert', 'store')->name('profil.store');
+    Route::post('/profilUpdate', 'update')->name('profil.update');
+    Route::post('/profilDelete', 'destroy')->name('profil.destroy');
 });
 
 Route::resource('cover', Cover::class);
@@ -121,6 +134,62 @@ Route::controller(BeritaController::class)->group(function () {
     Route::post('modberitahapus', 'destroy')->name('modberita.hapus');
 });
 
+Route::controller(Kemahasiswaan::class)->group(function () {
+    Route::get('/kemahasiswaanModIndex', 'modIndex')->name('kemahasiswaan.modIndex');
+    Route::get('/kemahasiswaanModAdd', 'modCreate')->name('kemahasiswaan.modCreate');
+    Route::get('/kemahasiswaanModShow/{id}', 'modShow')->name('kemahasiswaan.modShow');
+    Route::post('/kemahasiswaanModInsert', 'modStore')->name('kemahasiswaan.modStore');
+    Route::post('/kemahasiswaanModUpdate', 'modUpdate')->name('kemahasiswaan.modUpdate');
+    Route::post('/kemahasiswaanModDelete', 'modDestroy')->name('kemahasiswaan.modDestroy');
+    //Bem
+    Route::get('/kemahasiswaanBemIndex', 'bemIndex')->name('kemahasiswaan.bemIndex');
+    Route::get('/kemahasiswaanBemAdd', 'bemCreate')->name('kemahasiswaan.bemCreate');
+    Route::get('/kemahasiswaanBemShow/{id}', 'bemShow')->name('kemahasiswaan.bemShow');
+    Route::post('/kemahasiswaanBemInsert', 'bemStore')->name('kemahasiswaan.bemStore');
+    Route::post('/kemahasiswaanBemUpdate', 'bemUpdate')->name('kemahasiswaan.bemUpdate');
+    Route::post('/kemahasiswaanBemDelete', 'bemDestroy')->name('kemahasiswaan.bemDestroy');
+    //Ukm
+    Route::get('/kemahasiswaanUkmIndex', 'ukmIndex')->name('kemahasiswaan.ukmIndex');
+    Route::get('/kemahasiswaanUkmAdd', 'ukmCreate')->name('kemahasiswaan.ukmCreate');
+    Route::get('/kemahasiswaanUkmShow/{id}', 'ukmShow')->name('kemahasiswaan.ukmShow');
+    Route::get('/kemahasiswaanUkmDetail/{id}', 'ukmDetail')->name('kemahasiswaan.ukmDetail');
+    Route::post('/kemahasiswaanUkmInsert', 'ukmStore')->name('kemahasiswaan.ukmStore');
+    Route::post('/kemahasiswaanUkmUpdate', 'ukmUpdate')->name('kemahasiswaan.ukmUpdate');
+    Route::post('/kemahasiswaanUkmDelete', 'ukmDestroy')->name('kemahasiswaan.ukmDestroy');
+});
+
+Route::controller(Akreditasi::class)->group(function () {
+    Route::get('/akreditasiModIndex', 'modIndex')->name('akreditasi.modIndex');
+    Route::get('/akreditasiModAdd', 'modCreate')->name('akreditasi.modCreate');
+    Route::get('/akreditasiModShow/{id}', 'modShow')->name('akreditasi.modShow');
+    Route::post('/akreditasiModInsert', 'modStore')->name('akreditasi.modStore');
+    Route::post('/akreditasiModUpdate', 'modUpdate')->name('akreditasi.modUpdate');
+    Route::post('/akreditasiModDelete', 'modDestroy')->name('akreditasi.modDestroy');
+    //accreditation
+    Route::get('/akreditasiAccreditationIndex', 'accreditationIndex')->name('akreditasi.accreditationIndex');
+    Route::get('/akreditasiAccreditationAdd', 'accreditationCreate')->name('akreditasi.accreditationCreate');
+    Route::get('/akreditasiAccreditationShow/{id}', 'accreditationShow')->name('akreditasi.accreditationShow');
+    Route::get('/akreditasiAccreditationDetail/{id}', 'accreditationDetail')->name('akreditasi.accreditationDetail');
+    Route::post('/akreditasiAccreditationInsert', 'accreditationStore')->name('akreditasi.accreditationStore');
+    Route::post('/akreditasiAccreditationUpdate', 'accreditationUpdate')->name('akreditasi.accreditationUpdate');
+    Route::post('/akreditasiAccreditationDelete', 'accreditationDestroy')->name('akreditasi.accreditationDestroy');
+});
+
+Route::controller(Contact::class)->group(function () {
+    Route::get('/contactModIndex', 'modIndex')->name('contact.modIndex');
+    Route::get('/contactModAdd', 'modCreate')->name('contact.modCreate');
+    Route::get('/contactModShow/{id}', 'modShow')->name('contact.modShow');
+    Route::post('/contactModInsert', 'modStore')->name('contact.modStore');
+    Route::post('/contactModUpdate', 'modUpdate')->name('contact.modUpdate');
+    Route::post('/contactModDelete', 'modDestroy')->name('contact.modDestroy');
+    //Mail
+    Route::get('/contactMailIndex', 'mailIndex')->name('contact.mailIndex');
+    Route::get('/contactMailShow/{id}', 'mailShow')->name('contact.mailShow');
+    Route::get('/contactMailDetail/{id}', 'mailDetail')->name('contact.mailDetail');
+    Route::post('/contactMailReplay', 'mailReplay')->name('contact.mailReplay');
+    Route::post('/contactMailDelete', 'mailDestroy')->name('contact.mailDestroy');
+});
+
 Route::controller(ArtikelController::class)->group(function () {
     Route::get('/artikelList', 'index')->name('artikel.List');
     Route::get('/artikelAdd', 'create')->name('artikel.Add');
@@ -133,9 +202,13 @@ Route::controller(ArtikelController::class)->group(function () {
     Route::post('modartikeltambah', 'store_mod')->name('modartikel.Tambah');
     Route::post('modartikelupdate', 'update_mod')->name('modartikel.update');
     Route::post('modartikelhapus', 'destroy')->name('modartikel.hapus');
+<<<<<<< HEAD
     Route::get('/katartikel', 'showKat')->name('artikel.Kat');
     Route::post('katartikeltambah', 'store_kat')->name('katartikel.Tambah');
     Route::get('/katartikelEdit/{id}', 'edit_kat')->name('katartikel.Edit');
     Route::post('katartikelupdate', 'update_kat')->name('katartikel.update');
     Route::post('katartikelnonaktif', 'nonaktif_kat')->name('katartikel.nonaktif');
+=======
+    
+>>>>>>> 2b6f888c6c96ec2c5203cde4fc4a8e8d43e3cd72
 });

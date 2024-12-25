@@ -17,15 +17,11 @@
                     aria-label="Slide 3"></button>
             </div>
             <div class="carousel-inner">
+                @foreach ($dataCover as $item)
                 <div class="carousel-item active">
-                    <img src="dist/images/bg_1.jpg" class="d-block" alt="...">
+                    <img src="http://localhost:8000/image/cover/{{$item->cover}}" class="d-block" alt="...">
                 </div>
-                <div class="carousel-item">
-                    <img src="dist/images/bg_2.jpg" class="d-block" alt="...">
-                </div>
-                <div class="carousel-item">
-                    <img src="dist/images/bg_3.jpg" class="d-block" alt="...">
-                </div>
+                @endforeach
             </div>
         </div>
     </section>
@@ -35,20 +31,24 @@
             {{-- <h2 class="text-center">I help people tackle their business issues</h2>
             <p class="text-center">It’s easy to get the results you want with the top-quality advice.</p> --}}
             <div class="row row-40 justify-content-center">
+                @foreach ($dataPersonalBranding as $item)
                 <div class="col-sm-6 col-lg-4 height-fill wow fadeInUp" data-wow-delay="0s">
                     <article class="icon-box shadow-lg">
                         <div class="box-top">
-                            <div class="box-icon"><span class="icon icon-md icomoon-stats"></span></div>
+                            <div class="box-icon">
+                                <span class="icon icon-md {{$item->icon}}" ></span>
+                            </div>
                             <div class="box-header">
-                                <h3 class="h4"><a href="about-me.html">Kuliah & Ngaji</a></h3>
+                                <h3 class="h4"><a href="about-me.html">{{$item->title}}</a></h3>
                             </div>
                         </div>
                         <div class="box-body">
-                            <p>Accelerate your career and achieve your goals through mentoring at Lead Planner.</p>
+                            <p>{{$item->context}}</p>
                         </div>
                     </article>
                 </div>
-                <div class="col-sm-6 col-lg-4 height-fill wow fadeInUp" data-wow-delay="0.1s">
+                @endforeach
+                {{-- <div class="col-sm-6 col-lg-4 height-fill wow fadeInUp" data-wow-delay="0.1s">
                     <article class="icon-box bg-primary">
                         <div class="box-top">
                             <div class="box-icon"><span class="icon icon-md icomoon-user"></span></div>
@@ -73,7 +73,7 @@
                             <p>Decide what to do next with your work to achieve success with your business.</p>
                         </div>
                     </article>
-                </div>
+                </div> --}}
             </div>
         </div>
     </section>
@@ -81,26 +81,17 @@
     <section class="section section-lg bg-default">
         <div class="container">
             <div class="row row-40 justify-content-md-between flex-column-reverse flex-md-row">
-                <div class="col-md-6">
-                    <h2>Selayang Pandang</h2>
-                    <p>My name is John Adams and I am a business coach and trainer. I work with you to increase your
-                        awareness and choices, so you can set meaningful goals and get the results you truly want. I
-                        will challenge you to learn and think differently.</p>
-                    <p>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos, molestias iste fugit minus
-                        iusto quas eveniet neque libero rerum at. Doloribus perferendis ipsum reiciendis sequi at voluptatum
-                        maiores enim neque!
-                    </p>
-                    <p>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos, molestias iste fugit minus
-                        iusto quas eveniet neque libero rerum at. Doloribus perferendis ipsum reiciendis sequi at voluptatum
-                        maiores enim neque!
-                    </p>
-                </div>
-                <div class="col-md-5">
-                    <img class="wow fadeIn" src="dist/images/t.jpg" alt="" width="510" height="680"
-                        data-wow-delay=".3s" />
-                </div>
+                @foreach ($dataProfilSingkat as $item)
+                    <div class="col-md-6">
+                        <h2>{{$item->title}}</h2>
+                        <p>{{$item->isi_profile}}</p>
+                    </div>
+                    <div class="col-md-5">
+                        <img class="wow fadeIn" src="http://localhost:8000/image/profil/{{$item->gambar}}" alt="" width="510" height="680"
+                            data-wow-delay=".3s" />
+                    </div>
+                @endforeach
+
             </div>
         </div>
     </section>

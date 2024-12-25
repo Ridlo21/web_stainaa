@@ -32,6 +32,13 @@
                                 </div>
                             </div>
                             <div class="row mb-2 align-items-center">
+                                <label for="title" class="col-sm-2 col-form-label">Icon</label>
+                                <div class="col-sm-10">
+                                    <input type="text" class="form-control" required id="icon" name="icon"
+                                        placeholder="Icon">
+                                </div>
+                            </div>
+                            <div class="row mb-2 align-items-center">
                                 <label for="context" class="col-sm-2 col-form-label">Deskripsi</label>
                                 <div class="col-sm-10">
                                     <textarea class="form-control" required name="context" id="context" cols="30" rows="5"

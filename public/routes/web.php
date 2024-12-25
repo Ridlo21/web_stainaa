@@ -1,18 +1,22 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Home;
+use App\Http\Controllers\Pendidikan;
+use App\Http\Controllers\Tentang;
 
-Route::get('/', function () {
-    return view('home.beranda');
+Route::get('/', [Home::class, 'index'])->name('home.index');
+
+Route::controller(Tentang::class)->group(function () {
+    Route::get('/tentangIndex', 'index')->name('tentang.index');
+    Route::get('/tentangPimpinan', 'tentangPimpinan')->name('tentangPimpinan.show');
 });
 
-Route::get('/tentang', function () {
-    return view('tentang.tentang');
+Route::controller(Pendidikan::class)->group(function () {
+    Route::get('/pendidikanIndex', 'index')->name('pendidikan.index');
+    Route::get('/pendidikanShow/{id}', 'show')->name('pendidikan.show');
 });
 
-Route::get('/pendidikan', function () {
-    return view('pendidikan.pendidikan');
-});
 
 Route::get('/pendidikan_detail', function () {
     return view('pendidikan.pendidikandetail');
