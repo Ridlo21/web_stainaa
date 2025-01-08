@@ -171,7 +171,7 @@
             $('#clear_button_b').css("display", "none")
 
             $('#isi_berita').summernote({
-                placeholder: 'Isi Pengumuman',
+                placeholder: 'Isi Berita',
                 tabsize: 2,
                 height: 200,
                 callbacks: {

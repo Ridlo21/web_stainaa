@@ -194,8 +194,10 @@ Route::controller(ArtikelController::class)->group(function () {
     Route::get('/artikelList', 'index')->name('artikel.List');
     Route::get('/artikelAdd', 'create')->name('artikel.Add');
     Route::post('artikeltambah', 'store')->name('artikel.Tambah');
-
-
+    Route::get('/artikelEdit/{id}', 'edit')->name('artikel.Edit');
+    Route::post('artikelupdate', 'update')->name('artikel.update');
+    Route::get('/artikelInfo/{id}', 'show')->name('artikel.Info');
+    Route::post('artikelnonaktif', 'nonaktifkan')->name('artikel.nonaktif');
     Route::get('/artikelMod', 'showMod')->name('artikel.mod');
     Route::get('/artikelModAdd', 'createMod')->name('artikel.mod.Add');
     Route::get('/modartikelEdit/{id}', 'edit_mod')->name('modartikel.Edit');

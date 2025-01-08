@@ -30,10 +30,15 @@ class ArtikelController extends Controller
     }
 
     // Artikel
-    public function index()
+    public function index(Request $request)
     {
-        $query = DB::table('artikel')->where('status', 'aktif')->orderBy('id_kategori_artikel', 'DESC');
-        return view('artikel.artikel');
+        $search = $request->search;
+        $query = DB::table('artikel')->where('status', 'aktif')->orderBy('id_artikel', 'DESC');
+        if ($search) {
+            $query->where('judul', 'like', '%' . $search . '%');
+        }
+        $data = $query->paginate(9);
+        return view('artikel.artikel', compact('data', 'search'));
     }
 
     public function create()
@@ -110,13 +115,123 @@ class ArtikelController extends Controller
         }
     }
 
-    public function edit($id) {}
+    public function edit($id)
+    {
+        $data = DB::table('artikel')->where('id_artikel', $id)->first();
+        $kategory = DB::table('kategori_artikel')->where('status', 'aktif')->orderBy('id_kategori_artikel', 'DESC')->get();
+        return view('artikel.artikelEdit', compact('data', 'kategory'));
+    }
 
-    public function update(Request $request) {}
+    public function update(Request $request)
+    {
+        $data = array();
 
-    public function show() {}
+        Carbon::setLocale('id');
+        $hariIni = Carbon::now()->translatedFormat('l');
 
-    public function nonaktifkan() {}
+        $data['judul'] = strtoupper($request->judul);
+        $data['sub_judul'] = strtoupper($request->sub_judul);
+        $data['judul_seo'] = $this->seo_title($request->judul);
+        $data['id_kategori_artikel'] = $request->kategori;
+        $data['isi_artikel'] = $request->isi_artikel;
+        $data['sub_isi_artikel'] = $request->sub_isi_artikel;
+        $data['ket_gambar'] = $request->ket_gambar;
+        $data['penulis'] = $request->penulis;
+        $data['tag'] = $request->tag;
+        $data['dibaca'] = 0;
+        $data['status'] = 'aktif';
+
+        if ($request->file('gambar_a')) {
+            $image1 = $request->file('gambar_a');
+            $imagename1 = 'img1' . str_pad(rand(0, 99999), 5, '0', STR_PAD_LEFT) . $this->acak(32) . ".jpg";
+            $destinationPath = public_path('/image/artikel');
+            if (file_exists($destinationPath . '/' . $request->gambar1_old)) {
+                unlink($destinationPath . '/' . $request->gambar1_old);
+            }
+            $img = Image::read($image1->path());
+            $img->resize(840, 464, function ($constraint) {
+                $constraint->aspectRatio(); // Menjaga rasio gambar
+                $constraint->upsize();      // Mencegah gambar menjadi lebih besar dari aslinya
+            });
+            $img->save($destinationPath . '/' . $imagename1, 100);
+            $data['gambar1'] = $imagename1;
+        } else {
+            $data['gambar1'] = $request->gambar1_old;
+        }
+
+        if ($request->file('gambar_b')) {
+            $image2 = $request->file('gambar_b');
+            $imagename2 = 'img2' . str_pad(rand(0, 99999), 5, '0', STR_PAD_LEFT) . $this->acak(32) . ".jpg";
+            $destinationPath = public_path('/image/artikel');
+            if (file_exists($destinationPath . '/' . $request->gambar2_old)) {
+                unlink($destinationPath . '/' . $request->gambar2_old);
+            }
+            $img = Image::read($image2->path());
+            $img->resize(840, 464, function ($constraint) {
+                $constraint->aspectRatio(); // Menjaga rasio gambar
+                $constraint->upsize();      // Mencegah gambar menjadi lebih besar dari aslinya
+            });
+            $img->save($destinationPath . '/' . $imagename2, 100);
+            $data['gambar2'] = $imagename2;
+        } else {
+            $data['gambar2'] = $request->gambar2_old;
+        }
+
+        $simpan = DB::table('artikel')->where('id_artikel', $request->id)->update($data);
+        if ($simpan == 0 || $simpan == 1) {
+            return response()->json([
+                'title' => 'Berhasil',
+                'message' => 'Data berhasil diedit',
+                'icon' => 'success'
+            ], 201);
+        } else {
+            return response()->json([
+                'title' => 'Gagal',
+                'message' => 'Data gagal diedit',
+                'icon' => 'error'
+            ], 400);
+        }
+    }
+
+    public function show($id)
+    {
+        $data = DB::table('artikel')->where('judul_seo', $id)->first();
+        if ($data) {
+            // Tentukan posisi untuk menyisipkan gambar2
+            $posisiPenyisipan = 2; // Setelah paragraf kedua
+
+            // Periksa apakah gambar2 tidak kosong
+            $gambar2Path = null;
+            if ($data->gambar2 && file_exists(public_path('image/artikel/' . $data->gambar2))) {
+                $gambar2Path = asset('image/artikel/' . $data->gambar2);
+            }
+
+            // Pecah isi berdasarkan tag </p>
+            $paragraf = preg_split('/(<\/p>)/i', $data->isi_artikel, -1, PREG_SPLIT_DELIM_CAPTURE);
+
+            $html = '';
+            foreach ($paragraf as $index => $content) {
+                $html .= $content;
+
+                // Sisipkan gambar hanya jika $gambar2Path ada (gambar hanya muncul jika gambar2 diunggah dan valid)
+                if ($gambar2Path && $index === ($posisiPenyisipan * 2) - 1) {
+                    $html .= '<img src="' . $gambar2Path . '" alt="Gambar 2" class="mb-3" width="670">';
+                }
+            }
+
+            $data->isi_artikel = $html;
+        }
+        return view('artikel.artikelinfo', compact('data'));
+    }
+
+    public function nonaktifkan(Request $request)
+    {
+        DB::table('artikel')->where('id_artikel', $request->id)->update([
+            'status' => 'tidak',
+        ]);
+
+        return response()->json(['message' => 'Data berhasil dinonaktifkan'], 201);
+    }
 
     // Mod Artikel
     public function showMod()
