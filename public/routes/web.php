@@ -5,6 +5,7 @@ use App\Http\Controllers\Home;
 use App\Http\Controllers\Pendidikan;
 use App\Http\Controllers\Tentang;
 use App\Http\Controllers\Pengumuman;
+use App\Http\Controllers\Berita;
 
 Route::get('/', [Home::class, 'index'])->name('home.index');
 
@@ -21,14 +22,23 @@ Route::controller(Pendidikan::class)->group(function () {
 
 Route::controller(Pengumuman::class)->group(function () {
     Route::get('/pengumuman_detail/{seo}', 'show')->name('pengumuman.show');
-    // Route::get('/semua_pengumuman', function () {
-    //     return view('pengumuman.pengumumanlist');
+    Route::get('/semua_pengumuman', 'all')->name('pengumuman.all');
+});
+
+Route::controller(Berita::class)->group(function () {
+    Route::get('/berita_detail/{seo}', 'show')->name('berita.show');
+    Route::get('/semua_berita', 'all')->name('berita.all');
+
+    // Route::get('/semua_berita', function () {
+    //     return view('berita.beritalist');
     // });
     
-    // Route::get('/pengumuman_detail', function () {
-    //     return view('pengumuman.pengumumandetail');
+    // Route::get('/berita_detail', function () {
+    //     return view('berita.beritadetail');
     // });
 });
+
+
 
 
 Route::get('/pendidikan_detail', function () {
@@ -63,12 +73,6 @@ Route::get('/narahubung', function () {
     return view('narahubung.narahubung');
 });
 
-Route::get('/semua_berita', function () {
-    return view('berita.beritalist');
-});
 
-Route::get('/berita_detail', function () {
-    return view('berita.beritadetail');
-});
 
 

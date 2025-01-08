@@ -104,7 +104,7 @@
                     <p>Berikut beberapa informasi mengenai perkuliahan di STAINAA.</p>
                 </div>
                 <div class="col-md-4 text-md-end"><a class="btn btn-nero-outline-1"
-                        href="{{ url('/semua_pengumuman') }}">Lainnya</a></div>
+                        href="{{ route('pengumuman.all') }}">Lainnya</a></div>
             </div>
             <div class="row row-20 row-md-40 row-xl-60">
                     @foreach ($dataPengumuman as $item)
@@ -146,86 +146,27 @@
                 </div>
             </div>
             <div class="row row-20 row-md-40 row-xl-60">
-                <div class="col-sm-6 col-md-3 wow fadeInUp" data-wow-delay="0s">
-                    <div class="card shadow post post-preview">
-                        <img src="dist/images/b4.jpg" class="card-img-top" alt="..."
-                            style="height: 250px; object-fit: cover;">
-                        <div class="card-body unit-body">
-                            <h5 class="card-title" style="margin-bottom: -20px !important;"><a
-                                    href="{{ url('/berita_detail') }}">Card
-                                    title</a></h5>
-                            <div class="post-meta">
-                                <ul class="list-meta">
-                                    <li>
-                                        <time datetime="2023-02-04">Feb 4, 2023</time>
-                                    </li>
-                                </ul>
+                @foreach ($dataBerita as $item)
+                    <div class="col-sm-6 col-md-3 wow fadeInUp" data-wow-delay="0s">
+                        <div class="card shadow post post-preview">
+                            <img src="http://localhost:8000/image/berita/{{$item->gambar1}}" class="card-img-top" alt="..."
+                                style="height: 250px; object-fit: cover;">
+                            <div class="card-body unit-body">
+                                <h5 class="card-title" style="margin-bottom: -20px !important;"><a
+                                        href="{{ url('/berita_detail') }}">{{$item->judul}}</a></h5>
+                                <div class="post-meta">
+                                    <ul class="list-meta">
+                                        <li>
+                                            <time datetime="2023-02-04">{{Date('d-m-Y', strtotime($item->tanggal))}}</time>
+                                        </li>
+                                    </ul>
+                                </div>
+                                {{substr($item->isi_berita, 3,100)}}...
                             </div>
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of
-                                the card's content.</p>
                         </div>
                     </div>
-                </div>
-                <div class="col-sm-6 col-md-3 wow fadeInUp" data-wow-delay="0s">
-                    <div class="card shadow post post-preview">
-                        <img src="dist/images/b4.jpg" class="card-img-top" alt="..."
-                            style="height: 250px; object-fit: cover;">
-                        <div class="card-body unit-body">
-                            <h5 class="card-title" style="margin-bottom: -20px !important;"><a
-                                    href="{{ url('/berita_detail') }}">Card
-                                    title</a></h5>
-                            <div class="post-meta">
-                                <ul class="list-meta">
-                                    <li>
-                                        <time datetime="2023-02-04">Feb 4, 2023</time>
-                                    </li>
-                                </ul>
-                            </div>
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of
-                                the card's content.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-sm-6 col-md-3 wow fadeInUp" data-wow-delay="0s">
-                    <div class="card shadow post post-preview">
-                        <img src="dist/images/b4.jpg" class="card-img-top" alt="..."
-                            style="height: 250px; object-fit: cover;">
-                        <div class="card-body unit-body">
-                            <h5 class="card-title" style="margin-bottom: -20px !important;"><a
-                                    href="{{ url('/berita_detail') }}">Card
-                                    title</a></h5>
-                            <div class="post-meta">
-                                <ul class="list-meta">
-                                    <li>
-                                        <time datetime="2023-02-04">Feb 4, 2023</time>
-                                    </li>
-                                </ul>
-                            </div>
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of
-                                the card's content.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-sm-6 col-md-3 wow fadeInUp" data-wow-delay="0s">
-                    <div class="card shadow post post-preview">
-                        <img src="dist/images/b4.jpg" class="card-img-top" alt="..."
-                            style="height: 250px; object-fit: cover;">
-                        <div class="card-body unit-body">
-                            <h5 class="card-title" style="margin-bottom: -20px !important;"><a
-                                    href="{{ url('/berita_detail') }}">Card
-                                    title</a></h5>
-                            <div class="post-meta">
-                                <ul class="list-meta">
-                                    <li>
-                                        <time datetime="2023-02-04">Feb 4, 2023</time>
-                                    </li>
-                                </ul>
-                            </div>
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of
-                                the card's content.</p>
-                        </div>
-                    </div>
-                </div>
+                @endforeach
+
             </div>
         </div>
     </section>

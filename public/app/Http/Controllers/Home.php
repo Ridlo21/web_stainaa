@@ -14,11 +14,13 @@ class Home extends Controller
         $dataPersonalBranding = DB::table('personal_branding')->where('status','aktif')->get();
         $dataProfilSingkat = DB::table('profile_singkat')->where('status','aktif')->get();
         $dataPengumuman = DB::table('pengumuman')->where('status','aktif')->limit(6)->get();
+        $dataBerita = DB::table('berita')->where('status','aktif')->limit(6)->get();
         return view('home.beranda', compact(
             'dataCover',
             'dataPersonalBranding',
             'dataProfilSingkat',
-            'dataPengumuman'
+            'dataPengumuman',
+            'dataBerita'
         ));
     }
 }
