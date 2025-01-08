@@ -13,9 +13,24 @@ class Pengumuman extends Controller
         ->where('judul_seo',$seo)
         ->where('status','aktif')
         ->first();
-        $insert = DB::table('users')
+        $sum = (int)$data->dibaca + 1;
+        $insert = DB::table('pengumuman')
         ->where('judul_seo', $seo)
-        ->update(['dibaca' => 1]);
+        ->update(['dibaca' => $sum]);
         return view('pengumuman.pengumumandetail', compact('data'));
+    }
+
+    public function all()
+    {
+        $data = DB::table('pengumuman')
+        ->where('status','aktif')
+        ->paginate(1);
+        $dataLanding = DB::table('landing_pengumuman')
+        ->where('status','aktif')
+        ->get();
+        return view('pengumuman.pengumumanlist', compact(
+            'data',
+            'dataLanding'
+        ));
     }
 }
