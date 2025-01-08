@@ -182,7 +182,7 @@
                         <a class="nav-link  collapsed " href="#" data-bs-toggle="collapse"
                             data-bs-target="#navartikel" aria-expanded="false" aria-controls="navartikel">
                             <i class="nav-icon bi bi-newspaper me-2"></i>
-                            Berita
+                            Artikel
                         </a>
                         <div id="navartikel" class="collapse " data-bs-parent="#sideNavbar">
                             <ul class="nav flex-column">

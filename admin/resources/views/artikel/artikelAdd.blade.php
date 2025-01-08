@@ -50,7 +50,7 @@
                                 <label for="sub_isi_artikel" class="col-sm-2 col-form-label">Sub Isi Artikel</label>
                                 <div class="col-sm-10">
                                     <input type="text" class="form-control" required id="sub_isi_artikel"
-                                        name="sub_isi_artikel" autocomplete="off" placeholder="Sub Isi Berita">
+                                        name="sub_isi_artikel" autocomplete="off" placeholder="Sub Isi Artikel">
                                 </div>
                             </div>
                             <div class="row mb-2 align-items-center">
@@ -164,7 +164,7 @@
             $('#clear_button_b').css("display", "none")
 
             $('#isi_artikel').summernote({
-                placeholder: 'Isi Pengumuman',
+                placeholder: 'Isi Artikel',
                 tabsize: 2,
                 height: 200,
                 callbacks: {

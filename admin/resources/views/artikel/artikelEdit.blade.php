@@ -1,7 +1,7 @@
 @extends('template')
 
 @section('title')
-    Berita | Edit
+    Artikel | Edit
 @endsection
 
 @section('konten')
@@ -11,22 +11,22 @@
                 <div
                     class="border-bottom pb-3 mb-3 d-flex flex-column flex-lg-row gap-3 justify-content-between align-items-lg-center">
                     <div>
-                        <h1 class="mb-0 h2 fw-bold">Berita</h1>
+                        <h1 class="mb-0 h2 fw-bold">Artikel</h1>
                     </div>
                 </div>
             </div>
         </div>
         <div class="row">
             <div class="col-lg-12 col-md-12 col-sm-12">
-                <form id="form_pengumuman" alamat="{{ route('berita.update') }}" data-parsley-validate
+                <form id="form_pengumuman" alamat="{{ route('artikel.update') }}" data-parsley-validate
                     enctype="multipart/form-data" method="POST">
                     {{ csrf_field() }}
-                    <input type="hidden" name="id" value="{{ $data->id_berita }}">
+                    <input type="hidden" name="id" value="{{ $data->id_artikel }}">
                     <input type="hidden" name="gambar1_old" id="gambar1_old" value="{{ $data->gambar1 }}">
                     <input type="hidden" name="gambar2_old" id="gambar2_old" value="{{ $data->gambar2 }}">
                     <div class="card">
                         <div class="card-header pb-1 pt-2">
-                            <h4 class="card-title">Edit Data Berita</h4>
+                            <h4 class="card-title">Edit Data Artikel</h4>
                         </div>
                         <div class="card-body">
                             <div class="row mb-2 align-items-center">
@@ -45,17 +45,30 @@
                                 </div>
                             </div>
                             <div class="row mb-2 align-items-center">
-                                <label for="isi_berita" class="col-sm-2 col-form-label">Isi Berita</label>
+                                <label for="isi_artikel" class="col-sm-2 col-form-label">Isi Artikel</label>
                                 <div class="col-sm-10">
-                                    <textarea name="isi_berita" required id="isi_berita">{{ $data->isi_berita }}</textarea>
+                                    <textarea name="isi_artikel" required id="isi_artikel">{{ $data->isi_artikel }}</textarea>
                                 </div>
                             </div>
                             <div class="row mb-2 align-items-center">
-                                <label for="sub_isi_berita" class="col-sm-2 col-form-label">Sub Isi Berita</label>
+                                <label for="sub_isi_artikel" class="col-sm-2 col-form-label">Sub Isi Artikel</label>
                                 <div class="col-sm-10">
-                                    <input type="text" class="form-control" required id="sub_isi_berita"
-                                        name="sub_isi_berita" autocomplete="off" placeholder="Sub Isi Berita"
-                                        value="{{ $data->sub_isi_berita }}">
+                                    <input type="text" class="form-control" required id="sub_isi_artikel"
+                                        name="sub_isi_artikel" autocomplete="off" placeholder="Sub Isi Artikel"
+                                        value="{{ $data->sub_isi_artikel }}">
+                                </div>
+                            </div>
+                            <div class="row mb-2 align-items-center">
+                                <label for="kategori" class="col-sm-2 col-form-label">Kategori Artikel</label>
+                                <div class="col-sm-10">
+                                    <select class="form-select" name="kategori" id="kategori" required>
+                                        <option value="">Kategori Artikel</option>
+                                        @foreach ($kategory as $item)
+                                            <option value="{{ $item->id_kategori_artikel }}"
+                                                {{ $item->id_kategori_artikel == $data->id_kategori_artikel ? 'selected' : '' }}>
+                                                {{ $item->kategori }}</option>
+                                        @endforeach
+                                    </select>
                                 </div>
                             </div>
                             <div class="row mb-2 align-items-center">
@@ -73,7 +86,7 @@
                                             @if ($data->gambar1)
                                                 <div class="shadow border border-success rounded image-preview"
                                                     id="eprev_a"
-                                                    style="height: 250px; background-size: cover; background-repeat: no-repeat; background-image: url('{{ asset('image') }}/berita/{{ $data->gambar1 }}')">
+                                                    style="height: 250px; background-size: cover; background-repeat: no-repeat; background-image: url('{{ asset('image') }}/artikel/{{ $data->gambar1 }}')">
                                                 </div>
                                             @endif
                                             <div class="shadow border border-success rounded image-preview" id="prev_a"
@@ -106,7 +119,7 @@
                                             @if ($data->gambar2)
                                                 <div class="shadow border border-success rounded image-preview"
                                                     id="eprev_b"
-                                                    style="height: 250px; background-size: cover; background-repeat: no-repeat; background-image: url('{{ asset('image') }}/berita/{{ $data->gambar2 }}')">
+                                                    style="height: 250px; background-size: cover; background-repeat: no-repeat; background-image: url('{{ asset('image') }}/artikel/{{ $data->gambar2 }}')">
                                                 </div>
                                             @endif
                                             <div class="shadow border border-success rounded image-preview" id="prev_b"
@@ -170,15 +183,15 @@
             $('#prev_b').css("display", "none")
             $('#clear_button_b').css("display", "none")
 
-            $('#isi_berita').summernote({
-                placeholder: 'Isi Pengumuman',
+            $('#isi_artikel').summernote({
+                placeholder: 'Isi Artikel',
                 tabsize: 2,
                 height: 200,
                 callbacks: {
                     onChange: function(contents, $editable) {
-                        $('#isi_berita').val(contents);
+                        $('#isi_artikel').val(contents);
 
-                        $('#isi_berita').parsley().validate();
+                        $('#isi_artikel').parsley().validate();
                     }
                 }
             })
@@ -250,7 +263,7 @@
                                 icon: response.icon
                             }).then(function() {
                                 $('#spinnerWrapper').css('display', 'flex')
-                                window.location.href = "{{ route('berita.list') }}"
+                                window.location.href = "{{ route('artikel.List') }}"
                             })
                         }
                     })
@@ -274,7 +287,7 @@
                             icon: "success"
                         }).then(function() {
                             $('#spinnerWrapper').css('display', 'flex')
-                            window.location.href = "{{ route('berita.list') }}"
+                            window.location.href = "{{ route('artikel.List') }}"
                         })
                     }
                 })
