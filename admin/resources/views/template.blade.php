@@ -82,15 +82,15 @@
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link {{ request()->segment(1) == 'pengumumanMod' || 'pengumumanList' ? '' : 'collapsed' }}  "
+                        <a class="nav-link {{ request()->segment(1) == 'pengumumanMod' || request()->segment(1) == 'pengumumanList' ? '' : 'collapsed' }}"
                             href="#" data-bs-toggle="collapse" data-bs-target="#navecommerce"
-                            aria-expanded="{{ request()->segment(1) == 'pengumumanMod' || 'pengumumanList' ? 'true' : 'false' }}"
+                            aria-expanded="{{ request()->segment(1) == 'pengumumanMod' || request()->segment(1) == 'pengumumanList' ? 'true' : 'false' }}"
                             aria-controls="navecommerce">
                             <i class="nav-icon bi bi-file me-2"></i>
                             Pengumuman
                         </a>
                         <div id="navecommerce"
-                            class="collapse {{ request()->segment(1) == 'pengumumanMod' || 'pengumumanList' ? 'show' : '' }}"
+                            class="collapse {{ request()->segment(1) == 'pengumumanMod' || request()->segment(1) == 'pengumumanList' ? 'show' : '' }}"
                             data-bs-parent="#sideNavbar">
                             <ul class="nav flex-column active">
                                 <li class="nav-item">
@@ -105,15 +105,15 @@
                         </div>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link {{ request()->segment(1) == 'tentangModIndex' || 'tentangProfilIndex' || 'tentangSejarahIndex' || 'tentangVisiIndex' || 'tentangMisiIndex' || 'tentangMottoIndex' ? '' : 'collapsed' }}  "
+                        <a class="nav-link {{ request()->segment(1) == 'tentangModIndex' || request()->segment(1) == 'tentangProfilIndex' || request()->segment(1) == 'tentangSejarahIndex' || request()->segment(1) == 'tentangVisiIndex' || request()->segment(1) == 'tentangMisiIndex' || request()->segment(1) == 'tentangMottoIndex' ? '' : 'collapsed' }}  "
                             href="#" data-bs-toggle="collapse" data-bs-target="#navetentang"
-                            aria-expanded="{{ request()->segment(1) == 'tentangModIndex' || 'tentangProfilIndex' || 'tentangSejarahIndex' || 'tentangVisiIndex' || 'tentangMisiIndex' || 'tentangMottoIndex' ? 'true' : 'false' }} "
+                            aria-expanded="{{ request()->segment(1) == 'tentangModIndex' || request()->segment(1) == 'tentangProfilIndex' || request()->segment(1) == 'tentangSejarahIndex' || request()->segment(1) == 'tentangVisiIndex' || request()->segment(1) == 'tentangMisiIndex' || request()->segment(1) == 'tentangMottoIndex' ? 'true' : 'false' }} "
                             aria-controls="navetentang">
                             <i class="nav-icon bi bi-floppy2-fill me-2"></i>
                             Tentang
                         </a>
                         <div id="navetentang"
-                            class="collapse {{ request()->segment(1) == 'tentangModIndex' || 'tentangProfilIndex' || 'tentangSejarahIndex' || 'tentangVisiIndex' || 'tentangMisiIndex' || 'tentangMottoIndex' ? 'show' : '' }} "
+                            class="collapse {{ request()->segment(1) == 'tentangModIndex' || request()->segment(1) == 'tentangProfilIndex' || request()->segment(1) == 'tentangSejarahIndex' || request()->segment(1) == 'tentangVisiIndex' || request()->segment(1) == 'tentangMisiIndex' || request()->segment(1) == 'tentangMottoIndex' ? 'show' : '' }} "
                             data-bs-parent="#sideNavbar">
                             <ul class="nav flex-column">
                                 <li class="nav-item">
@@ -144,110 +144,144 @@
                         </div>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link  collapsed " href="#" data-bs-toggle="collapse"
-                            data-bs-target="#navependidikan" aria-expanded="false" aria-controls="navependidikan">
+                        <a class="nav-link  {{ request()->segment(1) == 'pendidikanModIndex' || request()->segment(1) == 'pendidikanEducationIndex' ? '' : 'collapsed' }}"
+                            href="#" data-bs-toggle="collapse" data-bs-target="#navependidikan"
+                            aria-expanded="{{ request()->segment(1) == 'pendidikanModIndex' || request()->segment(1) == 'pendidikanEducationIndex' ? 'true' : 'false' }}"
+                            aria-controls="navependidikan">
                             <i class="nav-icon bi bi-journal-medical me-2"></i>
                             Pendidikan
                         </a>
-                        <div id="navependidikan" class="collapse " data-bs-parent="#sideNavbar">
+                        <div id="navependidikan"
+                            class="collapse {{ request()->segment(1) == 'pendidikanModIndex' || request()->segment(1) == 'pendidikanEducationIndex' ? 'show' : '' }}"
+                            data-bs-parent="#sideNavbar">
                             <ul class="nav flex-column">
                                 <li class="nav-item">
-                                    <a class="nav-link " href="{{ route('pendidikan.modIndex') }}">Mod Pendidikan</a>
+                                    <a class="nav-link {{ request()->segment(1) == 'pendidikanModIndex' ? 'active' : '' }}"
+                                        href="{{ route('pendidikan.modIndex') }}">Mod Pendidikan</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link "
+                                    <a class="nav-link {{ request()->segment(1) == 'pendidikanEducationIndex' ? 'active' : '' }}"
                                         href="{{ route('pendidikan.educationIndex') }}">Education</a>
                                 </li>
                             </ul>
                         </div>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link  collapsed " href="#" data-bs-toggle="collapse"
-                            data-bs-target="#navberita" aria-expanded="false" aria-controls="navberita">
+                        <a class="nav-link {{ request()->segment(1) == 'beritaMod' || request()->segment(1) == 'beritaList' ? '' : 'collapsed' }}"
+                            href="#" data-bs-toggle="collapse" data-bs-target="#navberita"
+                            aria-expanded="{{ request()->segment(1) == 'beritaMod' || request()->segment(1) == 'beritaList' ? 'true' : 'false' }}"
+                            aria-controls="navberita">
                             <i class="nav-icon bi bi-newspaper me-2"></i>
                             Berita
                         </a>
-                        <div id="navberita" class="collapse " data-bs-parent="#sideNavbar">
+                        <div id="navberita"
+                            class="collapse {{ request()->segment(1) == 'beritaMod' || request()->segment(1) == 'beritaList' ? 'show' : '' }}"
+                            data-bs-parent="#sideNavbar">
                             <ul class="nav flex-column">
                                 <li class="nav-item">
-                                    <a class="nav-link " href="{{ route('berita.mod') }}">Mod Berita</a>
+                                    <a class="nav-link {{ request()->segment(1) == 'beritaMod' ? 'active' : '' }}"
+                                        href="{{ route('berita.mod') }}">Mod Berita</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link " href="{{ route('berita.list') }}">Berita</a>
+                                    <a class="nav-link {{ request()->segment(1) == 'beritaList' ? 'active' : '' }}"
+                                        href="{{ route('berita.list') }}">Berita</a>
                                 </li>
                             </ul>
                         </div>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link  collapsed " href="#" data-bs-toggle="collapse"
-                            data-bs-target="#navartikel" aria-expanded="false" aria-controls="navartikel">
+                        <a class="nav-link  {{ request()->segment(1) == 'katartikel' || request()->segment(1) == 'artikelList' || request()->segment(1) == 'artikelMod' ? '' : 'collapsed' }}"
+                            href="#" data-bs-toggle="collapse" data-bs-target="#navartikel"
+                            aria-expanded="{{ request()->segment(1) == 'katartikel' || request()->segment(1) == 'artikelList' || request()->segment(1) == 'artikelMod' ? 'true' : 'false' }}"
+                            aria-controls="navartikel">
                             <i class="nav-icon bi bi-newspaper me-2"></i>
                             Artikel
                         </a>
-                        <div id="navartikel" class="collapse " data-bs-parent="#sideNavbar">
+                        <div id="navartikel"
+                            class="collapse {{ request()->segment(1) == 'katartikel' || request()->segment(1) == 'artikelList' || request()->segment(1) == 'artikelMod' ? 'show' : '' }}"
+                            data-bs-parent="#sideNavbar">
                             <ul class="nav flex-column">
                                 <li class="nav-item">
-                                    <a class="nav-link " href="{{ route('artikel.Kat') }}">Kategori Artikel</a>
+                                    <a class="nav-link {{ request()->segment(1) == 'katartikel' ? 'active' : '' }}"
+                                        href="{{ route('artikel.Kat') }}">Kategori Artikel</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link " href="{{ route('artikel.List') }}">Artikel</a>
+                                    <a class="nav-link {{ request()->segment(1) == 'artikelList' ? 'active' : '' }}"
+                                        href="{{ route('artikel.List') }}">Artikel</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link " href="{{ route('artikel.mod') }}">Mod Artikel</a>
+                                    <a class="nav-link {{ request()->segment(1) == 'artikelMod' ? 'active' : '' }}"
+                                        href="{{ route('artikel.mod') }}">Mod Artikel</a>
                                 </li>
                             </ul>
                         </div>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link  collapsed " href="#" data-bs-toggle="collapse"
-                            data-bs-target="#navKemahasiswaan" aria-expanded="false"
+                        <a class="nav-link  {{ request()->segment(1) == 'kemahasiswaanModIndex' || request()->segment(1) == 'kemahasiswaanBemIndex' || request()->segment(1) == 'kemahasiswaanUkmIndex' ? '' : 'collapsed' }}"
+                            href="#" data-bs-toggle="collapse" data-bs-target="#navKemahasiswaan"
+                            aria-expanded="{{ request()->segment(1) == 'kemahasiswaanModIndex' || request()->segment(1) == 'kemahasiswaanBemIndex' || request()->segment(1) == 'kemahasiswaanUkmIndex' ? 'true' : 'false' }}"
                             aria-controls="navKemahasiswaan">
                             <i class="nav-icon bi bi-pip me-2"></i>
                             Kemahasiswaan
                         </a>
-                        <div id="navKemahasiswaan" class="collapse " data-bs-parent="#sideNavbar">
+                        <div id="navKemahasiswaan"
+                            class="collapse {{ request()->segment(1) == 'kemahasiswaanModIndex' || request()->segment(1) == 'kemahasiswaanBemIndex' || request()->segment(1) == 'kemahasiswaanUkmIndex' ? 'show' : '' }}"
+                            data-bs-parent="#sideNavbar">
                             <ul class="nav flex-column">
                                 <li class="nav-item">
-                                    <a class="nav-link " href="{{ route('kemahasiswaan.modIndex') }}">Mod
+                                    <a class="nav-link {{ request()->segment(1) == 'kemahasiswaanModIndex' ? 'active' : '' }}"
+                                        href="{{ route('kemahasiswaan.modIndex') }}">Mod
                                         Kemahasiswaan</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link " href="{{ route('kemahasiswaan.bemIndex') }}">Bem</a>
+                                    <a class="nav-link {{ request()->segment(1) == 'kemahasiswaanBemIndex' ? 'active' : '' }}"
+                                        href="{{ route('kemahasiswaan.bemIndex') }}">Bem</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link " href="{{ route('kemahasiswaan.ukmIndex') }}">Ukm</a>
+                                    <a class="nav-link {{ request()->segment(1) == 'kemahasiswaanUkmIndex' ? 'active' : '' }}"
+                                        href="{{ route('kemahasiswaan.ukmIndex') }}">Ukm</a>
                                 </li>
                             </ul>
                         </div>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link  collapsed " href="#" data-bs-toggle="collapse"
-                            data-bs-target="#navAkreditasi" aria-expanded="false" aria-controls="navAkreditasi">
+                        <a class="nav-link {{ request()->segment(1) == 'akreditasiModIndex' || request()->segment(1) == 'akreditasiAccreditationIndex' ? '' : 'collapsed' }}"
+                            href="#" data-bs-toggle="collapse" data-bs-target="#navAkreditasi"
+                            aria-expanded="{{ request()->segment(1) == 'akreditasiModIndex' || request()->segment(1) == 'akreditasiAccreditationIndex' ? 'true' : 'false' }}"
+                            aria-controls="navAkreditasi">
                             <i class="nav-icon bi bi-slash-square me-2"></i>
                             Akreditasi
                         </a>
-                        <div id="navAkreditasi" class="collapse " data-bs-parent="#sideNavbar">
+                        <div id="navAkreditasi"
+                            class="collapse {{ request()->segment(1) == 'akreditasiModIndex' || request()->segment(1) == 'akreditasiAccreditationIndex' ? 'show' : '' }}"
+                            data-bs-parent="#sideNavbar">
                             <ul class="nav flex-column">
                                 <li class="nav-item">
-                                    <a class="nav-link " href="{{ route('akreditasi.modIndex') }}">Mod Akreditasi</a>
+                                    <a class="nav-link {{ request()->segment(1) == 'akreditasiModIndex' ? 'active' : '' }}"
+                                        href="{{ route('akreditasi.modIndex') }}">Mod Akreditasi</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link "
+                                    <a class="nav-link {{ request()->segment(1) == 'akreditasiAccreditationIndex' ? 'active' : '' }}"
                                         href="{{ route('akreditasi.accreditationIndex') }}">Accreditation</a>
                                 </li>
                             </ul>
                         </div>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link  collapsed " href="#" data-bs-toggle="collapse"
-                            data-bs-target="#navContact" aria-expanded="false" aria-controls="navContact">
+                        <a class="nav-link {{ request()->segment(1) == 'contactModIndex' ? '' : 'collapsed' }}"
+                            href="#" data-bs-toggle="collapse" data-bs-target="#navContact"
+                            aria-expanded="{{ request()->segment(1) == 'contactModIndex' ? 'true' : 'false' }}"
+                            aria-controls="navContact">
                             <i class="nav-icon fe fe-shopping-bag me-2"></i>
                             Contact
                         </a>
-                        <div id="navContact" class="collapse " data-bs-parent="#sideNavbar">
+                        <div id="navContact"
+                            class="collapse {{ request()->segment(1) == 'contactModIndex' ? 'show' : '' }}"
+                            data-bs-parent="#sideNavbar">
                             <ul class="nav flex-column">
                                 <li class="nav-item">
-                                    <a class="nav-link " href="{{ route('contact.modIndex') }}">Mod Contact</a>
+                                    <a class="nav-link {{ request()->segment(1) == 'contactModIndex' ? 'active' : '' }}"
+                                        href="{{ route('contact.modIndex') }}">Mod Contact</a>
                                 </li>
                             </ul>
                         </div>
