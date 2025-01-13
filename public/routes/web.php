@@ -6,6 +6,7 @@ use App\Http\Controllers\Pendidikan;
 use App\Http\Controllers\Tentang;
 use App\Http\Controllers\Pengumuman;
 use App\Http\Controllers\Berita;
+use App\Http\Controllers\Akreditasi;
 
 Route::get('/', [Home::class, 'index'])->name('home.index');
 
@@ -39,11 +40,14 @@ Route::controller(Berita::class)->group(function () {
 });
 
 
-
-
-Route::get('/pendidikan_detail', function () {
-    return view('pendidikan.pendidikandetail');
+Route::controller(Akreditasi::class)->group(function () {
+    Route::get('/akreditasiIndex', 'index')->name('akreditasi.index');
+    Route::get('/akreditasiShow/{fakultas}', 'show')->name('akreditasi.show');
 });
+
+// Route::get('/pendidikan_detail', function () {
+//     return view('pendidikan.pendidikandetail');
+// });
 
 Route::get('/kemahasiswaan', function () {
     return view('kemahasiswaan.kemahasiswaan');
@@ -61,13 +65,7 @@ Route::get('/artikel_detail', function () {
     return view('artikel.artikeldetail');
 });
 
-Route::get('/akreditasi', function () {
-    return view('akreditasi.akreditasi');
-});
 
-Route::get('/akreditasi_detail', function () {
-    return view('akreditasi.akreditasidetail');
-});
 
 Route::get('/narahubung', function () {
     return view('narahubung.narahubung');

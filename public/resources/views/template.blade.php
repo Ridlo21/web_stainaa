@@ -73,7 +73,7 @@
                                         </li>
                                         <li
                                             class="rd-nav-item {{ request()->segment(1) == 'akreditasi' ? 'active' : '' }}">
-                                            <a class="rd-nav-link" href="{{ url('/akreditasi') }}">Akreditasi</a>
+                                            <a class="rd-nav-link" href="{{ route('akreditasi.index') }}">Akreditasi</a>
                                         </li>
                                         {{-- <li class="rd-nav-item"><a class="rd-nav-link" href="blog.html">Blog</a>
                                             <ul class="rd-menu rd-navbar-dropdown">
