@@ -13,41 +13,34 @@
         </div>
     </section> --}}
     <div class="mm bg-default mb-5">
-        <img class="img-fluid cover" src="dist/images/bg_3.jpg" alt="" />
+        @foreach ($data as $item)
+            
+        <img class="img-fluid cover" src="http://localhost:8000/image/kemahasiswaan/{{$item->gambar}}" alt="" />
         <div class="container judul">
             <div class="row">
                 <div class="col-lg-4 col-md-6 bg-primary shadow pt-3">
-                    <h3>Kemahasiswaan</h3>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam necessitatibus facilis iste qui
-                        excepturi reprehenderit at, quis corrupti fugit sit, magnam dolorem nisi, accusamus aliquam et
-                        cupiditate aliquid assumenda eos.</p>
+                    <h3>{{$item->title}}</h3>
+                    <p>{{$item->descripton}}</p>
                 </div>
             </div>
         </div>
+        @endforeach
     </div>
     <section class="section section-lg bg-default mt-5 pt-5">
         <div class="container">
             <div class="row row-40 justify-content-md-between flex-column-reverse flex-md-row">
+                @foreach ($bems as $bem)
+                    
                 <div class="col-md-6">
-                    <h3>Badan Eksekutif Mahasiswa</h3>
-                    <p>My name is John Adams and I am a business coach and trainer. I work with you to increase your
-                        awareness and choices, so you can set meaningful goals and get the results you truly want. I
-                        will challenge you to learn and think differently.</p>
-                    <p>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos, molestias iste fugit minus
-                        iusto quas eveniet neque libero rerum at. Doloribus perferendis ipsum reiciendis sequi at voluptatum
-                        maiores enim neque!
-                    </p>
-                    <p>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos, molestias iste fugit minus
-                        iusto quas eveniet neque libero rerum at. Doloribus perferendis ipsum reiciendis sequi at voluptatum
-                        maiores enim neque!
-                    </p>
+                    <h3>{{$bem->judul}}</h3>
+                    <p><?= $bem->isi?></p>
                 </div>
                 <div class="col-md-5">
-                    <img class="wow fadeIn" src="dist/images/t.jpg" alt="" width="510" height="680"
+                    <img class="wow fadeIn" src="http://localhost:8000/image/kemahasiswaan/{{$item->gambar}}" alt="" width="510" height="680"
                         data-wow-delay=".3s" />
                 </div>
+                @endforeach
+
             </div>
         </div>
     </section>

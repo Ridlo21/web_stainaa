@@ -65,7 +65,7 @@
                                         </li>
                                         <li
                                             class="rd-nav-item {{ request()->segment(1) == 'kemahasiswaan' ? 'active' : '' }}">
-                                            <a class="rd-nav-link" href="{{ url('/kemahasiswaan') }}">Kemahasiswaan</a>
+                                            <a class="rd-nav-link" href="{{ route('kemahasiswaan.index') }}">Kemahasiswaan</a>
                                         </li>
                                         <li
                                             class="rd-nav-item {{ request()->segment(1) == 'artikel' ? 'active' : '' }}">

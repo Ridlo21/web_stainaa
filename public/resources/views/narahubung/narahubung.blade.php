@@ -23,7 +23,7 @@
         <div class="container">
             <div class="row row-50 justify-content-md-between">
                 <div class="col-md-12">
-                    <h2>Stainaa menyediakan contak yang bisa dihubungi</h2>
+                    <h2>Stainaa menyediakan contact yang bisa dihubungi</h2>
                     <p style="max-width: 450px;">ketika ada yang dibutuhkan kami siap melayani dengan menghubungi email dan nomor dibawah ini</p>
                     <address class="contact-info">
                         <p class="h4">P:&nbsp;<a class="link-default" href="tel:#">082845289894</a></p><a

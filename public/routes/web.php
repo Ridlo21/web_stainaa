@@ -8,6 +8,7 @@ use App\Http\Controllers\Pengumuman;
 use App\Http\Controllers\Berita;
 use App\Http\Controllers\Akreditasi;
 use App\Http\Controllers\Contact;
+use App\Http\Controllers\Kemahasiswaan;
 
 Route::get('/', [Home::class, 'index'])->name('home.index');
 
@@ -54,13 +55,14 @@ Route::controller(Contact::class)->group(function () {
 //     return view('pendidikan.pendidikandetail');
 // });
 
-Route::get('/kemahasiswaan', function () {
-    return view('kemahasiswaan.kemahasiswaan');
+Route::controller(Kemahasiswaan::class)->group(function () {
+    Route::get('/kemahasiswaanIndex', 'index')->name('kemahasiswaan.index');
 });
 
 Route::get('/ukm_detail', function () {
     return view('kemahasiswaan.ukmdetail');
 });
+
 
 Route::get('/artikel', function () {
     return view('artikel.artikel');
