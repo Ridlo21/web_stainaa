@@ -4,6 +4,12 @@
     Home
 @endsection
 
+<?php
+    $countMahasiswa = DB::connection('mysql_second')->table('tb_mahasiswa')->where('status','aktif')->count();
+    $countAlumniMahasiswa = DB::connection('mysql_second')->table('tb_mahasiswa')->where('status','tidak')->count();
+    $countDosen = DB::connection('mysql_second')->table('tb_dosen')->where('status','aktif')->count();
+?>
+
 @section('konten')
     <section class="section bg-primary">
         {{-- <img class="img-fluid cover" src="dist/images/bg_3.jpg" alt="" /> --}}
@@ -177,26 +183,26 @@
             <div class="row row-40">
                 <div class="col-sm-6 col-md-3">
                     <div class="box-counter"><span class="novi-icon icon icon-md icon-primary fa-university"></span>
-                        <div class="text-large counter">58249</div>
+                        <div class="text-large counter">2020</div>
                         <h5 class="box-header">Berdiri Sejak</h5>
                     </div>
                 </div>
                 <div class="col-sm-6 col-md-3">
                     <div class="box-counter"><span class="novi-icon icon icon-md icon-primary material-icons-mood"></span>
-                        <div class="text-large counter counter-k">246</div>
+                        <div class="text-large counter"><?= $countMahasiswa ?></div>
                         <h5 class="box-header">Mahasiswa</h5>
                     </div>
                 </div>
                 <div class="col-sm-6 col-md-3">
                     <div class="box-counter"><span
                             class="novi-icon icon icon-md icon-primary material-icons-access_time"></span>
-                        <div class="text-large counter">1200</div>
+                        <div class="text-large counter"><?= $countDosen ?></div>
                         <h5 class="box-header">Dosen</h5>
                     </div>
                 </div>
                 <div class="col-sm-6 col-md-3">
                     <div class="box-counter"><span class="novi-icon icon icon-md icon-primary fa-graduation-cap"></span>
-                        <div class="text-large counter counter-k">834</div>
+                        <div class="text-large counter"><?= $countAlumniMahasiswa ?></div>
                         <h5 class="box-header">Lulusan</h5>
                     </div>
                 </div>

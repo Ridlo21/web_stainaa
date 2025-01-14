@@ -51,7 +51,7 @@
                                 <div class="rd-navbar-nav-inner">
                                     <div class="rd-navbar-btn-wrap"><a
                                             class="btn btn-180 btn-icon btn-icon-right btn-nero-outline-1"
-                                            href="{{ url('/narahubung') }}"><span
+                                            href="{{ url('/contactIndex') }}"><span
                                                 class="icon icon-xs-smaller icomoon-chat"></span>Contact me</a></div>
                                     <ul class="rd-navbar-nav">
                                         <li

@@ -7,6 +7,7 @@ use App\Http\Controllers\Tentang;
 use App\Http\Controllers\Pengumuman;
 use App\Http\Controllers\Berita;
 use App\Http\Controllers\Akreditasi;
+use App\Http\Controllers\Contact;
 
 Route::get('/', [Home::class, 'index'])->name('home.index');
 
@@ -45,6 +46,10 @@ Route::controller(Akreditasi::class)->group(function () {
     Route::get('/akreditasiShow/{fakultas}', 'show')->name('akreditasi.show');
 });
 
+Route::controller(Contact::class)->group(function () {
+    Route::get('/contactIndex', 'index')->name('contact.index');
+});
+
 // Route::get('/pendidikan_detail', function () {
 //     return view('pendidikan.pendidikandetail');
 // });
@@ -65,11 +70,6 @@ Route::get('/artikel_detail', function () {
     return view('artikel.artikeldetail');
 });
 
-
-
-Route::get('/narahubung', function () {
-    return view('narahubung.narahubung');
-});
 
 
 
