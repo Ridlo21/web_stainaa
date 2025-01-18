@@ -13,14 +13,12 @@
         </div>
     </section> --}}
     <div class="mm bg-default mb-5">
-        <img class="img-fluid cover" src="dist/images/bg_3.jpg" alt="" />
+        <img class="img-fluid cover" src="http://localhost:8000/image/mod_artikel/{{ $mod->gambar }}" alt="" />
         <div class="container judul">
             <div class="row">
                 <div class="col-lg-4 col-md-6 bg-primary shadow pt-3">
-                    <h3>Artikel</h3>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam necessitatibus facilis iste qui
-                        excepturi reprehenderit at, quis corrupti fugit sit, magnam dolorem nisi, accusamus aliquam et
-                        cupiditate aliquid assumenda eos.</p>
+                    <h3>{{ $mod->title }}</h3>
+                    <p>{{ $mod->descripton }}</p>
                 </div>
             </div>
         </div>
@@ -29,206 +27,30 @@
         <div class="container">
             <div class="row row-50 justify-content-between">
                 <div class="col-lg-8">
-                    <article class="post post-single mb-5">
-                        <div class="post-image">
-                            <figure><img src="dist/images/post-1-840x464.jpg" alt="" width="840"
-                                    height="464" />
-                            </figure>
-                        </div>
-                        <div class="post-header">
-                            <h2 class="h3">The ultimate guide to time management</h2>
-                        </div>
-                        <div class="divider-fullwidth"></div>
-                        <div class="post-body">
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec nec venenatis elit,
-                                sed vehicula sapien. Praesent facilisis varius imperdiet. Ut et ligula quis mi
-                                viverra sodales. Vivamus lectus magna, faucibus vel ipsum. Proin iaculis, diam et
-                                placerat lacinia, odio nisl congue tellus, sed placerat nunc neque id urna.
-                                Phasellus nec massa purus.</p>
-                        </div>
-                        <a class="btn btn-nero" style="margin-top: 20px !important;" style="margin-top: 20px !important;"
-                            href="{{ url('/artikel_detail') }}">Read More</a>
-                    </article>
-                    <article class="post post-single mb-5">
-                        <div class="post-image">
-                            <figure><img src="dist/images/post-1-840x464.jpg" alt="" width="840"
-                                    height="464" />
-                            </figure>
-                        </div>
-                        <div class="post-header">
-                            <h2 class="h3">The ultimate guide to time management</h2>
-                        </div>
-                        <div class="divider-fullwidth"></div>
-                        <div class="post-body">
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec nec venenatis elit,
-                                sed vehicula sapien. Praesent facilisis varius imperdiet. Ut et ligula quis mi
-                                viverra sodales. Vivamus lectus magna, faucibus vel ipsum. Proin iaculis, diam et
-                                placerat lacinia, odio nisl congue tellus, sed placerat nunc neque id urna.
-                                Phasellus nec massa purus.</p>
-                        </div>
-                        <a class="btn btn-nero" style="margin-top: 20px !important;"
-                            href="{{ url('/artikel_detail') }}">Read More</a>
-                    </article>
-                    <article class="post post-single mb-5">
-                        <div class="post-image">
-                            <figure><img src="dist/images/post-1-840x464.jpg" alt="" width="840"
-                                    height="464" />
-                            </figure>
-                        </div>
-                        <div class="post-header">
-                            <h2 class="h3">The ultimate guide to time management</h2>
-                        </div>
-                        <div class="divider-fullwidth"></div>
-                        <div class="post-body">
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec nec venenatis elit,
-                                sed vehicula sapien. Praesent facilisis varius imperdiet. Ut et ligula quis mi
-                                viverra sodales. Vivamus lectus magna, faucibus vel ipsum. Proin iaculis, diam et
-                                placerat lacinia, odio nisl congue tellus, sed placerat nunc neque id urna.
-                                Phasellus nec massa purus.</p>
-                        </div>
-                        <a class="btn btn-nero" style="margin-top: 20px !important;"
-                            href="{{ url('/artikel_detail') }}">Read More</a>
-                    </article>
-                    <article class="post post-single mb-5">
-                        <div class="post-image">
-                            <figure><img src="dist/images/post-1-840x464.jpg" alt="" width="840"
-                                    height="464" />
-                            </figure>
-                        </div>
-                        <div class="post-header">
-                            <h2 class="h3">The ultimate guide to time management</h2>
-                        </div>
-                        <div class="divider-fullwidth"></div>
-                        <div class="post-body">
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec nec venenatis elit,
-                                sed vehicula sapien. Praesent facilisis varius imperdiet. Ut et ligula quis mi
-                                viverra sodales. Vivamus lectus magna, faucibus vel ipsum. Proin iaculis, diam et
-                                placerat lacinia, odio nisl congue tellus, sed placerat nunc neque id urna.
-                                Phasellus nec massa purus.</p>
-                        </div>
-                        <a class="btn btn-nero" style="margin-top: 20px !important;"
-                            href="{{ url('/artikel_detail') }}">Read More</a>
-                    </article>
-                    <article class="post post-single mb-5">
-                        <div class="post-image">
-                            <figure><img src="dist/images/post-1-840x464.jpg" alt="" width="840"
-                                    height="464" />
-                            </figure>
-                        </div>
-                        <div class="post-header">
-                            <h2 class="h3">The ultimate guide to time management</h2>
-                        </div>
-                        <div class="divider-fullwidth"></div>
-                        <div class="post-body">
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec nec venenatis elit,
-                                sed vehicula sapien. Praesent facilisis varius imperdiet. Ut et ligula quis mi
-                                viverra sodales. Vivamus lectus magna, faucibus vel ipsum. Proin iaculis, diam et
-                                placerat lacinia, odio nisl congue tellus, sed placerat nunc neque id urna.
-                                Phasellus nec massa purus.</p>
-                        </div>
-                        <a class="btn btn-nero" style="margin-top: 20px !important;"
-                            href="{{ url('/artikel_detail') }}">Read More</a>
-                    </article>
-                    <article class="post post-single mb-5">
-                        <div class="post-image">
-                            <figure><img src="dist/images/post-1-840x464.jpg" alt="" width="840"
-                                    height="464" />
-                            </figure>
-                        </div>
-                        <div class="post-header">
-                            <h2 class="h3">The ultimate guide to time management</h2>
-                        </div>
-                        <div class="divider-fullwidth"></div>
-                        <div class="post-body">
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec nec venenatis elit,
-                                sed vehicula sapien. Praesent facilisis varius imperdiet. Ut et ligula quis mi
-                                viverra sodales. Vivamus lectus magna, faucibus vel ipsum. Proin iaculis, diam et
-                                placerat lacinia, odio nisl congue tellus, sed placerat nunc neque id urna.
-                                Phasellus nec massa purus.</p>
-                        </div>
-                        <a class="btn btn-nero" style="margin-top: 20px !important;"
-                            href="{{ url('/artikel_detail') }}">Read More</a>
-                    </article>
-                    <article class="post post-single mb-5">
-                        <div class="post-image">
-                            <figure><img src="dist/images/post-1-840x464.jpg" alt="" width="840"
-                                    height="464" />
-                            </figure>
-                        </div>
-                        <div class="post-header">
-                            <h2 class="h3">The ultimate guide to time management</h2>
-                        </div>
-                        <div class="divider-fullwidth"></div>
-                        <div class="post-body">
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec nec venenatis elit,
-                                sed vehicula sapien. Praesent facilisis varius imperdiet. Ut et ligula quis mi
-                                viverra sodales. Vivamus lectus magna, faucibus vel ipsum. Proin iaculis, diam et
-                                placerat lacinia, odio nisl congue tellus, sed placerat nunc neque id urna.
-                                Phasellus nec massa purus.</p>
-                        </div>
-                        <a class="btn btn-nero" style="margin-top: 20px !important;"
-                            href="{{ url('/artikel_detail') }}">Read More</a>
-                    </article>
-                    <article class="post post-single mb-5">
-                        <div class="post-image">
-                            <figure><img src="dist/images/post-1-840x464.jpg" alt="" width="840"
-                                    height="464" />
-                            </figure>
-                        </div>
-                        <div class="post-header">
-                            <h2 class="h3">The ultimate guide to time management</h2>
-                        </div>
-                        <div class="divider-fullwidth"></div>
-                        <div class="post-body">
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec nec venenatis elit,
-                                sed vehicula sapien. Praesent facilisis varius imperdiet. Ut et ligula quis mi
-                                viverra sodales. Vivamus lectus magna, faucibus vel ipsum. Proin iaculis, diam et
-                                placerat lacinia, odio nisl congue tellus, sed placerat nunc neque id urna.
-                                Phasellus nec massa purus.</p>
-                        </div>
-                        <a class="btn btn-nero" style="margin-top: 20px !important;"
-                            href="{{ url('/artikel_detail') }}">Read More</a>
-                    </article>
-                    <article class="post post-single mb-5">
-                        <div class="post-image">
-                            <figure><img src="dist/images/post-1-840x464.jpg" alt="" width="840"
-                                    height="464" />
-                            </figure>
-                        </div>
-                        <div class="post-header">
-                            <h2 class="h3">The ultimate guide to time management</h2>
-                        </div>
-                        <div class="divider-fullwidth"></div>
-                        <div class="post-body">
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec nec venenatis elit,
-                                sed vehicula sapien. Praesent facilisis varius imperdiet. Ut et ligula quis mi
-                                viverra sodales. Vivamus lectus magna, faucibus vel ipsum. Proin iaculis, diam et
-                                placerat lacinia, odio nisl congue tellus, sed placerat nunc neque id urna.
-                                Phasellus nec massa purus.</p>
-                        </div>
-                        <a class="btn btn-nero" style="margin-top: 20px !important;"
-                            href="{{ url('/artikel_detail') }}">Read More</a>
-                    </article>
-                    <article class="post post-single mb-5">
-                        <div class="post-image">
-                            <figure><img src="dist/images/post-1-840x464.jpg" alt="" width="840"
-                                    height="464" />
-                            </figure>
-                        </div>
-                        <div class="post-header">
-                            <h2 class="h3">The ultimate guide to time management</h2>
-                        </div>
-                        <div class="divider-fullwidth"></div>
-                        <div class="post-body">
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec nec venenatis elit,
-                                sed vehicula sapien. Praesent facilisis varius imperdiet. Ut et ligula quis mi
-                                viverra sodales. Vivamus lectus magna, faucibus vel ipsum. Proin iaculis, diam et
-                                placerat lacinia, odio nisl congue tellus, sed placerat nunc neque id urna.
-                                Phasellus nec massa purus.</p>
-                        </div>
-                        <a class="btn btn-nero" style="margin-top: 20px !important;"
-                            href="{{ url('/artikel_detail') }}">Read More</a>
-                    </article>
+                    @if ($data->isEmpty())
+                        <p class="mb-4"><i>Tidak ada arikel pada kategori yang anda pilih!</i></p>
+                    @else
+                        @foreach ($data as $item)
+                            <article class="post post-single mb-5">
+                                <div class="post-image">
+                                    <figure><img src="http://localhost:8000/image/artikel/{{ $item->gambar1 }}"
+                                            alt="" width="840" height="464" />
+                                    </figure>
+                                </div>
+                                <div class="post-header">
+                                    <h3 class="h3">{{ $item->judul }}</h3>
+                                </div>
+                                <div class="divider-fullwidth"></div>
+                                <div class="post-body">
+                                    <p>
+                                        <?= substr($item->isi_artikel, 3, 200) ?>
+                                    </p>
+                                </div>
+                                <a class="btn btn-nero" href="{{ route('artikel.Info', ['id' => $item->judul_seo]) }}">Read
+                                    More</a>
+                            </article>
+                        @endforeach
+                    @endif
                     <ul class="pag pag-simple">
                         <li class="pag-simple-item"><a class="pag-simple-link pag-simple-link-prev inactive"
                                 href="#"><span class="mdi mdi-arrow-left novi-icon"></span></a>
@@ -265,81 +87,43 @@
                         <div class="blog-aside-item">
                             <h4>Categories</h4>
                             <ul class="list-marked-variant-3">
-                                <li><a href="#"><span>Management</span><span class="list-counter">(3)</span></a>
+                                <li>
+                                    <a href="{{ route('artikel.List') }}"><span>All</span><span
+                                            class="list-counter">({{ $total }})</span></a>
                                 </li>
-                                <li><a href="#"><span>Marketing</span><span class="list-counter">(4)</span></a></li>
-                                <li><a href="#"><span>Business</span><span class="list-counter">(4)</span></a></li>
+                                @foreach ($kategori as $kat)
+                                    <li>
+                                        <a href="{{ url('/artikel?kategori=' . urlencode($kat->kategori)) }}"><span>{{ $kat->kategori }}</span><span
+                                                class="list-counter">({{ $kat->total_artikel }})</span></a>
+                                    </li>
+                                @endforeach
                             </ul>
                         </div>
                         <div class="blog-aside-item">
                             <h4>Popular posts</h4>
                             <div class="post-preview-wrap">
-                                <article class="post post-preview"><a href="{{ url('/artikel_detail') }}">
-                                        <div class="unit unit-spacing-md">
-                                            <div class="unit-left">
-                                                <figure class="post-image"><img src="dist/images/post-preview-1-80x80.jpg"
-                                                        alt="" width="80" height="80" />
-                                                </figure>
-                                            </div>
-                                            <div class="unit-body">
-                                                <div class="post-header">
-                                                    <p>Find more time in your day through a simple time audit</p>
-                                                </div>
-                                                <div class="post-meta">
-                                                    <ul class="list-meta">
-                                                        <li>
-                                                            <time datetime="2023-02-04">Feb 4, 2023</time>
-                                                        </li>
-                                                        <li>3 Comments</li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </a></article>
-                                <article class="post post-preview"><a href="{{ url('/artikel_detail') }}">
-                                        <div class="unit unit-spacing-md">
-                                            <div class="unit-left">
-                                                <figure class="post-image"><img src="dist/images/post-preview-2-80x80.jpg"
-                                                        alt="" width="80" height="80" />
-                                                </figure>
-                                            </div>
-                                            <div class="unit-body">
-                                                <div class="post-header">
-                                                    <p>How to get more out of your business</p>
-                                                </div>
-                                                <div class="post-meta">
-                                                    <ul class="list-meta">
-                                                        <li>
-                                                            <time datetime="2023-02-04">Feb 4, 2023</time>
-                                                        </li>
-                                                        <li>3 Comments</li>
-                                                    </ul>
+                                @foreach ($populer as $item)
+                                    <article class="post post-preview"><a
+                                            href="{{ route('artikel.Info', ['id' => $item->judul_seo]) }}">
+                                            <div class="unit unit-spacing-md">
+                                                <div class="unit-body">
+                                                    <div class="post-header">
+                                                        <p>{{ $item->judul }}</p>
+                                                    </div>
+                                                    <div class="post-meta">
+                                                        <ul class="list-meta">
+                                                            <li>
+                                                                <time
+                                                                    datetime="{{ $item->tanggal }}">{{ \Carbon\Carbon::parse($item->tanggal)->format('M j, Y') }}</time>
+                                                            </li>
+                                                            <li>{{ $item->dibaca }} x dibaca</li>
+                                                        </ul>
+                                                    </div>
                                                 </div>
                                             </div>
-                                        </div>
-                                    </a></article>
-                                <article class="post post-preview"><a href="{{ url('/artikel_detail') }}">
-                                        <div class="unit unit-spacing-md">
-                                            <div class="unit-left">
-                                                <figure class="post-image"><img src="dist/images/post-preview-3-80x80.jpg"
-                                                        alt="" width="80" height="80" />
-                                                </figure>
-                                            </div>
-                                            <div class="unit-body">
-                                                <div class="post-header">
-                                                    <p>5 steps to increasing your effectiveness</p>
-                                                </div>
-                                                <div class="post-meta">
-                                                    <ul class="list-meta">
-                                                        <li>
-                                                            <time datetime="2023-02-04">Feb 4, 2023</time>
-                                                        </li>
-                                                        <li>3 Comments</li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </a></article>
+                                        </a>
+                                    </article>
+                                @endforeach
                             </div>
                         </div>
                     </div>

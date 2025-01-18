@@ -7,6 +7,7 @@ use App\Http\Controllers\Tentang;
 use App\Http\Controllers\Pengumuman;
 use App\Http\Controllers\Berita;
 use App\Http\Controllers\Akreditasi;
+use App\Http\Controllers\Artikel;
 use App\Http\Controllers\Contact;
 use App\Http\Controllers\Kemahasiswaan;
 
@@ -35,7 +36,7 @@ Route::controller(Berita::class)->group(function () {
     // Route::get('/semua_berita', function () {
     //     return view('berita.beritalist');
     // });
-    
+
     // Route::get('/berita_detail', function () {
     //     return view('berita.beritadetail');
     // });
@@ -63,16 +64,15 @@ Route::get('/ukm_detail', function () {
     return view('kemahasiswaan.ukmdetail');
 });
 
-
-Route::get('/artikel', function () {
-    return view('artikel.artikel');
+Route::controller(Artikel::class)->group(function () {
+    Route::get('/artikel', 'index')->name('artikel.List');
+    Route::get('/artikelInfo/{id}', 'show')->name('artikel.Info');
 });
 
-Route::get('/artikel_detail', function () {
-    return view('artikel.artikeldetail');
-});
+// Route::get('/artikel', function () {
+//     return view('artikel.artikel');
+// });
 
-
-
-
-
+// Route::get('/artikel_detail', function () {
+//     return view('artikel.artikeldetail');
+// });

@@ -65,11 +65,11 @@ return [
         'mysql_second' => [
             'driver' => 'mysql',
             'url' => env('DATABASE_URL_SECOND'),
-            'host' => env('DB_HOST_SECOND', '127.0.0.1'),
+            'host' => env('DB_HOST_SECOND', '151.106.119.201'),
             'port' => env('DB_PORT_SECOND', '3306'),
-            'database' => env('DB_DATABASE_SECOND', 'forge'),
-            'username' => env('DB_USERNAME_SECOND', 'forge'),
-            'password' => env('DB_PASSWORD_SECOND', ''),
+            'database' => env('DB_DATABASE_SECOND', 'u2785662_coba_siakad_stainaa'),
+            'username' => env('DB_USERNAME_SECOND', 'u2785662_coba_siakad_stainaa'),
+            'password' => env('DB_PASSWORD_SECOND', '@cobasiakadstainaa24'),
             'unix_socket' => env('DB_SOCKET_SECOND', ''),
             'charset' => 'utf8mb4',
             'collation' => 'utf8mb4_unicode_ci',
@@ -167,7 +167,7 @@ return [
 
         'options' => [
             'cluster' => env('REDIS_CLUSTER', 'redis'),
-            'prefix' => env('REDIS_PREFIX', Str::slug(env('APP_NAME', 'laravel'), '_').'_database_'),
+            'prefix' => env('REDIS_PREFIX', Str::slug(env('APP_NAME', 'laravel'), '_') . '_database_'),
         ],
 
         'default' => [
