@@ -52,36 +52,38 @@
                         @endforeach
                     @endif
                     <ul class="pag pag-simple">
-                        <li class="pag-simple-item"><a class="pag-simple-link pag-simple-link-prev inactive"
-                                href="#"><span class="mdi mdi-arrow-left novi-icon"></span></a>
+                        <li class="pag-simple-item">
+                            <a class="pag-simple-link pag-simple-link-prev {{ $data->onFirstPage() ? 'inactive' : '' }}"
+                                href="{{ $data->previousPageUrl() ?? '#' }}">
+                                <span class="mdi mdi-arrow-left novi-icon"></span>
+                            </a>
                         </li>
-                        <li class="pag-simple-item active"><a class="pag-simple-link" href="#">1</a>
-                        </li>
-                        <li class="pag-simple-item"><a class="pag-simple-link" href="#">2</a>
-                        </li>
-                        <li class="pag-simple-item"><a class="pag-simple-link" href="#">3</a>
-                        </li>
-                        <li class="pag-simple-item"><a class="pag-simple-link" href="#">4</a>
-                        </li>
-                        <li class="pag-simple-item"><a class="pag-simple-link inactive" href="#">...</a>
-                        </li>
-                        <li class="pag-simple-item"><a class="pag-simple-link" href="#">7</a>
-                        </li>
-                        <li class="pag-simple-item"><a class="pag-simple-link pag-simple-link-next" href="#"><span
-                                    class="mdi mdi-arrow-right novi-icon"></span></a>
+
+                        @foreach ($data->getUrlRange(1, $data->lastPage()) as $page => $url)
+                            <li class="pag-simple-item {{ $page == $data->currentPage() ? 'active' : '' }}">
+                                <a class="pag-simple-link" href="{{ $url }}">{{ $page }}</a>
+                            </li>
+                        @endforeach
+
+                        <li class="pag-simple-item">
+                            <a class="pag-simple-link pag-simple-link-next {{ $data->hasMorePages() ? '' : 'inactive' }}"
+                                href="{{ $data->nextPageUrl() ?? '#' }}">
+                                <span class="mdi mdi-arrow-right novi-icon"></span>
+                            </a>
                         </li>
                     </ul>
                 </div>
                 <div class="col-lg-4 col-xl-3">
                     <div class="blog-aside">
                         <div class="blog-aside-item">
-                            <form class="rd-search rd-search-classic" action="search-results.html" method="GET">
+                            <form class="rd-search rd-search-classic" action="{{ route('artikel.List') }}" method="GET">
                                 <div class="form-wrap">
-                                    <label class="form-label" for="rd-search-form-input-1">Search</label>
-                                    <input class="form-input" id="rd-search-form-input-1" type="text" name="s"
+                                    <label class="form-label" for="searchInput">Search</label>
+                                    <input class="form-input" id="searchInput" type="text" name="search"
+                                        value="{{ old('search', $search) }}" oninput="this.form.submit()"
                                         autocomplete="off">
                                 </div>
-                                <button class="rd-search-submit" type="submit"></button>
+                                <button type="button" class="rd-search-submit"></button>
                             </form>
                         </div>
                         <div class="blog-aside-item">
@@ -131,4 +133,13 @@
             </div>
         </div>
     </section>
+    <script>
+        let timeout = null;
+        document.getElementById('searchInput').addEventListener('input', function() {
+            clearTimeout(timeout);
+            timeout = setTimeout(function() {
+                document.querySelector('form').submit();
+            }, 800);
+        });
+    </script>
 @endsection

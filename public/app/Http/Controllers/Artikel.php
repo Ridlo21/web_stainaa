@@ -11,16 +11,25 @@ class Artikel extends Controller
     {
 
         $kategoriNama = $request->input('kategori');
+        $search = $request->search;
 
         $mod = DB::table('landing_artikel')->where('status', 'aktif')->first();
         if ($kategoriNama) {
-            $data = DB::table('artikel')
+            $query = DB::table('artikel')
                 ->join('kategori_artikel', 'kategori_artikel.id_kategori_artikel', '=', 'artikel.id_kategori_artikel')
                 ->where('kategori_artikel.kategori', $kategoriNama)
                 ->where('artikel.status', 'aktif')
-                ->get();
+                ->orderBy('id_artikel', 'DESC');
+            if (!empty($search)) {
+                $query->where('judul', 'like', '%' . $search . '%');
+            }
+            $data = $query->paginate(5);
         } else {
-            $data = DB::table('artikel')->where('status', 'aktif')->get();
+            $query = DB::table('artikel')->where('status', 'aktif')->orderBy('id_artikel', 'DESC');
+            if (!empty($search)) {
+                $query->where('judul', 'like', '%' . $search . '%');
+            }
+            $data = $query->paginate(5);
         }
 
         $total = DB::table('artikel')->where('status', 'aktif')->count();
@@ -31,7 +40,7 @@ class Artikel extends Controller
             ->where('kategori_artikel.status', 'aktif')
             ->groupBy('kategori_artikel.id_kategori_artikel', 'kategori_artikel.kategori')
             ->get();
-        return view('artikel.artikel', compact('mod', 'data', 'kategori', 'total', 'populer'));
+        return view('artikel.artikel', compact('mod', 'data', 'search', 'kategori', 'total', 'populer'));
     }
 
     public function show($id)
