@@ -75,7 +75,7 @@ class PengumumanController extends Controller
             $imagename1 = 'img1' . str_pad(rand(0, 99999), 5, '0', STR_PAD_LEFT) . $this->acak(32) . ".jpg";
             $destinationPath = public_path('/image/pengumuman');
             $img = Image::read($image1->path());
-            $img->resize(840, 464, function ($constraint) {
+            $img->resize(1902, 614, function ($constraint) {
                 $constraint->aspectRatio(); // Menjaga rasio gambar
                 $constraint->upsize();      // Mencegah gambar menjadi lebih besar dari aslinya
             });
@@ -90,7 +90,7 @@ class PengumumanController extends Controller
             $imagename2 = 'img2' . str_pad(rand(0, 99999), 5, '0', STR_PAD_LEFT) . $this->acak(32) . ".jpg";
             $destinationPath = public_path('/image/pengumuman');
             $img = Image::read($image2->path());
-            $img->resize(840, 464, function ($constraint) {
+            $img->resize(1902, 614, function ($constraint) {
                 $constraint->aspectRatio(); // Menjaga rasio gambar
                 $constraint->upsize();      // Mencegah gambar menjadi lebih besar dari aslinya
             });
@@ -181,7 +181,7 @@ class PengumumanController extends Controller
                 unlink($destinationPath . '/' . $request->gambar1_old);
             }
             $img = Image::read($image1->path());
-            $img->resize(840, 464, function ($constraint) {
+            $img->resize(1902, 614, function ($constraint) {
                 $constraint->aspectRatio(); // Menjaga rasio gambar
                 $constraint->upsize();      // Mencegah gambar menjadi lebih besar dari aslinya
             });
@@ -199,7 +199,7 @@ class PengumumanController extends Controller
                 unlink($destinationPath . '/' . $request->gambar2_old);
             }
             $img = Image::read($image2->path());
-            $img->resize(840, 464, function ($constraint) {
+            $img->resize(1902, 614, function ($constraint) {
                 $constraint->aspectRatio(); // Menjaga rasio gambar
                 $constraint->upsize();      // Mencegah gambar menjadi lebih besar dari aslinya
             });
@@ -262,7 +262,7 @@ class PengumumanController extends Controller
             $imagename = 'cover' . str_pad(rand(0, 99999), 5, '0', STR_PAD_LEFT) . $this->acak(32) . ".jpg";
             $destinationPath = public_path('/image/mod_pengumuman');
             $img = Image::read($image->path());
-            $img->resize(840, 464, function ($constraint) {
+            $img->resize(1902, 614, function ($constraint) {
                 $constraint->aspectRatio(); // Menjaga rasio gambar
                 $constraint->upsize();      // Mencegah gambar menjadi lebih besar dari aslinya
             });
@@ -314,7 +314,7 @@ class PengumumanController extends Controller
                 unlink($destinationPath . '/' . $request->gambar_old);
             }
             $img = Image::read($image->path());
-            $img->resize(840, 464, function ($constraint) {
+            $img->resize(1902, 614, function ($constraint) {
                 $constraint->aspectRatio(); // Menjaga rasio gambar
                 $constraint->upsize();      // Mencegah gambar menjadi lebih besar dari aslinya
             });
