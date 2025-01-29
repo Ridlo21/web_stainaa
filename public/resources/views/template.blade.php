@@ -65,7 +65,8 @@
                                         </li>
                                         <li
                                             class="rd-nav-item {{ request()->segment(1) == 'kemahasiswaan' ? 'active' : '' }}">
-                                            <a class="rd-nav-link" href="{{ route('kemahasiswaan.index') }}">Kemahasiswaan</a>
+                                            <a class="rd-nav-link"
+                                                href="{{ route('kemahasiswaan.index') }}">Kemahasiswaan</a>
                                         </li>
                                         <li
                                             class="rd-nav-item {{ request()->segment(1) == 'artikel' ? 'active' : '' }}">
@@ -73,7 +74,8 @@
                                         </li>
                                         <li
                                             class="rd-nav-item {{ request()->segment(1) == 'akreditasi' ? 'active' : '' }}">
-                                            <a class="rd-nav-link" href="{{ route('akreditasi.index') }}">Akreditasi</a>
+                                            <a class="rd-nav-link"
+                                                href="{{ route('akreditasi.index') }}">Akreditasi</a>
                                         </li>
                                         {{-- <li class="rd-nav-item"><a class="rd-nav-link" href="blog.html">Blog</a>
                                             <ul class="rd-menu rd-navbar-dropdown">
@@ -160,18 +162,9 @@
         </header>
         @yield('konten')
         <footer class="section section-lg bg-nero">
-            <div class="container">
-                <div class="row row-40">
-                    <div class="col-sm-6 col-lg-4 col-xl-3">
-                        <address class="contact-info">
-                            <p class="small">3828 Fincham Road<br>
-                                Los Angeles, CA<br>
-                                California 90017
-                            </p>
-                            <p class="h4">P:&nbsp;<a href="tel:#">+1 (256) 1087 000</a></p><a
-                                class="small d-block mt-0 text-decoration-underline"
-                                href="mailto:#">mail@demolink.org</a>
-                        </address>
+            <div class="container d-flex justify-content-center align-items-center">
+                <div class="row row-40 text-center">
+                    <div class="col-sm-12">
                         <ul class="list-inline list-social list-inline-sm">
                             <li><a class="icon link-secondary icomoon-youtube" href="#"></a></li>
                             <li><a class="icon link-secondary icomoon-insta" href="#"></a></li>
@@ -180,42 +173,11 @@
                             <li><a class="icon link-secondary icomoon-linkedin" href="#"></a></li>
                         </ul>
                     </div>
-                    <div class="col-sm-6 col-lg-4 col-xl-3">
-                        <ul class="small">
-                            <li><a href="about-me.html">About me</a></li>
-                            <li><a href="coaching.html">Coaching</a></li>
-                            <li><a href="client-stories.html">Client stories</a></li>
-                            <li><a href="pricing.html">Prices</a></li>
-                            <li><a href="blog.html">Blog</a></li>
-                        </ul><a class="btn btn-180 btn-icon btn-icon-right btn-nero-outline-1" href="contact-me.html"
-                            target="_blank"><span class="icon icon-xs-smaller icomoon-chat"></span>Contact me</a>
+                    <div class="col-sm-12">
+                        <h3>STAINAA</h3>
                     </div>
-                    <div class="col-lg-4 col-xl-6">
-                        <h3 class="h4">Stay in touch! Get latest updates and offers.</h3>
-                        <form class="rd-mailform form-footer" data-form-output="form-output-global"
-                            data-form-type="subscribe" method="post" action="bat/rd-mailform.php">
-                            <div class="form-wrap">
-                                <input class="form-input" id="contact-email-footer" type="email" name="email">
-                                <label class="form-label" for="contact-email-footer">Enter your email</label>
-                            </div>
-                            <button class="btn btn-white" type="submit" aria-label="Subscribe">Subscribe</button>
-                        </form>
-                        <p class="small">By clicking the button you agree to the Privacy Policy and Terms and
-                            Conditions
-                        </p>
-                    </div>
-                </div>
-                <div class="row row-lg row-30 align-items-md-center justify-content-lg-center justify-content-xl-start wow fadeInUp"
-                    data-wow-delay=".3s">
-                    <div class="col-sm-6 col-lg-4 col-xl-3">
-                        <p class="rights small"><span>Lead Planner</span><span>&nbsp;&#169;&nbsp;</span><span
-                                class="copyright-year"></span><span>.&nbsp;</span><span>All rights reserved.</span></p>
-                    </div>
-                    <div class="col-sm-6 col-lg-4 col-xl-3">
-                        <div class="unit unit-spacing-md small">
-                            <div class="unit-left"><a href="privacy-policy.html">Terms & Conditions</a></div>
-                            <div class="unit-right"><a href="privacy-policy.html">Privacy Policy</a></div>
-                        </div>
+                    <div class="col-sm-12">
+                        <h4>Alasbuluh Kec. Wongsorejo, Kab. Banyuwangi, Jawa Timur</h4>
                     </div>
                 </div>
             </div>
