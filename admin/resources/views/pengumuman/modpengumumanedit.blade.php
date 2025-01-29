@@ -20,8 +20,8 @@
             <div class="col-lg-12 col-md-12 col-12">
                 <form id="formPengumuman" data-parsley-validate method="POST">
                     {{ csrf_field() }}
-                    <input type="text" name="id" value="{{ $data->id_landing_pengumuman }}">
-                    <input type="text" name="gambar_old" value="{{ $data->gambar }}">
+                    <input type="hidden" name="id" value="{{ $data->id_landing_pengumuman }}">
+                    <input type="hidden" name="gambar_old" value="{{ $data->gambar }}">
                     <div class="card">
                         <div class="card-header pb-1 pt-2">
                             <h4 class="card-title">Tambah Mod Pengumuman</h4>

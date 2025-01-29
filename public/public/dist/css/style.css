@@ -242,7 +242,7 @@ a:focus {
 
 a[href*='tel'],
 a[href*='mailto'] {
-	white-space: nowrap;
+	/* white-space: nowrap; */
 }
 
 figure {
@@ -19625,4 +19625,16 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item.lg-complete .lg-object 
 	max-width: 100%;
 	display: block;
 	object-fit: cover;
+}
+
+.post-body {
+	font-size: 18px !important;
+	line-height: 1.6;
+	text-align: justify;
+}
+
+.post-body * {
+	font-size: inherit !important;
+	line-height: inherit !important;
+	text-align: inherit !important;
 }

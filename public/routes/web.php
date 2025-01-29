@@ -30,8 +30,8 @@ Route::controller(Pengumuman::class)->group(function () {
 });
 
 Route::controller(Berita::class)->group(function () {
-    Route::get('/berita_detail/{seo}', 'show')->name('berita.show');
-    Route::get('/semua_berita', 'all')->name('berita.all');
+    Route::get('/semua_berita', 'index')->name('berita.all');
+    Route::get('/berita_detail/{id}', 'show')->name('berita.show');
 
     // Route::get('/semua_berita', function () {
     //     return view('berita.beritalist');
@@ -58,21 +58,10 @@ Route::controller(Contact::class)->group(function () {
 
 Route::controller(Kemahasiswaan::class)->group(function () {
     Route::get('/kemahasiswaanIndex', 'index')->name('kemahasiswaan.index');
-});
-
-Route::get('/ukm_detail', function () {
-    return view('kemahasiswaan.ukmdetail');
+    Route::get('/ukm_detail/{id}', 'show')->name('ukm.show'); // ditambahkan oleh ridlo
 });
 
 Route::controller(Artikel::class)->group(function () {
     Route::get('/artikel', 'index')->name('artikel.List');
     Route::get('/artikelInfo/{id}', 'show')->name('artikel.Info');
 });
-
-// Route::get('/artikel', function () {
-//     return view('artikel.artikel');
-// });
-
-// Route::get('/artikel_detail', function () {
-//     return view('artikel.artikeldetail');
-// });

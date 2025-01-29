@@ -52,13 +52,14 @@
             </div>
             <div class="row row-20 row-md-40 row-xl-60">
                 @foreach ($ukm as $item)
-                    <div class="col-sm-6 col-md-4 wow fadeInUp" data-wow-delay="0s">
+                    <div class="col-sm-6 col-md-3 wow fadeInUp" data-wow-delay="0s">
                         <div class="card shadow post post-preview">
                             <img src="http://localhost:8000/image/kemahasiswaan/{{ $item->gambar1 }}" class="card-img-top"
                                 alt="..." style="height: 250px; object-fit: cover;">
                             <div class="card-body unit-body">
                                 <h5 class="card-title" style="margin-bottom: -20px !important;"><a
-                                        href="{{ url('/ukm_detail') }}">{{ $item->judul }}</a></h5>
+                                        href="{{ route('ukm.show', ['id' => $item->judul_seo]) }}">{{ $item->judul }}</a>
+                                </h5>
                                 <div class="post-meta">
                                     <ul class="list-meta">
                                         <li>

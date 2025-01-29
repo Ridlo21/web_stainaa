@@ -4,22 +4,13 @@
 @endsection
 
 @section('konten')
-    {{-- <section class="section section-xs bg-nero">
-        <div class="container">
-            <div class="page-title">
-                <h1 class="h2">Semua Berita</h1>
-            </div>
-        </div>
-    </section> --}}
     <div class="mm bg-default mb-5">
-        <img class="img-fluid cover" src="dist/images/bg_3.jpg" alt="" />
+        <img class="img-fluid cover" src="http://localhost:8000/image/mod_berita/{{ $mod->gambar }}" alt="" />
         <div class="container judul">
             <div class="row">
                 <div class="col-lg-4 col-md-6 bg-primary shadow pt-3">
-                    <h3>Berita</h3>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam necessitatibus facilis iste qui
-                        excepturi reprehenderit at, quis corrupti fugit sit, magnam dolorem nisi, accusamus aliquam et
-                        cupiditate aliquid assumenda eos.</p>
+                    <h3>{{ $mod->title }}</h3>
+                    <p>{{ $mod->descripton }}</p>
                 </div>
             </div>
         </div>
@@ -30,238 +21,69 @@
                 <div class="col-xl-8">
                     <dl class="blog-timeline">
                         <dd>
-                            <article class="post-classic-minimal">
-                                <div class="post-left">
-                                    <time datetime="2023-06-17">Jun 17</time>
-                                </div>
-                                <div class="post-main">
-                                    <div class="post-media post-gallery">
-                                        <figure><img src="dist/images/blog-line-1-620x464.jpg" alt="" width="620"
-                                                height="464" />
-                                        </figure>
+                            @foreach ($data as $item)
+                                <article class="post-classic-minimal">
+                                    <div class="post-left">
+                                        <time
+                                            datetime="{{ $item->tanggal }}">{{ \Carbon\Carbon::parse($item->tanggal)->format('j M') }}</time>
                                     </div>
-                                    <div class="post-header">
-                                        <h2 class="h3"><a href="{{ url('/berita_detail') }}">The ultimate guide to time
-                                                management</a></h2>
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec nec
-                                            venenatis elit, sed vehicula sapien. Praesent facilisis varius
-                                            imperdiet. Ut et ligula quis mi viverra sodales. Vivamus lectus magna,
-                                            faucibus vel ipsum. Proin iaculis, diam et placerat lacinia, odio nisl
-                                            congue tellus, sed placerat nunc neque id urna. Phasellus nec massa
-                                            purus.</p>
+                                    <div class="post-main">
+                                        <div class="post-media post-gallery">
+                                            <figure><img src="http://localhost:8000/image/berita/{{ $item->gambar1 }}"
+                                                    alt="" width="620" height="464" />
+                                            </figure>
+                                        </div>
+                                        <div class="post-header">
+                                            <h2 class="h3"><a
+                                                    href="{{ route('berita.show', ['id' => $item->judul_seo]) }}">{{ $item->judul }}</a>
+                                            </h2>
+                                            <p>{{ substr($item->isi_berita, 3, 167) }}...</p>
+                                        </div>
+                                        <div class="post-footer">
+                                            <ul class="post-meta">
+                                                <li>
+                                                    <dl>
+                                                        <dt>Pewarta</dt>
+                                                        <dd>
+                                                            <ul class="list-tags-inline">
+                                                                <li><a href="#">{{ $item->penulis }}</a></li>
+                                                            </ul>
+                                                        </dd>
+                                                    </dl>
+                                                </li>
+                                                <li>
+                                                    <dl>
+                                                        <dt>Dibaca</dt>
+                                                        <dd><a href="#">{{ $item->dibaca }} x dibaca</a></dd>
+                                                    </dl>
+                                                </li>
+                                            </ul>
+                                        </div>
                                     </div>
-                                    <div class="post-footer">
-                                        <ul class="post-meta">
-                                            <li>
-                                                <dl>
-                                                    <dt>in</dt>
-                                                    <dd>
-                                                        <ul class="list-tags-inline">
-                                                            <li><a href="#">Business</a></li>
-                                                            <li><a href="#">Blog</a></li>
-                                                        </ul>
-                                                    </dd>
-                                                </dl>
-                                            </li>
-                                            <li>
-                                                <dl>
-                                                    <dt>by</dt>
-                                                    <dd><a href="#">John Adams</a></dd>
-                                                </dl>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </article>
-                            <article class="post-classic-minimal">
-                                <div class="post-left">
-                                    <time datetime="2023-05-23">May 23</time>
-                                </div>
-                                <div class="post-main">
-                                    <div class="post-media post-gallery">
-                                        <figure><img src="dist/images/blog-line-1-620x464.jpg" alt="" width="620"
-                                                height="464" />
-                                        </figure>
-                                    </div>
-                                    <div class="post-header">
-                                        <h2 class="h3"><a href="{{ url('/berita_detail') }}">Find more time in your day
-                                                by
-                                                conducting a simple time audit</a></h2>
-                                        <p>Praesent facilisis varius imperdiet. Ut et ligula quis mi viverra
-                                            sodales. Vivamus lectus magna, faucibus vel ipsum. Proin iaculis, diam
-                                            et placerat lacinia, odio nisl congue tellus, sed placerat nunc neque id
-                                            urna. Phasellus nec massa purus.</p>
-                                    </div>
-                                    <div class="post-footer">
-                                        <ul class="post-meta">
-                                            <li>
-                                                <dl>
-                                                    <dt>in</dt>
-                                                    <dd>
-                                                        <ul class="list-tags-inline">
-                                                            <li><a href="#">Business</a></li>
-                                                            <li><a href="#">Blog</a></li>
-                                                        </ul>
-                                                    </dd>
-                                                </dl>
-                                            </li>
-                                            <li>
-                                                <dl>
-                                                    <dt>by</dt>
-                                                    <dd><a href="#">John Adams</a></dd>
-                                                </dl>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </article>
-                            <article class="post-classic-minimal">
-                                <div class="post-left">
-                                    <time datetime="2023-04-14">Apr 14</time>
-                                </div>
-                                <div class="post-main">
-                                    <div class="post-media post-gallery">
-                                        <figure><img src="dist/images/blog-line-2-620x464.jpg" alt="" width="620"
-                                                height="464" />
-                                        </figure>
-                                    </div>
-                                    <div class="post-header">
-                                        <h2 class="h3"><a href="{{ url('/berita_detail') }}">How to get more out of your
-                                                business</a></h2>
-                                        <p>Donec nec venenatis elit, sed vehicula sapien. Praesent facilisis varius
-                                            imperdiet. Ut et ligula quis mi viverra sodales. Vivamus lectus magna,
-                                            faucibus vel ipsum. Proin iaculis, diam et placerat lacinia, odio nisl
-                                            congue tellus, sed placerat nunc neque id urna. Phasellus nec massa
-                                            purus.</p>
-                                    </div>
-                                    <div class="post-footer">
-                                        <ul class="post-meta">
-                                            <li>
-                                                <dl>
-                                                    <dt>in</dt>
-                                                    <dd>
-                                                        <ul class="list-tags-inline">
-                                                            <li><a href="#">Business</a></li>
-                                                            <li><a href="#">Blog</a></li>
-                                                        </ul>
-                                                    </dd>
-                                                </dl>
-                                            </li>
-                                            <li>
-                                                <dl>
-                                                    <dt>by</dt>
-                                                    <dd><a href="#">John Adams</a></dd>
-                                                </dl>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </article>
-                            <article class="post-classic-minimal">
-                                <div class="post-left">
-                                    <time datetime="2023-03-02">Mar 2</time>
-                                </div>
-                                <div class="post-main">
-                                    <div class="post-media post-gallery">
-                                        <figure><img src="dist/images/blog-line-2-620x464.jpg" alt="" width="620"
-                                                height="464" />
-                                        </figure>
-                                    </div>
-                                    <div class="post-header">
-                                        <h2 class="h3"><a href="{{ url('/berita_detail') }}">5 steps to increasing your
-                                                effectiveness</a></h2>
-                                        <p>Praesent facilisis varius imperdiet. Ut et ligula quis mi viverra
-                                            sodales. Vivamus lectus magna, faucibus vel ipsum. Proin iaculis,
-                                            diMauris lorem massa, gravida ac justo at, rutrum accumsan sem. In
-                                            ornare bibendum faucibus. Suspendisse tincidunt diam ut sem cursus, vel
-                                            sodales nisl mollis.</p>
-                                    </div>
-                                    <div class="post-footer">
-                                        <ul class="post-meta">
-                                            <li>
-                                                <dl>
-                                                    <dt>in</dt>
-                                                    <dd>
-                                                        <ul class="list-tags-inline">
-                                                            <li><a href="#">Business</a></li>
-                                                            <li><a href="#">Blog</a></li>
-                                                        </ul>
-                                                    </dd>
-                                                </dl>
-                                            </li>
-                                            <li>
-                                                <dl>
-                                                    <dt>by</dt>
-                                                    <dd><a href="#">John Adams</a></dd>
-                                                </dl>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </article>
-                            <article class="post-classic-minimal">
-                                <div class="post-left">
-                                    <time datetime="2023-03-02">Mar 2</time>
-                                </div>
-                                <div class="post-main">
-                                    <div class="post-media post-gallery">
-                                        <figure><img src="dist/images/blog-line-2-620x464.jpg" alt="" width="620"
-                                                height="464" />
-                                        </figure>
-                                    </div>
-                                    <div class="post-header">
-                                        <h2 class="h3"><a href="{{ url('/berita_detail') }}">5 steps to increasing your
-                                                effectiveness</a></h2>
-                                        <p>Praesent facilisis varius imperdiet. Ut et ligula quis mi viverra
-                                            sodales. Vivamus lectus magna, faucibus vel ipsum. Proin iaculis,
-                                            diMauris lorem massa, gravida ac justo at, rutrum accumsan sem. In
-                                            ornare bibendum faucibus. Suspendisse tincidunt diam ut sem cursus, vel
-                                            sodales nisl mollis.</p>
-                                    </div>
-                                    <div class="post-footer">
-                                        <ul class="post-meta">
-                                            <li>
-                                                <dl>
-                                                    <dt>in</dt>
-                                                    <dd>
-                                                        <ul class="list-tags-inline">
-                                                            <li><a href="#">Business</a></li>
-                                                            <li><a href="#">Blog</a></li>
-                                                        </ul>
-                                                    </dd>
-                                                </dl>
-                                            </li>
-                                            <li>
-                                                <dl>
-                                                    <dt>by</dt>
-                                                    <dd><a href="#">John Adams</a></dd>
-                                                </dl>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </article>
+                                </article>
+                            @endforeach
                         </dd>
                     </dl>
                 </div>
-                <ul class="pag pag-simple mt-5">
-                    <li class="pag-simple-item"><a class="pag-simple-link pag-simple-link-prev inactive"
-                            href="#"><span class="mdi mdi-arrow-left novi-icon"></span></a>
+                <ul class="pag pag-simple mt-3">
+                    <li class="pag-simple-item">
+                        <a class="pag-simple-link pag-simple-link-prev {{ $data->onFirstPage() ? 'inactive' : '' }}"
+                            href="{{ $data->previousPageUrl() ?? '#' }}">
+                            <span class="mdi mdi-arrow-left novi-icon"></span>
+                        </a>
                     </li>
-                    <li class="pag-simple-item active"><a class="pag-simple-link" href="#">1</a>
-                    </li>
-                    <li class="pag-simple-item"><a class="pag-simple-link" href="#">2</a>
-                    </li>
-                    <li class="pag-simple-item"><a class="pag-simple-link" href="#">3</a>
-                    </li>
-                    <li class="pag-simple-item"><a class="pag-simple-link" href="#">4</a>
-                    </li>
-                    <li class="pag-simple-item"><a class="pag-simple-link inactive" href="#">...</a>
-                    </li>
-                    <li class="pag-simple-item"><a class="pag-simple-link" href="#">7</a>
-                    </li>
-                    <li class="pag-simple-item"><a class="pag-simple-link pag-simple-link-next" href="#"><span
-                                class="mdi mdi-arrow-right novi-icon"></span></a>
+
+                    @foreach ($data->getUrlRange(1, $data->lastPage()) as $page => $url)
+                        <li class="pag-simple-item {{ $page == $data->currentPage() ? 'active' : '' }}">
+                            <a class="pag-simple-link" href="{{ $url }}">{{ $page }}</a>
+                        </li>
+                    @endforeach
+
+                    <li class="pag-simple-item">
+                        <a class="pag-simple-link pag-simple-link-next {{ $data->hasMorePages() ? '' : 'inactive' }}"
+                            href="{{ $data->nextPageUrl() ?? '#' }}">
+                            <span class="mdi mdi-arrow-right novi-icon"></span>
+                        </a>
                     </li>
                 </ul>
             </div>

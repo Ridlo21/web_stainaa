@@ -56,7 +56,7 @@
                         </div>
                         <div class="divider-fullwidth"></div>
                         <div class="post-body">
-                            {!! $data->isi_artikel !!}
+                            <?= $data->isi_artikel ?>
                         </div>
                     </article>
                 </div>
